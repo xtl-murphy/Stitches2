@@ -122,6 +122,492 @@ Stitches/fast:
 	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/build
 .PHONY : Stitches/fast
 
+Resources/Files/Json/Json.obj: Resources/Files/Json/Json.cpp.obj
+
+.PHONY : Resources/Files/Json/Json.obj
+
+# target to build an object file
+Resources/Files/Json/Json.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj
+.PHONY : Resources/Files/Json/Json.cpp.obj
+
+Resources/Files/Json/Json.i: Resources/Files/Json/Json.cpp.i
+
+.PHONY : Resources/Files/Json/Json.i
+
+# target to preprocess a source file
+Resources/Files/Json/Json.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.i
+.PHONY : Resources/Files/Json/Json.cpp.i
+
+Resources/Files/Json/Json.s: Resources/Files/Json/Json.cpp.s
+
+.PHONY : Resources/Files/Json/Json.s
+
+# target to generate assembly for a file
+Resources/Files/Json/Json.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.s
+.PHONY : Resources/Files/Json/Json.cpp.s
+
+Resources/Files/Node.obj: Resources/Files/Node.cpp.obj
+
+.PHONY : Resources/Files/Node.obj
+
+# target to build an object file
+Resources/Files/Node.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj
+.PHONY : Resources/Files/Node.cpp.obj
+
+Resources/Files/Node.i: Resources/Files/Node.cpp.i
+
+.PHONY : Resources/Files/Node.i
+
+# target to preprocess a source file
+Resources/Files/Node.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.i
+.PHONY : Resources/Files/Node.cpp.i
+
+Resources/Files/Node.s: Resources/Files/Node.cpp.s
+
+.PHONY : Resources/Files/Node.s
+
+# target to generate assembly for a file
+Resources/Files/Node.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.s
+.PHONY : Resources/Files/Node.cpp.s
+
+Resources/Files/NodeConstView.obj: Resources/Files/NodeConstView.cpp.obj
+
+.PHONY : Resources/Files/NodeConstView.obj
+
+# target to build an object file
+Resources/Files/NodeConstView.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj
+.PHONY : Resources/Files/NodeConstView.cpp.obj
+
+Resources/Files/NodeConstView.i: Resources/Files/NodeConstView.cpp.i
+
+.PHONY : Resources/Files/NodeConstView.i
+
+# target to preprocess a source file
+Resources/Files/NodeConstView.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.i
+.PHONY : Resources/Files/NodeConstView.cpp.i
+
+Resources/Files/NodeConstView.s: Resources/Files/NodeConstView.cpp.s
+
+.PHONY : Resources/Files/NodeConstView.s
+
+# target to generate assembly for a file
+Resources/Files/NodeConstView.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.s
+.PHONY : Resources/Files/NodeConstView.cpp.s
+
+Resources/Files/NodeView.obj: Resources/Files/NodeView.cpp.obj
+
+.PHONY : Resources/Files/NodeView.obj
+
+# target to build an object file
+Resources/Files/NodeView.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj
+.PHONY : Resources/Files/NodeView.cpp.obj
+
+Resources/Files/NodeView.i: Resources/Files/NodeView.cpp.i
+
+.PHONY : Resources/Files/NodeView.i
+
+# target to preprocess a source file
+Resources/Files/NodeView.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.i
+.PHONY : Resources/Files/NodeView.cpp.i
+
+Resources/Files/NodeView.s: Resources/Files/NodeView.cpp.s
+
+.PHONY : Resources/Files/NodeView.s
+
+# target to generate assembly for a file
+Resources/Files/NodeView.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.s
+.PHONY : Resources/Files/NodeView.cpp.s
+
+Resources/Math/Colour.obj: Resources/Math/Colour.cpp.obj
+
+.PHONY : Resources/Math/Colour.obj
+
+# target to build an object file
+Resources/Math/Colour.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj
+.PHONY : Resources/Math/Colour.cpp.obj
+
+Resources/Math/Colour.i: Resources/Math/Colour.cpp.i
+
+.PHONY : Resources/Math/Colour.i
+
+# target to preprocess a source file
+Resources/Math/Colour.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.i
+.PHONY : Resources/Math/Colour.cpp.i
+
+Resources/Math/Colour.s: Resources/Math/Colour.cpp.s
+
+.PHONY : Resources/Math/Colour.s
+
+# target to generate assembly for a file
+Resources/Math/Colour.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.s
+.PHONY : Resources/Math/Colour.cpp.s
+
+Resources/Math/ElapsedTime.obj: Resources/Math/ElapsedTime.cpp.obj
+
+.PHONY : Resources/Math/ElapsedTime.obj
+
+# target to build an object file
+Resources/Math/ElapsedTime.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj
+.PHONY : Resources/Math/ElapsedTime.cpp.obj
+
+Resources/Math/ElapsedTime.i: Resources/Math/ElapsedTime.cpp.i
+
+.PHONY : Resources/Math/ElapsedTime.i
+
+# target to preprocess a source file
+Resources/Math/ElapsedTime.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.i
+.PHONY : Resources/Math/ElapsedTime.cpp.i
+
+Resources/Math/ElapsedTime.s: Resources/Math/ElapsedTime.cpp.s
+
+.PHONY : Resources/Math/ElapsedTime.s
+
+# target to generate assembly for a file
+Resources/Math/ElapsedTime.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.s
+.PHONY : Resources/Math/ElapsedTime.cpp.s
+
+Resources/Math/Maths.obj: Resources/Math/Maths.cpp.obj
+
+.PHONY : Resources/Math/Maths.obj
+
+# target to build an object file
+Resources/Math/Maths.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj
+.PHONY : Resources/Math/Maths.cpp.obj
+
+Resources/Math/Maths.i: Resources/Math/Maths.cpp.i
+
+.PHONY : Resources/Math/Maths.i
+
+# target to preprocess a source file
+Resources/Math/Maths.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.i
+.PHONY : Resources/Math/Maths.cpp.i
+
+Resources/Math/Maths.s: Resources/Math/Maths.cpp.s
+
+.PHONY : Resources/Math/Maths.s
+
+# target to generate assembly for a file
+Resources/Math/Maths.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.s
+.PHONY : Resources/Math/Maths.cpp.s
+
+Resources/Math/Matrix2.obj: Resources/Math/Matrix2.cpp.obj
+
+.PHONY : Resources/Math/Matrix2.obj
+
+# target to build an object file
+Resources/Math/Matrix2.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.obj
+.PHONY : Resources/Math/Matrix2.cpp.obj
+
+Resources/Math/Matrix2.i: Resources/Math/Matrix2.cpp.i
+
+.PHONY : Resources/Math/Matrix2.i
+
+# target to preprocess a source file
+Resources/Math/Matrix2.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.i
+.PHONY : Resources/Math/Matrix2.cpp.i
+
+Resources/Math/Matrix2.s: Resources/Math/Matrix2.cpp.s
+
+.PHONY : Resources/Math/Matrix2.s
+
+# target to generate assembly for a file
+Resources/Math/Matrix2.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.s
+.PHONY : Resources/Math/Matrix2.cpp.s
+
+Resources/Math/Matrix3.obj: Resources/Math/Matrix3.cpp.obj
+
+.PHONY : Resources/Math/Matrix3.obj
+
+# target to build an object file
+Resources/Math/Matrix3.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.obj
+.PHONY : Resources/Math/Matrix3.cpp.obj
+
+Resources/Math/Matrix3.i: Resources/Math/Matrix3.cpp.i
+
+.PHONY : Resources/Math/Matrix3.i
+
+# target to preprocess a source file
+Resources/Math/Matrix3.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.i
+.PHONY : Resources/Math/Matrix3.cpp.i
+
+Resources/Math/Matrix3.s: Resources/Math/Matrix3.cpp.s
+
+.PHONY : Resources/Math/Matrix3.s
+
+# target to generate assembly for a file
+Resources/Math/Matrix3.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.s
+.PHONY : Resources/Math/Matrix3.cpp.s
+
+Resources/Math/Matrix4.obj: Resources/Math/Matrix4.cpp.obj
+
+.PHONY : Resources/Math/Matrix4.obj
+
+# target to build an object file
+Resources/Math/Matrix4.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.obj
+.PHONY : Resources/Math/Matrix4.cpp.obj
+
+Resources/Math/Matrix4.i: Resources/Math/Matrix4.cpp.i
+
+.PHONY : Resources/Math/Matrix4.i
+
+# target to preprocess a source file
+Resources/Math/Matrix4.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.i
+.PHONY : Resources/Math/Matrix4.cpp.i
+
+Resources/Math/Matrix4.s: Resources/Math/Matrix4.cpp.s
+
+.PHONY : Resources/Math/Matrix4.s
+
+# target to generate assembly for a file
+Resources/Math/Matrix4.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.s
+.PHONY : Resources/Math/Matrix4.cpp.s
+
+Resources/Math/Quaternion.obj: Resources/Math/Quaternion.cpp.obj
+
+.PHONY : Resources/Math/Quaternion.obj
+
+# target to build an object file
+Resources/Math/Quaternion.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.obj
+.PHONY : Resources/Math/Quaternion.cpp.obj
+
+Resources/Math/Quaternion.i: Resources/Math/Quaternion.cpp.i
+
+.PHONY : Resources/Math/Quaternion.i
+
+# target to preprocess a source file
+Resources/Math/Quaternion.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.i
+.PHONY : Resources/Math/Quaternion.cpp.i
+
+Resources/Math/Quaternion.s: Resources/Math/Quaternion.cpp.s
+
+.PHONY : Resources/Math/Quaternion.s
+
+# target to generate assembly for a file
+Resources/Math/Quaternion.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.s
+.PHONY : Resources/Math/Quaternion.cpp.s
+
+Resources/Math/Transform.obj: Resources/Math/Transform.cpp.obj
+
+.PHONY : Resources/Math/Transform.obj
+
+# target to build an object file
+Resources/Math/Transform.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.obj
+.PHONY : Resources/Math/Transform.cpp.obj
+
+Resources/Math/Transform.i: Resources/Math/Transform.cpp.i
+
+.PHONY : Resources/Math/Transform.i
+
+# target to preprocess a source file
+Resources/Math/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.i
+.PHONY : Resources/Math/Transform.cpp.i
+
+Resources/Math/Transform.s: Resources/Math/Transform.cpp.s
+
+.PHONY : Resources/Math/Transform.s
+
+# target to generate assembly for a file
+Resources/Math/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.s
+.PHONY : Resources/Math/Transform.cpp.s
+
+Resources/Math/Vector2.obj: Resources/Math/Vector2.cpp.obj
+
+.PHONY : Resources/Math/Vector2.obj
+
+# target to build an object file
+Resources/Math/Vector2.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.obj
+.PHONY : Resources/Math/Vector2.cpp.obj
+
+Resources/Math/Vector2.i: Resources/Math/Vector2.cpp.i
+
+.PHONY : Resources/Math/Vector2.i
+
+# target to preprocess a source file
+Resources/Math/Vector2.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.i
+.PHONY : Resources/Math/Vector2.cpp.i
+
+Resources/Math/Vector2.s: Resources/Math/Vector2.cpp.s
+
+.PHONY : Resources/Math/Vector2.s
+
+# target to generate assembly for a file
+Resources/Math/Vector2.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.s
+.PHONY : Resources/Math/Vector2.cpp.s
+
+Resources/Math/Vector3.obj: Resources/Math/Vector3.cpp.obj
+
+.PHONY : Resources/Math/Vector3.obj
+
+# target to build an object file
+Resources/Math/Vector3.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.obj
+.PHONY : Resources/Math/Vector3.cpp.obj
+
+Resources/Math/Vector3.i: Resources/Math/Vector3.cpp.i
+
+.PHONY : Resources/Math/Vector3.i
+
+# target to preprocess a source file
+Resources/Math/Vector3.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.i
+.PHONY : Resources/Math/Vector3.cpp.i
+
+Resources/Math/Vector3.s: Resources/Math/Vector3.cpp.s
+
+.PHONY : Resources/Math/Vector3.s
+
+# target to generate assembly for a file
+Resources/Math/Vector3.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.s
+.PHONY : Resources/Math/Vector3.cpp.s
+
+Resources/Math/Vector4.obj: Resources/Math/Vector4.cpp.obj
+
+.PHONY : Resources/Math/Vector4.obj
+
+# target to build an object file
+Resources/Math/Vector4.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.obj
+.PHONY : Resources/Math/Vector4.cpp.obj
+
+Resources/Math/Vector4.i: Resources/Math/Vector4.cpp.i
+
+.PHONY : Resources/Math/Vector4.i
+
+# target to preprocess a source file
+Resources/Math/Vector4.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.i
+.PHONY : Resources/Math/Vector4.cpp.i
+
+Resources/Math/Vector4.s: Resources/Math/Vector4.cpp.s
+
+.PHONY : Resources/Math/Vector4.s
+
+# target to generate assembly for a file
+Resources/Math/Vector4.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.s
+.PHONY : Resources/Math/Vector4.cpp.s
+
+Resources/Utils/String.obj: Resources/Utils/String.cpp.obj
+
+.PHONY : Resources/Utils/String.obj
+
+# target to build an object file
+Resources/Utils/String.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.obj
+.PHONY : Resources/Utils/String.cpp.obj
+
+Resources/Utils/String.i: Resources/Utils/String.cpp.i
+
+.PHONY : Resources/Utils/String.i
+
+# target to preprocess a source file
+Resources/Utils/String.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.i
+.PHONY : Resources/Utils/String.cpp.i
+
+Resources/Utils/String.s: Resources/Utils/String.cpp.s
+
+.PHONY : Resources/Utils/String.s
+
+# target to generate assembly for a file
+Resources/Utils/String.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.s
+.PHONY : Resources/Utils/String.cpp.s
+
+Resources/Window/Monitor.obj: Resources/Window/Monitor.cpp.obj
+
+.PHONY : Resources/Window/Monitor.obj
+
+# target to build an object file
+Resources/Window/Monitor.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.obj
+.PHONY : Resources/Window/Monitor.cpp.obj
+
+Resources/Window/Monitor.i: Resources/Window/Monitor.cpp.i
+
+.PHONY : Resources/Window/Monitor.i
+
+# target to preprocess a source file
+Resources/Window/Monitor.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.i
+.PHONY : Resources/Window/Monitor.cpp.i
+
+Resources/Window/Monitor.s: Resources/Window/Monitor.cpp.s
+
+.PHONY : Resources/Window/Monitor.s
+
+# target to generate assembly for a file
+Resources/Window/Monitor.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.s
+.PHONY : Resources/Window/Monitor.cpp.s
+
+Resources/Window/Window.obj: Resources/Window/Window.cpp.obj
+
+.PHONY : Resources/Window/Window.obj
+
+# target to build an object file
+Resources/Window/Window.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.obj
+.PHONY : Resources/Window/Window.cpp.obj
+
+Resources/Window/Window.i: Resources/Window/Window.cpp.i
+
+.PHONY : Resources/Window/Window.i
+
+# target to preprocess a source file
+Resources/Window/Window.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.i
+.PHONY : Resources/Window/Window.cpp.i
+
+Resources/Window/Window.s: Resources/Window/Window.cpp.s
+
+.PHONY : Resources/Window/Window.s
+
+# target to generate assembly for a file
+Resources/Window/Window.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.s
+.PHONY : Resources/Window/Window.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -149,438 +635,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/Files/Json/Json.obj: src/Files/Json/Json.cpp.obj
-
-.PHONY : src/Files/Json/Json.obj
-
-# target to build an object file
-src/Files/Json/Json.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.obj
-.PHONY : src/Files/Json/Json.cpp.obj
-
-src/Files/Json/Json.i: src/Files/Json/Json.cpp.i
-
-.PHONY : src/Files/Json/Json.i
-
-# target to preprocess a source file
-src/Files/Json/Json.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.i
-.PHONY : src/Files/Json/Json.cpp.i
-
-src/Files/Json/Json.s: src/Files/Json/Json.cpp.s
-
-.PHONY : src/Files/Json/Json.s
-
-# target to generate assembly for a file
-src/Files/Json/Json.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.s
-.PHONY : src/Files/Json/Json.cpp.s
-
-src/Files/Node.obj: src/Files/Node.cpp.obj
-
-.PHONY : src/Files/Node.obj
-
-# target to build an object file
-src/Files/Node.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/Node.cpp.obj
-.PHONY : src/Files/Node.cpp.obj
-
-src/Files/Node.i: src/Files/Node.cpp.i
-
-.PHONY : src/Files/Node.i
-
-# target to preprocess a source file
-src/Files/Node.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/Node.cpp.i
-.PHONY : src/Files/Node.cpp.i
-
-src/Files/Node.s: src/Files/Node.cpp.s
-
-.PHONY : src/Files/Node.s
-
-# target to generate assembly for a file
-src/Files/Node.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/Node.cpp.s
-.PHONY : src/Files/Node.cpp.s
-
-src/Files/NodeConstView.obj: src/Files/NodeConstView.cpp.obj
-
-.PHONY : src/Files/NodeConstView.obj
-
-# target to build an object file
-src/Files/NodeConstView.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.obj
-.PHONY : src/Files/NodeConstView.cpp.obj
-
-src/Files/NodeConstView.i: src/Files/NodeConstView.cpp.i
-
-.PHONY : src/Files/NodeConstView.i
-
-# target to preprocess a source file
-src/Files/NodeConstView.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.i
-.PHONY : src/Files/NodeConstView.cpp.i
-
-src/Files/NodeConstView.s: src/Files/NodeConstView.cpp.s
-
-.PHONY : src/Files/NodeConstView.s
-
-# target to generate assembly for a file
-src/Files/NodeConstView.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.s
-.PHONY : src/Files/NodeConstView.cpp.s
-
-src/Files/NodeView.obj: src/Files/NodeView.cpp.obj
-
-.PHONY : src/Files/NodeView.obj
-
-# target to build an object file
-src/Files/NodeView.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.obj
-.PHONY : src/Files/NodeView.cpp.obj
-
-src/Files/NodeView.i: src/Files/NodeView.cpp.i
-
-.PHONY : src/Files/NodeView.i
-
-# target to preprocess a source file
-src/Files/NodeView.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.i
-.PHONY : src/Files/NodeView.cpp.i
-
-src/Files/NodeView.s: src/Files/NodeView.cpp.s
-
-.PHONY : src/Files/NodeView.s
-
-# target to generate assembly for a file
-src/Files/NodeView.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.s
-.PHONY : src/Files/NodeView.cpp.s
-
-src/Math/Colour.obj: src/Math/Colour.cpp.obj
-
-.PHONY : src/Math/Colour.obj
-
-# target to build an object file
-src/Math/Colour.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Colour.cpp.obj
-.PHONY : src/Math/Colour.cpp.obj
-
-src/Math/Colour.i: src/Math/Colour.cpp.i
-
-.PHONY : src/Math/Colour.i
-
-# target to preprocess a source file
-src/Math/Colour.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Colour.cpp.i
-.PHONY : src/Math/Colour.cpp.i
-
-src/Math/Colour.s: src/Math/Colour.cpp.s
-
-.PHONY : src/Math/Colour.s
-
-# target to generate assembly for a file
-src/Math/Colour.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Colour.cpp.s
-.PHONY : src/Math/Colour.cpp.s
-
-src/Math/ElapsedTime.obj: src/Math/ElapsedTime.cpp.obj
-
-.PHONY : src/Math/ElapsedTime.obj
-
-# target to build an object file
-src/Math/ElapsedTime.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.obj
-.PHONY : src/Math/ElapsedTime.cpp.obj
-
-src/Math/ElapsedTime.i: src/Math/ElapsedTime.cpp.i
-
-.PHONY : src/Math/ElapsedTime.i
-
-# target to preprocess a source file
-src/Math/ElapsedTime.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.i
-.PHONY : src/Math/ElapsedTime.cpp.i
-
-src/Math/ElapsedTime.s: src/Math/ElapsedTime.cpp.s
-
-.PHONY : src/Math/ElapsedTime.s
-
-# target to generate assembly for a file
-src/Math/ElapsedTime.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.s
-.PHONY : src/Math/ElapsedTime.cpp.s
-
-src/Math/Maths.obj: src/Math/Maths.cpp.obj
-
-.PHONY : src/Math/Maths.obj
-
-# target to build an object file
-src/Math/Maths.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Maths.cpp.obj
-.PHONY : src/Math/Maths.cpp.obj
-
-src/Math/Maths.i: src/Math/Maths.cpp.i
-
-.PHONY : src/Math/Maths.i
-
-# target to preprocess a source file
-src/Math/Maths.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Maths.cpp.i
-.PHONY : src/Math/Maths.cpp.i
-
-src/Math/Maths.s: src/Math/Maths.cpp.s
-
-.PHONY : src/Math/Maths.s
-
-# target to generate assembly for a file
-src/Math/Maths.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Maths.cpp.s
-.PHONY : src/Math/Maths.cpp.s
-
-src/Math/Matrix2.obj: src/Math/Matrix2.cpp.obj
-
-.PHONY : src/Math/Matrix2.obj
-
-# target to build an object file
-src/Math/Matrix2.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.obj
-.PHONY : src/Math/Matrix2.cpp.obj
-
-src/Math/Matrix2.i: src/Math/Matrix2.cpp.i
-
-.PHONY : src/Math/Matrix2.i
-
-# target to preprocess a source file
-src/Math/Matrix2.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.i
-.PHONY : src/Math/Matrix2.cpp.i
-
-src/Math/Matrix2.s: src/Math/Matrix2.cpp.s
-
-.PHONY : src/Math/Matrix2.s
-
-# target to generate assembly for a file
-src/Math/Matrix2.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.s
-.PHONY : src/Math/Matrix2.cpp.s
-
-src/Math/Matrix3.obj: src/Math/Matrix3.cpp.obj
-
-.PHONY : src/Math/Matrix3.obj
-
-# target to build an object file
-src/Math/Matrix3.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.obj
-.PHONY : src/Math/Matrix3.cpp.obj
-
-src/Math/Matrix3.i: src/Math/Matrix3.cpp.i
-
-.PHONY : src/Math/Matrix3.i
-
-# target to preprocess a source file
-src/Math/Matrix3.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.i
-.PHONY : src/Math/Matrix3.cpp.i
-
-src/Math/Matrix3.s: src/Math/Matrix3.cpp.s
-
-.PHONY : src/Math/Matrix3.s
-
-# target to generate assembly for a file
-src/Math/Matrix3.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.s
-.PHONY : src/Math/Matrix3.cpp.s
-
-src/Math/Matrix4.obj: src/Math/Matrix4.cpp.obj
-
-.PHONY : src/Math/Matrix4.obj
-
-# target to build an object file
-src/Math/Matrix4.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.obj
-.PHONY : src/Math/Matrix4.cpp.obj
-
-src/Math/Matrix4.i: src/Math/Matrix4.cpp.i
-
-.PHONY : src/Math/Matrix4.i
-
-# target to preprocess a source file
-src/Math/Matrix4.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.i
-.PHONY : src/Math/Matrix4.cpp.i
-
-src/Math/Matrix4.s: src/Math/Matrix4.cpp.s
-
-.PHONY : src/Math/Matrix4.s
-
-# target to generate assembly for a file
-src/Math/Matrix4.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.s
-.PHONY : src/Math/Matrix4.cpp.s
-
-src/Math/Quaternion.obj: src/Math/Quaternion.cpp.obj
-
-.PHONY : src/Math/Quaternion.obj
-
-# target to build an object file
-src/Math/Quaternion.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.obj
-.PHONY : src/Math/Quaternion.cpp.obj
-
-src/Math/Quaternion.i: src/Math/Quaternion.cpp.i
-
-.PHONY : src/Math/Quaternion.i
-
-# target to preprocess a source file
-src/Math/Quaternion.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.i
-.PHONY : src/Math/Quaternion.cpp.i
-
-src/Math/Quaternion.s: src/Math/Quaternion.cpp.s
-
-.PHONY : src/Math/Quaternion.s
-
-# target to generate assembly for a file
-src/Math/Quaternion.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.s
-.PHONY : src/Math/Quaternion.cpp.s
-
-src/Math/Transform.obj: src/Math/Transform.cpp.obj
-
-.PHONY : src/Math/Transform.obj
-
-# target to build an object file
-src/Math/Transform.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Transform.cpp.obj
-.PHONY : src/Math/Transform.cpp.obj
-
-src/Math/Transform.i: src/Math/Transform.cpp.i
-
-.PHONY : src/Math/Transform.i
-
-# target to preprocess a source file
-src/Math/Transform.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Transform.cpp.i
-.PHONY : src/Math/Transform.cpp.i
-
-src/Math/Transform.s: src/Math/Transform.cpp.s
-
-.PHONY : src/Math/Transform.s
-
-# target to generate assembly for a file
-src/Math/Transform.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Transform.cpp.s
-.PHONY : src/Math/Transform.cpp.s
-
-src/Math/Vector2.obj: src/Math/Vector2.cpp.obj
-
-.PHONY : src/Math/Vector2.obj
-
-# target to build an object file
-src/Math/Vector2.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.obj
-.PHONY : src/Math/Vector2.cpp.obj
-
-src/Math/Vector2.i: src/Math/Vector2.cpp.i
-
-.PHONY : src/Math/Vector2.i
-
-# target to preprocess a source file
-src/Math/Vector2.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.i
-.PHONY : src/Math/Vector2.cpp.i
-
-src/Math/Vector2.s: src/Math/Vector2.cpp.s
-
-.PHONY : src/Math/Vector2.s
-
-# target to generate assembly for a file
-src/Math/Vector2.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.s
-.PHONY : src/Math/Vector2.cpp.s
-
-src/Math/Vector3.obj: src/Math/Vector3.cpp.obj
-
-.PHONY : src/Math/Vector3.obj
-
-# target to build an object file
-src/Math/Vector3.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.obj
-.PHONY : src/Math/Vector3.cpp.obj
-
-src/Math/Vector3.i: src/Math/Vector3.cpp.i
-
-.PHONY : src/Math/Vector3.i
-
-# target to preprocess a source file
-src/Math/Vector3.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.i
-.PHONY : src/Math/Vector3.cpp.i
-
-src/Math/Vector3.s: src/Math/Vector3.cpp.s
-
-.PHONY : src/Math/Vector3.s
-
-# target to generate assembly for a file
-src/Math/Vector3.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.s
-.PHONY : src/Math/Vector3.cpp.s
-
-src/Math/Vector4.obj: src/Math/Vector4.cpp.obj
-
-.PHONY : src/Math/Vector4.obj
-
-# target to build an object file
-src/Math/Vector4.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.obj
-.PHONY : src/Math/Vector4.cpp.obj
-
-src/Math/Vector4.i: src/Math/Vector4.cpp.i
-
-.PHONY : src/Math/Vector4.i
-
-# target to preprocess a source file
-src/Math/Vector4.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.i
-.PHONY : src/Math/Vector4.cpp.i
-
-src/Math/Vector4.s: src/Math/Vector4.cpp.s
-
-.PHONY : src/Math/Vector4.s
-
-# target to generate assembly for a file
-src/Math/Vector4.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.s
-.PHONY : src/Math/Vector4.cpp.s
-
-src/Utils/String.obj: src/Utils/String.cpp.obj
-
-.PHONY : src/Utils/String.obj
-
-# target to build an object file
-src/Utils/String.cpp.obj:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Utils/String.cpp.obj
-.PHONY : src/Utils/String.cpp.obj
-
-src/Utils/String.i: src/Utils/String.cpp.i
-
-.PHONY : src/Utils/String.i
-
-# target to preprocess a source file
-src/Utils/String.cpp.i:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Utils/String.cpp.i
-.PHONY : src/Utils/String.cpp.i
-
-src/Utils/String.s: src/Utils/String.cpp.s
-
-.PHONY : src/Utils/String.s
-
-# target to generate assembly for a file
-src/Utils/String.cpp.s:
-	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/src/Utils/String.cpp.s
-.PHONY : src/Utils/String.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -590,57 +644,63 @@ help:
 	@echo ... edit_cache
 	@echo ... Stitches
 	@echo ... rebuild_cache
+	@echo ... Resources/Files/Json/Json.obj
+	@echo ... Resources/Files/Json/Json.i
+	@echo ... Resources/Files/Json/Json.s
+	@echo ... Resources/Files/Node.obj
+	@echo ... Resources/Files/Node.i
+	@echo ... Resources/Files/Node.s
+	@echo ... Resources/Files/NodeConstView.obj
+	@echo ... Resources/Files/NodeConstView.i
+	@echo ... Resources/Files/NodeConstView.s
+	@echo ... Resources/Files/NodeView.obj
+	@echo ... Resources/Files/NodeView.i
+	@echo ... Resources/Files/NodeView.s
+	@echo ... Resources/Math/Colour.obj
+	@echo ... Resources/Math/Colour.i
+	@echo ... Resources/Math/Colour.s
+	@echo ... Resources/Math/ElapsedTime.obj
+	@echo ... Resources/Math/ElapsedTime.i
+	@echo ... Resources/Math/ElapsedTime.s
+	@echo ... Resources/Math/Maths.obj
+	@echo ... Resources/Math/Maths.i
+	@echo ... Resources/Math/Maths.s
+	@echo ... Resources/Math/Matrix2.obj
+	@echo ... Resources/Math/Matrix2.i
+	@echo ... Resources/Math/Matrix2.s
+	@echo ... Resources/Math/Matrix3.obj
+	@echo ... Resources/Math/Matrix3.i
+	@echo ... Resources/Math/Matrix3.s
+	@echo ... Resources/Math/Matrix4.obj
+	@echo ... Resources/Math/Matrix4.i
+	@echo ... Resources/Math/Matrix4.s
+	@echo ... Resources/Math/Quaternion.obj
+	@echo ... Resources/Math/Quaternion.i
+	@echo ... Resources/Math/Quaternion.s
+	@echo ... Resources/Math/Transform.obj
+	@echo ... Resources/Math/Transform.i
+	@echo ... Resources/Math/Transform.s
+	@echo ... Resources/Math/Vector2.obj
+	@echo ... Resources/Math/Vector2.i
+	@echo ... Resources/Math/Vector2.s
+	@echo ... Resources/Math/Vector3.obj
+	@echo ... Resources/Math/Vector3.i
+	@echo ... Resources/Math/Vector3.s
+	@echo ... Resources/Math/Vector4.obj
+	@echo ... Resources/Math/Vector4.i
+	@echo ... Resources/Math/Vector4.s
+	@echo ... Resources/Utils/String.obj
+	@echo ... Resources/Utils/String.i
+	@echo ... Resources/Utils/String.s
+	@echo ... Resources/Window/Monitor.obj
+	@echo ... Resources/Window/Monitor.i
+	@echo ... Resources/Window/Monitor.s
+	@echo ... Resources/Window/Window.obj
+	@echo ... Resources/Window/Window.i
+	@echo ... Resources/Window/Window.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... src/Files/Json/Json.obj
-	@echo ... src/Files/Json/Json.i
-	@echo ... src/Files/Json/Json.s
-	@echo ... src/Files/Node.obj
-	@echo ... src/Files/Node.i
-	@echo ... src/Files/Node.s
-	@echo ... src/Files/NodeConstView.obj
-	@echo ... src/Files/NodeConstView.i
-	@echo ... src/Files/NodeConstView.s
-	@echo ... src/Files/NodeView.obj
-	@echo ... src/Files/NodeView.i
-	@echo ... src/Files/NodeView.s
-	@echo ... src/Math/Colour.obj
-	@echo ... src/Math/Colour.i
-	@echo ... src/Math/Colour.s
-	@echo ... src/Math/ElapsedTime.obj
-	@echo ... src/Math/ElapsedTime.i
-	@echo ... src/Math/ElapsedTime.s
-	@echo ... src/Math/Maths.obj
-	@echo ... src/Math/Maths.i
-	@echo ... src/Math/Maths.s
-	@echo ... src/Math/Matrix2.obj
-	@echo ... src/Math/Matrix2.i
-	@echo ... src/Math/Matrix2.s
-	@echo ... src/Math/Matrix3.obj
-	@echo ... src/Math/Matrix3.i
-	@echo ... src/Math/Matrix3.s
-	@echo ... src/Math/Matrix4.obj
-	@echo ... src/Math/Matrix4.i
-	@echo ... src/Math/Matrix4.s
-	@echo ... src/Math/Quaternion.obj
-	@echo ... src/Math/Quaternion.i
-	@echo ... src/Math/Quaternion.s
-	@echo ... src/Math/Transform.obj
-	@echo ... src/Math/Transform.i
-	@echo ... src/Math/Transform.s
-	@echo ... src/Math/Vector2.obj
-	@echo ... src/Math/Vector2.i
-	@echo ... src/Math/Vector2.s
-	@echo ... src/Math/Vector3.obj
-	@echo ... src/Math/Vector3.i
-	@echo ... src/Math/Vector3.s
-	@echo ... src/Math/Vector4.obj
-	@echo ... src/Math/Vector4.i
-	@echo ... src/Math/Vector4.s
-	@echo ... src/Utils/String.obj
-	@echo ... src/Utils/String.i
-	@echo ... src/Utils/String.s
 .PHONY : help
 
 

@@ -56,234 +56,262 @@ include CMakeFiles/Stitches.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Stitches.dir/flags.make
 
-CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.obj: ../src/Files/Json/Json.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Files\Json\Json.cpp.obj -c D:\Documents\git_work\Stitches2\src\Files\Json\Json.cpp
+CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj: ../Resources/Files/Json/Json.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Files\Json\Json.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Files\Json\Json.cpp
 
-CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Files\Json\Json.cpp > CMakeFiles\Stitches.dir\src\Files\Json\Json.cpp.i
+CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Files\Json\Json.cpp > CMakeFiles\Stitches.dir\Resources\Files\Json\Json.cpp.i
 
-CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Files\Json\Json.cpp -o CMakeFiles\Stitches.dir\src\Files\Json\Json.cpp.s
+CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Files\Json\Json.cpp -o CMakeFiles\Stitches.dir\Resources\Files\Json\Json.cpp.s
 
-CMakeFiles/Stitches.dir/src/Files/Node.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Files/Node.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Files/Node.cpp.obj: ../src/Files/Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Stitches.dir/src/Files/Node.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Files\Node.cpp.obj -c D:\Documents\git_work\Stitches2\src\Files\Node.cpp
+CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj: ../Resources/Files/Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Files\Node.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Files\Node.cpp
 
-CMakeFiles/Stitches.dir/src/Files/Node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Files/Node.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Files\Node.cpp > CMakeFiles\Stitches.dir\src\Files\Node.cpp.i
+CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Files\Node.cpp > CMakeFiles\Stitches.dir\Resources\Files\Node.cpp.i
 
-CMakeFiles/Stitches.dir/src/Files/Node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Files/Node.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Files\Node.cpp -o CMakeFiles\Stitches.dir\src\Files\Node.cpp.s
+CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Files\Node.cpp -o CMakeFiles\Stitches.dir\Resources\Files\Node.cpp.s
 
-CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.obj: ../src/Files/NodeConstView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Files\NodeConstView.cpp.obj -c D:\Documents\git_work\Stitches2\src\Files\NodeConstView.cpp
+CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj: ../Resources/Files/NodeConstView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Files\NodeConstView.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Files\NodeConstView.cpp
 
-CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Files\NodeConstView.cpp > CMakeFiles\Stitches.dir\src\Files\NodeConstView.cpp.i
+CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Files\NodeConstView.cpp > CMakeFiles\Stitches.dir\Resources\Files\NodeConstView.cpp.i
 
-CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Files\NodeConstView.cpp -o CMakeFiles\Stitches.dir\src\Files\NodeConstView.cpp.s
+CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Files\NodeConstView.cpp -o CMakeFiles\Stitches.dir\Resources\Files\NodeConstView.cpp.s
 
-CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.obj: ../src/Files/NodeView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Files\NodeView.cpp.obj -c D:\Documents\git_work\Stitches2\src\Files\NodeView.cpp
+CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj: ../Resources/Files/NodeView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Files\NodeView.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Files\NodeView.cpp
 
-CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Files\NodeView.cpp > CMakeFiles\Stitches.dir\src\Files\NodeView.cpp.i
+CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Files\NodeView.cpp > CMakeFiles\Stitches.dir\Resources\Files\NodeView.cpp.i
 
-CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Files\NodeView.cpp -o CMakeFiles\Stitches.dir\src\Files\NodeView.cpp.s
+CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Files\NodeView.cpp -o CMakeFiles\Stitches.dir\Resources\Files\NodeView.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Colour.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Colour.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Colour.cpp.obj: ../src/Math/Colour.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Colour.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Colour.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Colour.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj: ../Resources/Math/Colour.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Colour.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Colour.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Colour.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Colour.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Colour.cpp > CMakeFiles\Stitches.dir\src\Math\Colour.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Colour.cpp > CMakeFiles\Stitches.dir\Resources\Math\Colour.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Colour.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Colour.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Colour.cpp -o CMakeFiles\Stitches.dir\src\Math\Colour.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Colour.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Colour.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.obj: ../src/Math/ElapsedTime.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\ElapsedTime.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\ElapsedTime.cpp
+CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj: ../Resources/Math/ElapsedTime.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\ElapsedTime.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\ElapsedTime.cpp
 
-CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\ElapsedTime.cpp > CMakeFiles\Stitches.dir\src\Math\ElapsedTime.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\ElapsedTime.cpp > CMakeFiles\Stitches.dir\Resources\Math\ElapsedTime.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\ElapsedTime.cpp -o CMakeFiles\Stitches.dir\src\Math\ElapsedTime.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\ElapsedTime.cpp -o CMakeFiles\Stitches.dir\Resources\Math\ElapsedTime.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Maths.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Maths.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Maths.cpp.obj: ../src/Math/Maths.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Maths.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Maths.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Maths.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj: ../Resources/Math/Maths.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Maths.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Maths.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Maths.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Maths.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Maths.cpp > CMakeFiles\Stitches.dir\src\Math\Maths.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Maths.cpp > CMakeFiles\Stitches.dir\Resources\Math\Maths.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Maths.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Maths.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Maths.cpp -o CMakeFiles\Stitches.dir\src\Math\Maths.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Maths.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Maths.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.obj: ../src/Math/Matrix2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Matrix2.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Matrix2.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.obj: ../Resources/Math/Matrix2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Matrix2.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Matrix2.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Matrix2.cpp > CMakeFiles\Stitches.dir\src\Math\Matrix2.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Matrix2.cpp > CMakeFiles\Stitches.dir\Resources\Math\Matrix2.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Matrix2.cpp -o CMakeFiles\Stitches.dir\src\Math\Matrix2.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Matrix2.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Matrix2.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.obj: ../src/Math/Matrix3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Matrix3.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Matrix3.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.obj: ../Resources/Math/Matrix3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Matrix3.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Matrix3.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Matrix3.cpp > CMakeFiles\Stitches.dir\src\Math\Matrix3.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Matrix3.cpp > CMakeFiles\Stitches.dir\Resources\Math\Matrix3.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Matrix3.cpp -o CMakeFiles\Stitches.dir\src\Math\Matrix3.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Matrix3.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Matrix3.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.obj: ../src/Math/Matrix4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Matrix4.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Matrix4.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.obj: ../Resources/Math/Matrix4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Matrix4.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Matrix4.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Matrix4.cpp > CMakeFiles\Stitches.dir\src\Math\Matrix4.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Matrix4.cpp > CMakeFiles\Stitches.dir\Resources\Math\Matrix4.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Matrix4.cpp -o CMakeFiles\Stitches.dir\src\Math\Matrix4.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Matrix4.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Matrix4.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.obj: ../src/Math/Quaternion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Quaternion.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Quaternion.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.obj: ../Resources/Math/Quaternion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Quaternion.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Quaternion.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Quaternion.cpp > CMakeFiles\Stitches.dir\src\Math\Quaternion.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Quaternion.cpp > CMakeFiles\Stitches.dir\Resources\Math\Quaternion.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Quaternion.cpp -o CMakeFiles\Stitches.dir\src\Math\Quaternion.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Quaternion.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Quaternion.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Transform.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Transform.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Transform.cpp.obj: ../src/Math/Transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Transform.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Transform.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Transform.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.obj: ../Resources/Math/Transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Transform.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Transform.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Transform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Transform.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Transform.cpp > CMakeFiles\Stitches.dir\src\Math\Transform.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Transform.cpp > CMakeFiles\Stitches.dir\Resources\Math\Transform.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Transform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Transform.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Transform.cpp -o CMakeFiles\Stitches.dir\src\Math\Transform.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Transform.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Transform.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.obj: ../src/Math/Vector2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Vector2.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Vector2.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.obj: ../Resources/Math/Vector2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Vector2.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Vector2.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Vector2.cpp > CMakeFiles\Stitches.dir\src\Math\Vector2.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Vector2.cpp > CMakeFiles\Stitches.dir\Resources\Math\Vector2.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Vector2.cpp -o CMakeFiles\Stitches.dir\src\Math\Vector2.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Vector2.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Vector2.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.obj: ../src/Math/Vector3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Vector3.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Vector3.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.obj: ../Resources/Math/Vector3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Vector3.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Vector3.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Vector3.cpp > CMakeFiles\Stitches.dir\src\Math\Vector3.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Vector3.cpp > CMakeFiles\Stitches.dir\Resources\Math\Vector3.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Vector3.cpp -o CMakeFiles\Stitches.dir\src\Math\Vector3.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Vector3.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Vector3.cpp.s
 
-CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.obj: ../src/Math/Vector4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Math\Vector4.cpp.obj -c D:\Documents\git_work\Stitches2\src\Math\Vector4.cpp
+CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.obj: ../Resources/Math/Vector4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Math\Vector4.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Math\Vector4.cpp
 
-CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Math\Vector4.cpp > CMakeFiles\Stitches.dir\src\Math\Vector4.cpp.i
+CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Math\Vector4.cpp > CMakeFiles\Stitches.dir\Resources\Math\Vector4.cpp.i
 
-CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Math\Vector4.cpp -o CMakeFiles\Stitches.dir\src\Math\Vector4.cpp.s
+CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Math\Vector4.cpp -o CMakeFiles\Stitches.dir\Resources\Math\Vector4.cpp.s
 
-CMakeFiles/Stitches.dir/src/Utils/String.cpp.obj: CMakeFiles/Stitches.dir/flags.make
-CMakeFiles/Stitches.dir/src/Utils/String.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
-CMakeFiles/Stitches.dir/src/Utils/String.cpp.obj: ../src/Utils/String.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Stitches.dir/src/Utils/String.cpp.obj"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\src\Utils\String.cpp.obj -c D:\Documents\git_work\Stitches2\src\Utils\String.cpp
+CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.obj: ../Resources/Utils/String.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Utils\String.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Utils\String.cpp
 
-CMakeFiles/Stitches.dir/src/Utils/String.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/src/Utils/String.cpp.i"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\src\Utils\String.cpp > CMakeFiles\Stitches.dir\src\Utils\String.cpp.i
+CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Utils\String.cpp > CMakeFiles\Stitches.dir\Resources\Utils\String.cpp.i
 
-CMakeFiles/Stitches.dir/src/Utils/String.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/src/Utils/String.cpp.s"
-	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\src\Utils\String.cpp -o CMakeFiles\Stitches.dir\src\Utils\String.cpp.s
+CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Utils\String.cpp -o CMakeFiles\Stitches.dir\Resources\Utils\String.cpp.s
+
+CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.obj: ../Resources/Window/Monitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Window\Monitor.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Window\Monitor.cpp
+
+CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Window\Monitor.cpp > CMakeFiles\Stitches.dir\Resources\Window\Monitor.cpp.i
+
+CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Window\Monitor.cpp -o CMakeFiles\Stitches.dir\Resources\Window\Monitor.cpp.s
+
+CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.obj: CMakeFiles/Stitches.dir/flags.make
+CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
+CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.obj: ../Resources/Window/Window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.obj"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\Resources\Window\Window.cpp.obj -c D:\Documents\git_work\Stitches2\Resources\Window\Window.cpp
+
+CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.i"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Documents\git_work\Stitches2\Resources\Window\Window.cpp > CMakeFiles\Stitches.dir\Resources\Window\Window.cpp.i
+
+CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.s"
+	D:\Software\Development\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Documents\git_work\Stitches2\Resources\Window\Window.cpp -o CMakeFiles\Stitches.dir\Resources\Window\Window.cpp.s
 
 CMakeFiles/Stitches.dir/main.cpp.obj: CMakeFiles/Stitches.dir/flags.make
 CMakeFiles/Stitches.dir/main.cpp.obj: CMakeFiles/Stitches.dir/includes_CXX.rsp
 CMakeFiles/Stitches.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Stitches.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Stitches.dir/main.cpp.obj"
 	D:\Software\Development\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Stitches.dir\main.cpp.obj -c D:\Documents\git_work\Stitches2\main.cpp
 
 CMakeFiles/Stitches.dir/main.cpp.i: cmake_force
@@ -296,49 +324,54 @@ CMakeFiles/Stitches.dir/main.cpp.s: cmake_force
 
 # Object files for target Stitches
 Stitches_OBJECTS = \
-"CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Files/Node.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Colour.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Maths.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Transform.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.obj" \
-"CMakeFiles/Stitches.dir/src/Utils/String.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.obj" \
+"CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.obj" \
 "CMakeFiles/Stitches.dir/main.cpp.obj"
 
 # External object files for target Stitches
 Stitches_EXTERNAL_OBJECTS =
 
-Stitches.exe: CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Files/Node.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Colour.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Maths.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Transform.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.obj
-Stitches.exe: CMakeFiles/Stitches.dir/src/Utils/String.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.obj
+Stitches.exe: CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.obj
 Stitches.exe: CMakeFiles/Stitches.dir/main.cpp.obj
 Stitches.exe: CMakeFiles/Stitches.dir/build.make
+Stitches.exe: ../Resources/Third/glfw/libglfw3.a
 Stitches.exe: CMakeFiles/Stitches.dir/linklibs.rsp
 Stitches.exe: CMakeFiles/Stitches.dir/objects1.rsp
 Stitches.exe: CMakeFiles/Stitches.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Stitches.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Stitches.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Stitches.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

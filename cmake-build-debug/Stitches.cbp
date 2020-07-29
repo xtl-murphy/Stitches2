@@ -34,7 +34,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Documents/git_work/Stitches2/src"/>
+					<Add directory="D:/Documents/git_work/Stitches2/Resources"/>
+					<Add directory="D:/Documents/git_work/Stitches2/Resources/Third/glfw/include"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/backward"/>
@@ -57,7 +58,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Documents/git_work/Stitches2/src"/>
+					<Add directory="D:/Documents/git_work/Stitches2/Resources"/>
+					<Add directory="D:/Documents/git_work/Stitches2/Resources/Third/glfw/include"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/backward"/>
@@ -84,136 +86,157 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/Json/Json.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/Json/Json.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/Node.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/Node.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/Node.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/NodeConstView.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/NodeConstView.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/NodeConstView.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/NodeView.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/NodeView.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/NodeView.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Colour.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Colour.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Colour.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/ElapsedTime.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/ElapsedTime.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Math.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Maths.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Maths.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Matrix2.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Matrix2.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Matrix3.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Matrix3.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Matrix4.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Matrix4.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Quaternion.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Quaternion.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Time.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Time.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Transform.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Transform.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector2.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector2.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector2.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector3.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector3.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector3.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector4.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector4.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Vector4.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Stitches.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Utils/ConstExpr.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Utils/Module.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Utils/NonCopyable.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Utils/String.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Utils/String.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Window/Monitor.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Window/Monitor.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Window/Window.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Window/Window.hpp">
+			<Option target="Stitches"/>
+		</Unit>
 		<Unit filename="D:/Documents/git_work/Stitches2/main.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/Json/Json.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/Json/Json.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/Node.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/Node.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/Node.inl">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/NodeConstView.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/NodeConstView.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/NodeConstView.inl">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/NodeView.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/NodeView.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Files/NodeView.inl">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Colour.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Colour.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Colour.inl">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/ElapsedTime.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/ElapsedTime.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Math.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Maths.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Maths.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Matrix2.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Matrix2.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Matrix3.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Matrix3.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Matrix4.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Matrix4.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Quaternion.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Quaternion.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Time.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Time.inl">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Transform.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Transform.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector2.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector2.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector2.inl">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector3.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector3.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector3.inl">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector4.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector4.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Math/Vector4.inl">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Stitches.hpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Utils/String.cpp">
-			<Option target="Stitches"/>
-		</Unit>
-		<Unit filename="D:/Documents/git_work/Stitches2/src/Utils/String.hpp">
 			<Option target="Stitches"/>
 		</Unit>
 		<Unit filename="D:/Documents/git_work/Stitches2/CMakeLists.txt">

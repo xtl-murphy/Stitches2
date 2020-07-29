@@ -73,12 +73,12 @@ clean: CMakeFiles/Stitches.dir/clean
 CMakeFiles/Stitches.dir/all:
 	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/depend
 	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target Stitches"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target Stitches"
 .PHONY : CMakeFiles/Stitches.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Stitches.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles 20
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Stitches.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Documents\git_work\Stitches2\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Stitches.dir/rule

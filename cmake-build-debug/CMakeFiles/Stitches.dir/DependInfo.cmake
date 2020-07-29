@@ -4,29 +4,32 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/Documents/git_work/Stitches2/Resources/Files/Json/Json.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Files/Node.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Files/NodeConstView.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Files/NodeView.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Colour.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/ElapsedTime.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Maths.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Matrix2.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Matrix2.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Matrix3.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Matrix3.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Matrix4.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Matrix4.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Quaternion.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Quaternion.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Transform.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Transform.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Vector2.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Vector2.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Vector3.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Vector3.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Math/Vector4.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Vector4.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Utils/String.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Utils/String.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Window/Monitor.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Window/Monitor.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Window/Window.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Window/Window.cpp.obj"
   "D:/Documents/git_work/Stitches2/main.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/main.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Files/Json/Json.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Files/Json/Json.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Files/Node.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Files/Node.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Files/NodeConstView.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Files/NodeConstView.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Files/NodeView.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Files/NodeView.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Colour.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Colour.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/ElapsedTime.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/ElapsedTime.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Maths.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Maths.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Matrix2.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Matrix2.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Matrix3.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Matrix3.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Matrix4.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Matrix4.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Quaternion.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Quaternion.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Transform.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Transform.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Vector2.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Vector2.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Vector3.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Vector3.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Math/Vector4.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Math/Vector4.cpp.obj"
-  "D:/Documents/git_work/Stitches2/src/Utils/String.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/src/Utils/String.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
+  "../Resources"
+  "../Resources/Third/glfw/include"
   )
 
 # Targets to which this target links.
