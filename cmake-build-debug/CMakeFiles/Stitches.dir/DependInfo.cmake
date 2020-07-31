@@ -4,10 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/Documents/git_work/Stitches2/Resources/Engine/Engine.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Engine/Engine.cpp.obj"
   "D:/Documents/git_work/Stitches2/Resources/Files/Json/Json.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj"
   "D:/Documents/git_work/Stitches2/Resources/Files/Node.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj"
   "D:/Documents/git_work/Stitches2/Resources/Files/NodeConstView.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj"
   "D:/Documents/git_work/Stitches2/Resources/Files/NodeView.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Graphics/OpenGLES/GLStateSave.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/GLStateSave.cpp.obj"
+  "D:/Documents/git_work/Stitches2/Resources/Graphics/OpenGLES/Shader.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/Shader.cpp.obj"
   "D:/Documents/git_work/Stitches2/Resources/Math/Colour.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj"
   "D:/Documents/git_work/Stitches2/Resources/Math/ElapsedTime.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj"
   "D:/Documents/git_work/Stitches2/Resources/Math/Maths.cpp" "D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj"
@@ -30,6 +33,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../Resources"
   "../Resources/Third/glfw/include"
+  "../Resources/Third/gles/include"
   )
 
 # Targets to which this target links.

@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../Resources/Engine/Engine.hpp
+Window/Window.hpp
+../Resources/Engine/Window/Window.hpp
+
 ../Resources/Files/Node.hpp
 ostream
 -
@@ -283,6 +287,8 @@ future
 -
 queue
 -
+android/log.h
+-
 
 ../Resources/Third/glfw/include/GLFW/glfw3.h
 stddef.h
@@ -368,23 +374,31 @@ Stitches.hpp
 ConstExpr.hpp
 ../Resources/Utils/ConstExpr.hpp
 
-D:/Documents/git_work/Stitches2/Resources/Window/Monitor.hpp
+../Resources/Window/Monitor.hpp
 GLFW/glfw3.h
 -
 GLFW/glfw3native.h
 -
 Stitches.hpp
-D:/Documents/git_work/Stitches2/Resources/Window/Stitches.hpp
+../Resources/Window/Stitches.hpp
 Math/Math.hpp
-D:/Documents/git_work/Stitches2/Resources/Window/Math/Math.hpp
+../Resources/Window/Math/Math.hpp
 
-D:/Documents/git_work/Stitches2/Resources/Window/Window.cpp
-Window.hpp
-D:/Documents/git_work/Stitches2/Resources/Window/Window.hpp
-
-D:/Documents/git_work/Stitches2/Resources/Window/Window.hpp
+../Resources/Window/Window.hpp
 Monitor.hpp
-D:/Documents/git_work/Stitches2/Resources/Window/Monitor.hpp
+../Resources/Window/Monitor.hpp
 Utils/Module.hpp
-D:/Documents/git_work/Stitches2/Resources/Window/Utils/Module.hpp
+../Resources/Window/Utils/Module.hpp
+
+D:/Documents/git_work/Stitches2/Resources/Engine/Engine.cpp
+Engine.hpp
+D:/Documents/git_work/Stitches2/Resources/Engine/Engine.hpp
+
+D:/Documents/git_work/Stitches2/Resources/Engine/Engine.hpp
+Window/Window.hpp
+D:/Documents/git_work/Stitches2/Resources/Engine/Window/Window.hpp
+
+D:/Documents/git_work/Stitches2/main.cpp
+Engine/Engine.hpp
+D:/Documents/git_work/Stitches2/Engine/Engine.hpp
 

@@ -1,8 +1,11 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Stitches.dir/Resources/Engine/Engine.cpp.obj"
   "CMakeFiles/Stitches.dir/Resources/Files/Json/Json.cpp.obj"
   "CMakeFiles/Stitches.dir/Resources/Files/Node.cpp.obj"
   "CMakeFiles/Stitches.dir/Resources/Files/NodeConstView.cpp.obj"
   "CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.obj"
+  "CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/GLStateSave.cpp.obj"
+  "CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/Shader.cpp.obj"
   "CMakeFiles/Stitches.dir/Resources/Math/Colour.cpp.obj"
   "CMakeFiles/Stitches.dir/Resources/Math/ElapsedTime.cpp.obj"
   "CMakeFiles/Stitches.dir/Resources/Math/Maths.cpp.obj"

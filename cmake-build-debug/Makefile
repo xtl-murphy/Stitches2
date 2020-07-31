@@ -122,6 +122,33 @@ Stitches/fast:
 	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/build
 .PHONY : Stitches/fast
 
+Resources/Engine/Engine.obj: Resources/Engine/Engine.cpp.obj
+
+.PHONY : Resources/Engine/Engine.obj
+
+# target to build an object file
+Resources/Engine/Engine.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Engine/Engine.cpp.obj
+.PHONY : Resources/Engine/Engine.cpp.obj
+
+Resources/Engine/Engine.i: Resources/Engine/Engine.cpp.i
+
+.PHONY : Resources/Engine/Engine.i
+
+# target to preprocess a source file
+Resources/Engine/Engine.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Engine/Engine.cpp.i
+.PHONY : Resources/Engine/Engine.cpp.i
+
+Resources/Engine/Engine.s: Resources/Engine/Engine.cpp.s
+
+.PHONY : Resources/Engine/Engine.s
+
+# target to generate assembly for a file
+Resources/Engine/Engine.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Engine/Engine.cpp.s
+.PHONY : Resources/Engine/Engine.cpp.s
+
 Resources/Files/Json/Json.obj: Resources/Files/Json/Json.cpp.obj
 
 .PHONY : Resources/Files/Json/Json.obj
@@ -229,6 +256,60 @@ Resources/Files/NodeView.s: Resources/Files/NodeView.cpp.s
 Resources/Files/NodeView.cpp.s:
 	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Files/NodeView.cpp.s
 .PHONY : Resources/Files/NodeView.cpp.s
+
+Resources/Graphics/OpenGLES/GLStateSave.obj: Resources/Graphics/OpenGLES/GLStateSave.cpp.obj
+
+.PHONY : Resources/Graphics/OpenGLES/GLStateSave.obj
+
+# target to build an object file
+Resources/Graphics/OpenGLES/GLStateSave.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/GLStateSave.cpp.obj
+.PHONY : Resources/Graphics/OpenGLES/GLStateSave.cpp.obj
+
+Resources/Graphics/OpenGLES/GLStateSave.i: Resources/Graphics/OpenGLES/GLStateSave.cpp.i
+
+.PHONY : Resources/Graphics/OpenGLES/GLStateSave.i
+
+# target to preprocess a source file
+Resources/Graphics/OpenGLES/GLStateSave.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/GLStateSave.cpp.i
+.PHONY : Resources/Graphics/OpenGLES/GLStateSave.cpp.i
+
+Resources/Graphics/OpenGLES/GLStateSave.s: Resources/Graphics/OpenGLES/GLStateSave.cpp.s
+
+.PHONY : Resources/Graphics/OpenGLES/GLStateSave.s
+
+# target to generate assembly for a file
+Resources/Graphics/OpenGLES/GLStateSave.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/GLStateSave.cpp.s
+.PHONY : Resources/Graphics/OpenGLES/GLStateSave.cpp.s
+
+Resources/Graphics/OpenGLES/Shader.obj: Resources/Graphics/OpenGLES/Shader.cpp.obj
+
+.PHONY : Resources/Graphics/OpenGLES/Shader.obj
+
+# target to build an object file
+Resources/Graphics/OpenGLES/Shader.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/Shader.cpp.obj
+.PHONY : Resources/Graphics/OpenGLES/Shader.cpp.obj
+
+Resources/Graphics/OpenGLES/Shader.i: Resources/Graphics/OpenGLES/Shader.cpp.i
+
+.PHONY : Resources/Graphics/OpenGLES/Shader.i
+
+# target to preprocess a source file
+Resources/Graphics/OpenGLES/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/Shader.cpp.i
+.PHONY : Resources/Graphics/OpenGLES/Shader.cpp.i
+
+Resources/Graphics/OpenGLES/Shader.s: Resources/Graphics/OpenGLES/Shader.cpp.s
+
+.PHONY : Resources/Graphics/OpenGLES/Shader.s
+
+# target to generate assembly for a file
+Resources/Graphics/OpenGLES/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles\Stitches.dir\build.make CMakeFiles/Stitches.dir/Resources/Graphics/OpenGLES/Shader.cpp.s
+.PHONY : Resources/Graphics/OpenGLES/Shader.cpp.s
 
 Resources/Math/Colour.obj: Resources/Math/Colour.cpp.obj
 
@@ -644,6 +725,9 @@ help:
 	@echo ... edit_cache
 	@echo ... Stitches
 	@echo ... rebuild_cache
+	@echo ... Resources/Engine/Engine.obj
+	@echo ... Resources/Engine/Engine.i
+	@echo ... Resources/Engine/Engine.s
 	@echo ... Resources/Files/Json/Json.obj
 	@echo ... Resources/Files/Json/Json.i
 	@echo ... Resources/Files/Json/Json.s
@@ -656,6 +740,12 @@ help:
 	@echo ... Resources/Files/NodeView.obj
 	@echo ... Resources/Files/NodeView.i
 	@echo ... Resources/Files/NodeView.s
+	@echo ... Resources/Graphics/OpenGLES/GLStateSave.obj
+	@echo ... Resources/Graphics/OpenGLES/GLStateSave.i
+	@echo ... Resources/Graphics/OpenGLES/GLStateSave.s
+	@echo ... Resources/Graphics/OpenGLES/Shader.obj
+	@echo ... Resources/Graphics/OpenGLES/Shader.i
+	@echo ... Resources/Graphics/OpenGLES/Shader.s
 	@echo ... Resources/Math/Colour.obj
 	@echo ... Resources/Math/Colour.i
 	@echo ... Resources/Math/Colour.s

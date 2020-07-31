@@ -38,7 +38,47 @@
 #include <queue>
 
 
+#define LOG_TURN_ON
+
+#ifdef _WIN32
+    #ifdef LOG_TURN_ON
+        #define LOGE(TAG, ...)  printf("%s : ", TAG) && \
+                                printf("<%s %s> %s %s:%d INFO: ",__DATE__, __TIME__,__FUNCTION__,__FILE__,__LINE__) && \
+                                printf(__VA_ARGS__) && \
+                                printf("\n")
+        #define LOGI(TAG, ...)  printf("%s : ", TAG) && \
+                                printf("<%s %s> %s %s:%d INFO: ",__DATE__, __TIME__,__FUNCTION__,__FILE__,__LINE__) && \
+                                printf(__VA_ARGS__) && \
+                                printf("\n")
+        #define LOGV(TAG, ...)  printf("%s : ", TAG) && \
+                                printf("<%s %s> %s %s:%d INFO: ",__DATE__, __TIME__,__FUNCTION__,__FILE__,__LINE__) && \
+                                printf(__VA_ARGS__) && \
+                                printf("\n")
+    #else
+        #define LOGE(TAG, ...)
+        #define LOGE(TAG, ...)
+        #define LOGV(TAG, ...)
+    #endif
+
+#elif __ANDROID__
+    #ifdef LOG_TURN_ON
+        #include <android/log.h>
+        #define LOGI(TAG, ...)  __android_log_print(ANDROID_LOG_INFO, TAG, __VA_ARGS__)
+        #define LOGE(TAG, ...)  __android_log_print(ANDROID_LOG_ERROR, TAG, __VA_ARGS__)
+        #define LOGV(TAG, ...)  __android_log_print(ANDROID_LOG_VERBOSE, TAG, __VA_ARGS__)
+    #else
+        #define LOGE(TAG, ...)
+        #define LOGE(TAG, ...)
+        #define LOGV(TAG, ...)
+    #endif
+#endif
+
 #define NS_STITCHES_BEGIN namespace Stitches {
 #define NS_STITCHES_END };
 #define USING_STITCHES_VK using namespace Stitches;
 
+
+typedef std::string String;
+
+typedef uint32_t uint32;
+typedef int32_t  int32;

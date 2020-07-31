@@ -36,6 +36,7 @@
 				<Compiler>
 					<Add directory="D:/Documents/git_work/Stitches2/Resources"/>
 					<Add directory="D:/Documents/git_work/Stitches2/Resources/Third/glfw/include"/>
+					<Add directory="D:/Documents/git_work/Stitches2/Resources/Third/gles/include"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/backward"/>
@@ -60,6 +61,7 @@
 				<Compiler>
 					<Add directory="D:/Documents/git_work/Stitches2/Resources"/>
 					<Add directory="D:/Documents/git_work/Stitches2/Resources/Third/glfw/include"/>
+					<Add directory="D:/Documents/git_work/Stitches2/Resources/Third/gles/include"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/Software/Development/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/backward"/>
@@ -86,6 +88,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Engine/Engine.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Engine/Engine.hpp">
+			<Option target="Stitches"/>
+		</Unit>
 		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/Json/Json.cpp">
 			<Option target="Stitches"/>
 		</Unit>
@@ -117,6 +125,21 @@
 			<Option target="Stitches"/>
 		</Unit>
 		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Files/NodeView.inl">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Graphics/OpenGLES/GLStateSave.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Graphics/OpenGLES/GLStateSave.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Graphics/OpenGLES/Shader.cpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Graphics/OpenGLES/Shader.hpp">
+			<Option target="Stitches"/>
+		</Unit>
+		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Graphics/Platform.hpp">
 			<Option target="Stitches"/>
 		</Unit>
 		<Unit filename="D:/Documents/git_work/Stitches2/Resources/Math/Colour.cpp">

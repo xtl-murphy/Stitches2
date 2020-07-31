@@ -18,6 +18,7 @@ set(THIRD_DIR ${SRC_DIR}/Third)
 include_directories(${SRC_DIR})
 
 include_directories(${THIRD_DIR}/glfw/include)
+include_directories(${THIRD_DIR}/gles/include)
 
 file(GLOB_RECURSE RES "${SRC_DIR}/*.cpp" "${SRC_DIR}/*.hpp" "${SRC_DIR}/*.inl")
 
@@ -27,4 +28,12 @@ add_executable(Stitches ${RES} main.cpp)
 add_library(libglfw STATIC IMPORTED)
 set_target_properties(libglfw PROPERTIES IMPORTED_LOCATION ${THIRD_DIR}/glfw/libglfw3.a)
 
-target_link_libraries(Stitches libglfw)
+#GLES
+add_library(libEGL STATIC IMPORTED)
+add_library(libGLES_CM STATIC IMPORTED)
+add_library(libGLESV2 STATIC IMPORTED)
+set_target_properties(libEGL PROPERTIES IMPORTED_LOCATION ${THIRD_DIR}/gles/libEGL.lib)
+set_target_properties(libGLES_CM PROPERTIES IMPORTED_LOCATION ${THIRD_DIR}/gles/libGLES_CM.lib)
+set_target_properties(libGLESV2 PROPERTIES IMPORTED_LOCATION ${THIRD_DIR}/gles/libGLESv2.lib)
+
+target_link_libraries(Stitches libglfw libEGL libGLES_CM libGLESV2)
