@@ -1,3 +1,0 @@
-D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/Stitches.dir
-D:/Documents/git_work/Stitches2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

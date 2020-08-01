@@ -1,1 +1,0 @@
- ../Resources/Third/glfw/libglfw3.a ../Resources/Third/gles/libEGL.lib ../Resources/Third/gles/libGLES_CM.lib ../Resources/Third/gles/libGLESv2.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

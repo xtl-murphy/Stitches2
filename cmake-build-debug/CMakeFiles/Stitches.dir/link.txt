@@ -1,3 +1,0 @@
-"D:\Software\Development\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Stitches.dir/objects.a
-D:\Software\Development\TDM-GCC-64\bin\ar.exe cr CMakeFiles\Stitches.dir/objects.a @CMakeFiles\Stitches.dir\objects1.rsp
-D:\Software\Development\TDM-GCC-64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Stitches.dir/objects.a -Wl,--no-whole-archive  -o Stitches.exe -Wl,--out-implib,libStitches.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Stitches.dir\linklibs.rsp
