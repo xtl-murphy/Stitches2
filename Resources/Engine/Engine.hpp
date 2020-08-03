@@ -8,7 +8,7 @@
 #pragma once
 
 #include "Window/Window.hpp"
-
+#include "Graphics/Graphics.hpp"
 NS_STITCHES_BEGIN
 
 class  Delta {

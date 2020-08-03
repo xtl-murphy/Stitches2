@@ -9,7 +9,7 @@
 
 #include "GLStateSave.hpp"
 
-USING_NS_VENUS
+USING_STITCHES_VK
 
 static const bool exclusivelyVAO = false;
 
