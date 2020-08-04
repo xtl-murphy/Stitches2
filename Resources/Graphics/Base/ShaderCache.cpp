@@ -34,3 +34,12 @@ void ShaderCache::destroyInstance()
 {
 
 }
+
+ShaderModule *ShaderCache::newShaderModule(ShaderStage stage, const String &shaderSource)
+{
+    std::size_t key = std::hash<std::string>{}(shaderSource);
+    auto iter = cachedShaders.find(key);
+    if (cachedShaders.end() != iter)
+        return iter->second;
+    return nullptr;
+}

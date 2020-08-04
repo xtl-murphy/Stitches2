@@ -1,6 +1,3 @@
-//
-// Created by Murphy on 2020/8/2.
-//
 
 /**
  * ShaderModuleGL
@@ -11,3 +8,11 @@
  **/
 #include "ShaderModuleGL.hpp"
 
+NS_STITCHES_BEGIN
+
+void ShaderModuleGL::compileShader(ShaderStage stage, const String &source)
+{
+
+}
+
+NS_STITCHES_END

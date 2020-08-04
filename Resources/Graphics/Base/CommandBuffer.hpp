@@ -11,6 +11,7 @@
 #include "Stitches.hpp"
 #include "RenderPassDescriptor.hpp"
 #include "Types.hpp"
+#include "Buffer.hpp"
 NS_STITCHES_BEGIN
 
 struct Viewport
@@ -37,7 +38,7 @@ public:
     virtual void setWinding(Winding winding) = 0;
     virtual void setVertexBuffer(Buffer* buffer) = 0;
     virtual void setIndexBuffer(Buffer* buffer) = 0;
-    virtual void setProgramState(ProgramState* programState) = 0;
+//    virtual void setProgramState(ProgramState* programState) = 0;
     virtual void drawArrays(PrimitiveType primitiveType, std::size_t start,  std::size_t count) = 0;
     virtual void drawElements(PrimitiveType primitiveType, IndexFormat indexType, std::size_t count, std::size_t offset) = 0;
     virtual void setLineWidth(float lineWidth) = 0;

@@ -61,6 +61,5 @@ public:
 
     virtual const std::unordered_map<std::string, AttributeBindInfo> getActiveAttributes() const override;
 };
-
 NS_STITCHES_END
 

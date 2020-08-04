@@ -28,34 +28,25 @@ private:
     /// Add built-in program
     void addShader(ShaderType type);
 
-    static std::unordered_map<ShaderType, Shader*> cachedShaders;
+    static std::unordered_map<std::size_t, ShaderModule*> cachedShaders;
     static ShaderCache *sharedProgramCache;
-
+    static ShaderModule* newShaderModule(ShaderStage stage, const String& shaderSource);
 public:
-    /** returns the shared instance */
     static ShaderCache* getInstance();
 
-    /** purges the cache. It releases the retained instance. */
     static void destroyInstance();
 
-    /// get built-in program
     Shader* getBuiltinShader(ShaderType type) const;
 
-    /**
-     * Remove a program object from cache.
-     * @param program Specifies the program object to move.
-     */
     void removeShader(Shader* shader);
 
-    /**
-     * Remove all unused program objects from cache.
-     */
     void removeUnusedShader();
 
-    /**
-     * Remove all program objects from cache.
-     */
     void removeAllShaders();
+
+    static ShaderModule* newVertexShaderModule(const std::string& shaderSource);
+
+    static ShaderModule* newFragmentShaderModule(const std::string& shaderSource);
 };
 
 NS_STITCHES_END
