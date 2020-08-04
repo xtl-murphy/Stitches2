@@ -10,7 +10,6 @@
 
 USING_STITCHES_VK
 
-
 ShaderCache::~ShaderCache()
 {
     for(auto& program : cachedShaders)
@@ -41,5 +40,35 @@ ShaderModule *ShaderCache::newShaderModule(ShaderStage stage, const String &shad
     auto iter = cachedShaders.find(key);
     if (cachedShaders.end() != iter)
         return iter->second;
+    return nullptr;
+}
+
+Shader *ShaderCache::getBuiltinShader(ShaderType type) const
+{
+    return nullptr;
+}
+
+void ShaderCache::removeShader(Shader *shader)
+{
+
+}
+
+void ShaderCache::removeUnusedShader()
+{
+
+}
+
+void ShaderCache::removeAllShaders()
+{
+
+}
+
+ShaderModule *ShaderCache::newVertexShaderModule(const std::string &shaderSource)
+{
+    return nullptr;
+}
+
+ShaderModule *ShaderCache::newFragmentShaderModule(const std::string &shaderSource)
+{
     return nullptr;
 }

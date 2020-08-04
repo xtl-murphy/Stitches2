@@ -12,6 +12,7 @@
 #include "RenderPassDescriptor.hpp"
 #include "Types.hpp"
 #include "Buffer.hpp"
+#include "DepthStencilState.hpp"
 NS_STITCHES_BEGIN
 
 struct Viewport
@@ -24,11 +25,10 @@ struct Viewport
 
 class CommandBuffer
 {
-private:
-    bool running = false;
-    unsigned int stencilReferenceValueFront = 0;
-    unsigned int stencilReferenceValueBack = 0;
+
 public:
+    using Stage = std::pair<uint32_t, uint32_t>;
+
     virtual void Begin(const RenderPassDescriptor& descriptor) = 0;
     virtual void End() = 0;
     virtual void SubmitIdle() = 0;
@@ -50,6 +50,12 @@ public:
 
 
     virtual ~CommandBuffer() = default;
+
+private:
+
+    bool running = false;
+    unsigned int stencilReferenceValueFront = 0;
+    unsigned int stencilReferenceValueBack = 0;
 };
 
 NS_STITCHES_END

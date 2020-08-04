@@ -36,7 +36,7 @@ public:
 
     virtual int getMaxFragmentLocation() const = 0;
 
-    virtual const std::unordered_map<std::string, AttributeBindInfo> getActiveAttributes() const = 0;
+    virtual const std::unordered_map<String, AttributeBindInfo> getActiveAttributes() const = 0;
 
     const String& getVertexShader() const { return vertexShader; }
 

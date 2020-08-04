@@ -13,16 +13,21 @@
 
 #include "Stitches.hpp"
 #include "Utils/Module.hpp"
-
+#include "OpenGLES/Renderer.hpp"
 NS_STITCHES_BEGIN
-
-class Graphics : public Module::Registrar<Graphics, Module::Stage::Render>
+class Renderer;
+class Graphics final : public Module::Registrar<Graphics, Module::Stage::Render>
 {
 public:
     Graphics();
     ~Graphics();
 
     void Update() override;
+
+    Renderer *GetRenderer() const { return renderer.get(); }
+    void SetRenderer(std::unique_ptr<Renderer> &&renderer) { this->renderer = std::move(renderer); }
+private:
+    std::unique_ptr<Renderer> renderer;
 };
 
 NS_STITCHES_END
