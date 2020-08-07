@@ -9,6 +9,7 @@
 #pragma once
 
 #include "Stitches.hpp"
+#include "Types.hpp"
 
 NS_STITCHES_BEGIN
 
@@ -27,6 +28,15 @@ public:
 
     RenderPassDescriptor& operator=(const RenderPassDescriptor& descriptor);
     bool operator==(const RenderPassDescriptor& descriptor) const;
+};
+
+class PipelineDescriptor
+{
+    ShaderStage* programState = nullptr;
+//    BlendState* blendState = nullptr;
+    PixelFormat colorAttachmentsFormat[MAX_COLOR_ATTCHMENT] = { PixelFormat::DEFAULT };
+    PixelFormat depthAttachmentFormat = PixelFormat::NONE;
+    PixelFormat stencilAttachmentFormat = PixelFormat::NONE;
 };
 
 NS_STITCHES_END

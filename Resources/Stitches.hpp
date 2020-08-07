@@ -77,6 +77,7 @@
 #define NS_STITCHES_END };
 #define USING_STITCHES_VK using namespace Stitches;
 
+#define MAX_COLOR_ATTCHMENT 1
 
 typedef std::string String;
 

@@ -26,8 +26,13 @@ public:
 
     Renderer *GetRenderer() const { return renderer.get(); }
     void SetRenderer(std::unique_ptr<Renderer> &&renderer) { this->renderer = std::move(renderer); }
+
+private:
+    bool StartRenderPass();
+    void EndRenderPass();
 private:
     std::unique_ptr<Renderer> renderer;
+    std::vector<std::unique_ptr<CommandBuffer>> commandBuffers;
 };
 
 NS_STITCHES_END
