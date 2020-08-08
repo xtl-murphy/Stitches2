@@ -10,7 +10,7 @@
 #pragma once
 
 #include "Stitches.hpp"
-#include "Graphics/Base/SubRenderHolder.hpp"
+#include "Graphics/SubRenderHolder.hpp"
 #include "Graphics/Graphics.hpp"
 #include "Graphics/Base/Types.hpp"
 NS_STITCHES_BEGIN

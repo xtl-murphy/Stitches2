@@ -18,9 +18,9 @@ class Buffer
 {
 public:
     Buffer(std::size_t size, BufferType type, BufferUsage usage)
-            : usage(usage)
-            , type(type)
-            , size(size)
+            : mUsage(usage)
+            , mType(type)
+            , mSize(size)
     {}
 
     virtual ~Buffer() = default;
@@ -31,12 +31,12 @@ public:
 
     virtual void usingDefaultStoredData(bool needDefaultStoredData) = 0;
 
-    std::size_t getSize() const { return size; }
+    std::size_t getSize() const { return mSize; }
 
-private:
-    BufferUsage usage = BufferUsage::DYNAMIC; ///< Buffer usage.
-    BufferType type = BufferType::VERTEX; ///< Buffer type.
-    std::size_t size = 0; ///< buffer size in bytes.
+protected:
+    BufferUsage mUsage = BufferUsage::DYNAMIC; ///< Buffer usage.
+    BufferType mType = BufferType::VERTEX; ///< Buffer type.
+    std::size_t mSize = 0; ///< buffer size in bytes.
 };
 
 NS_STITCHES_END

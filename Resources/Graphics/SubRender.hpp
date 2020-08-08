@@ -10,7 +10,7 @@
 #pragma once
 
 #include "Stitches.hpp"
-#include "CommandBuffer.hpp"
+#include "Graphics/Base/CommandBuffer.hpp"
 #include "Utils/TypeInfo.hpp"
 NS_STITCHES_BEGIN
 

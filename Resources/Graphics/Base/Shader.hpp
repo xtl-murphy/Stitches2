@@ -7,9 +7,12 @@
  * Created by Murphy at 2020/8/1 19:11
  **/
 
+#pragma once
+
 #include "Stitches.hpp"
 #include "Types.hpp"
-#include "ShaderModule.hpp"
+#include "ShaderCache.hpp"
+
 NS_STITCHES_BEGIN
 
 class Shader
@@ -22,7 +25,7 @@ public:
      * Get engine built-in program.
      * @param type Specifies the built-in program type.
      */
-//    static Shader* getBuiltinProgram(ProgramType type);
+    static Shader* getBuiltinProgram(ShaderType type);
 
     virtual UniformLocation getUniformLocation(const String& uniform) const = 0;
 
@@ -38,12 +41,18 @@ public:
 
     virtual const std::unordered_map<String, AttributeBindInfo> getActiveAttributes() const = 0;
 
-    const String& getVertexShader() const { return vertexShader; }
+    const String& getVertexShader() const { return mVertexShader; }
 
-    const String& getFragmentShader() const { return fragmentShader; }
-private:
-    String vertexShader;
-    String fragmentShader;
+    const String& getFragmentShader() const { return mFragmentShader; }
+
+protected:
+    void setShaderType(ShaderType type);
+
+    friend class ShaderCache;
+
+    String mVertexShader;
+    String mFragmentShader;
+    ShaderType mShaderType = ShaderType::CUSTOM_PROGRAM;
 };
 
 NS_STITCHES_END

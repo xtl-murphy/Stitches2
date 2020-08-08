@@ -10,27 +10,13 @@
 
 #include "Stitches.hpp"
 #include "Types.hpp"
+#include "ShaderModule.hpp"
 #include "Shader.hpp"
 
 NS_STITCHES_BEGIN
-
+class Shader;
 class ShaderCache
 {
-private:
-    ShaderCache() = default;
-    virtual ~ShaderCache();
-
-    /**
-     * Pre-load programs into cache.
-     */
-    bool init();
-
-    /// Add built-in program
-    void addShader(ShaderType type);
-
-    static std::unordered_map<std::size_t, ShaderModule*> cachedShaders;
-    static ShaderCache *sharedProgramCache;
-    static ShaderModule* newShaderModule(ShaderStage stage, const String& shaderSource);
 public:
     static ShaderCache* getInstance();
 
@@ -44,9 +30,20 @@ public:
 
     void removeAllShaders();
 
-    static ShaderModule* newVertexShaderModule(const std::string& shaderSource);
+protected:
+    ShaderCache() = default;
+    virtual ~ShaderCache();
 
-    static ShaderModule* newFragmentShaderModule(const std::string& shaderSource);
+    /**
+     * Pre-load programs into cache.
+     */
+    bool init();
+
+    /// Add built-in program
+    void addShader(ShaderType type);
+
+    static std::unordered_map<ShaderType, Shader*> mCachedShaders;
+    static ShaderCache *mSharedProgramCache;
 };
 
 NS_STITCHES_END

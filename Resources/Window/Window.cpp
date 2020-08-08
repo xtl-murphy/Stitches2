@@ -104,7 +104,11 @@ Window::Window() :
     // The window will stay hidden until after creation.
     glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
     // Disable context creation.
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_ES_API);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+
+
     // Fixes 16 bit stencil bits in macOS.
     glfwWindowHint(GLFW_STENCIL_BITS, 8);
     // No stereo view!

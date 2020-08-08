@@ -12,9 +12,19 @@
 NS_STITCHES_BEGIN
 
 Shader::Shader(const String& vs, const String& fs)
-        : vertexShader(vs)
-        , fragmentShader(fs)
+        : mVertexShader(vs)
+        , mFragmentShader(fs)
 {
+}
+
+void Shader::setShaderType(ShaderType type)
+{
+    mShaderType = type;
+}
+
+Shader* Shader::getBuiltinProgram(ShaderType type)
+{
+    return ShaderCache::getInstance()->getBuiltinShader(type);
 }
 
 NS_STITCHES_END

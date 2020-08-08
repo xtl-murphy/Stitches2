@@ -8,7 +8,7 @@
  **/
 #include "ShaderModule.hpp"
 
-NS_STITCHES_BEGIN
+USING_STITCHES_VK
 
 ShaderModule::ShaderModule(ShaderStage stage) : stage(stage)
 {
@@ -24,7 +24,3 @@ ShaderStage Stitches::ShaderModule::getShaderStage() const
 {
     return this->stage;
 }
-
-
-
-NS_STITCHES_END
