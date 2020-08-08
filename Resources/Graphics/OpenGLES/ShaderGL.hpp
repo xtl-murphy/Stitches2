@@ -71,4 +71,3 @@ private:
 
 };
 NS_STITCHES_END
-

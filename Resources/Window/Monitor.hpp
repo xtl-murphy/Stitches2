@@ -10,10 +10,7 @@
 
 #include "Stitches.hpp"
 #include "Math/Math.hpp"
-//#include "Graphics/Platform.hpp"
-
-#include <GLFW/glfw3.h>
-#include <GLFW/glfw3native.h>
+#include "Graphics/Platform.hpp"
 
 NS_STITCHES_BEGIN
 

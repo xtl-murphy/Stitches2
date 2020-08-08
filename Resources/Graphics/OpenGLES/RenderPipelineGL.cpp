@@ -46,4 +46,5 @@ void RenderPipelineGL::updateBlendState(const BlendDescriptor &descriptor)
     glColorMask(writeMaskRed, writeMaskGreen, writeMaskBlue, writeMaskAlpha);
 }
 
+
 NS_STITCHES_END

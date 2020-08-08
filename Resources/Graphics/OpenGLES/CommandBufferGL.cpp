@@ -298,4 +298,3 @@ void CommandBufferGL::setUniform(bool isArray, GLuint location, unsigned int siz
     }
 }
 
-

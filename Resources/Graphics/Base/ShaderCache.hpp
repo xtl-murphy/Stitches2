@@ -47,4 +47,3 @@ protected:
 };
 
 NS_STITCHES_END
-

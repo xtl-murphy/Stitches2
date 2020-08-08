@@ -1,6 +1,3 @@
-//
-// Created by Murphy on 2020/8/2.
-//
 
 /**
  * Graphics
@@ -13,7 +10,7 @@
 
 #include "Stitches.hpp"
 #include "Utils/Module.hpp"
-//#include "GLES/Renderer.hpp"
+
 NS_STITCHES_BEGIN
 class Renderer;
 class Graphics final : public Module::Registrar<Graphics, Module::Stage::Render>
@@ -36,4 +33,3 @@ private:
 };
 
 NS_STITCHES_END
-

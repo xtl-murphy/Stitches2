@@ -1,6 +1,3 @@
-//
-// Created by Murphy on 2020/8/6.
-//
 
 /**
  * RenderPipelineGL
@@ -33,4 +30,3 @@ private:
 };
 
 NS_STITCHES_END
-

@@ -1,6 +1,4 @@
-//
-// Created by Murphy on 2020/8/8.
-//
+
 
 /**
  * RenderState
@@ -16,6 +14,5 @@ class RenderState
 {
 
 };
-
 
 

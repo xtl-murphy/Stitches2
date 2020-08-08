@@ -1,4 +1,5 @@
 
+
 /**
  * ShaderGL
  * @version 1.0
@@ -76,6 +77,5 @@ void ShaderGL::computeLocations()
 {
 
 }
-
 
 NS_STITCHES_END
