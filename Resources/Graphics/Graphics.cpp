@@ -23,13 +23,14 @@ Graphics::~Graphics()
 
 void Graphics::Update()
 {
-    if (!renderer->started)
-    {
-        renderer->Start();
-        renderer->started = true;
-    }
+//    if (!renderer->started)
+//    {
+//        renderer->Start();
+//        renderer->started = true;
+//    }
+//
+//    renderer->Update();
 
-    renderer->Update();
 }
 
 bool Graphics::StartRenderPass()

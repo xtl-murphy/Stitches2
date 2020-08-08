@@ -12,11 +12,11 @@
 #pragma once
 
 #include "Stitches.hpp"
-#include "Graphics/Base/Pipeline.hpp"
+#include "Graphics/Base/RenderPipeline.hpp"
 #include "ShaderGL.hpp"
 NS_STITCHES_BEGIN
 
-class RenderPipelineGL : public Pipeline
+class RenderPipelineGL : public RenderPipeline
 {
 public:
     RenderPipelineGL() = default;
@@ -24,12 +24,12 @@ public:
 
     virtual void update(const PipelineDescriptor & pipelineDescirptor, const RenderPassDescriptor& renderpassDescriptor) override;
 
-    inline ShaderGL* getProgram() const { return shader; }
+    inline ShaderGL* getShader() const { return mShader; }
 
 private:
     void updateBlendState(const BlendDescriptor& descriptor);
-private:
-    ShaderGL* shader = nullptr;
+
+    ShaderGL* mShader = nullptr;
 };
 
 NS_STITCHES_END

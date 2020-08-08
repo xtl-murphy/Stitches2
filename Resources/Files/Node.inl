@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <codecvt>
 #include <cstring>
-#include <filesystem>
 #include <memory>
 #include <optional>
 #include <vector>

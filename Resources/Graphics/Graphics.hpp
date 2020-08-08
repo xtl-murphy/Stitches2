@@ -13,7 +13,7 @@
 
 #include "Stitches.hpp"
 #include "Utils/Module.hpp"
-#include "OpenGLES/Renderer.hpp"
+//#include "GLES/Renderer.hpp"
 NS_STITCHES_BEGIN
 class Renderer;
 class Graphics final : public Module::Registrar<Graphics, Module::Stage::Render>
@@ -23,16 +23,16 @@ public:
     ~Graphics();
 
     void Update() override;
-
-    Renderer *GetRenderer() const { return renderer.get(); }
-    void SetRenderer(std::unique_ptr<Renderer> &&renderer) { this->renderer = std::move(renderer); }
+//
+//    Renderer *GetRenderer() const { return renderer.get(); }
+//    void SetRenderer(std::unique_ptr<Renderer> &&renderer) { this->renderer = std::move(renderer); }
 
 private:
     bool StartRenderPass();
     void EndRenderPass();
 private:
-    std::unique_ptr<Renderer> renderer;
-    std::vector<std::unique_ptr<CommandBuffer>> commandBuffers;
+//    std::unique_ptr<Renderer> renderer;
+//    std::unique_ptr<CommandBuffer> commandBuffer;
 };
 
 NS_STITCHES_END

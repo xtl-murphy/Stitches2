@@ -26,7 +26,6 @@
 #include <thread>
 #include <memory>
 #include <cstring>
-#include <filesystem>
 #include <stdexcept>
 #include <typeinfo>
 #include <typeindex>
@@ -70,6 +69,25 @@
         #define LOGE(TAG, ...)
         #define LOGE(TAG, ...)
         #define LOGV(TAG, ...)
+    #endif
+#else
+    #ifdef LOG_TURN_ON
+    #define LOGE(TAG, ...)  printf("%s : ", TAG) && \
+                                    printf("<%s %s> %s %s:%d INFO: ",__DATE__, __TIME__,__FUNCTION__,__FILE__,__LINE__) && \
+                                    printf(__VA_ARGS__) && \
+                                    printf("\n")
+    #define LOGI(TAG, ...)  printf("%s : ", TAG) && \
+                                    printf("<%s %s> %s %s:%d INFO: ",__DATE__, __TIME__,__FUNCTION__,__FILE__,__LINE__) && \
+                                    printf(__VA_ARGS__) && \
+                                    printf("\n")
+    #define LOGV(TAG, ...)  printf("%s : ", TAG) && \
+                                    printf("<%s %s> %s %s:%d INFO: ",__DATE__, __TIME__,__FUNCTION__,__FILE__,__LINE__) && \
+                                    printf(__VA_ARGS__) && \
+                                    printf("\n")
+    #else
+    #define LOGE(TAG, ...)
+            #define LOGE(TAG, ...)
+            #define LOGV(TAG, ...)
     #endif
 #endif
 

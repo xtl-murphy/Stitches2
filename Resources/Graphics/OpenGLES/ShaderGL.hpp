@@ -26,25 +26,13 @@ struct AttributeInfo
     String name;
 };
 
-class ShaderGL : public Shader
+class ShaderGL final : public Shader
 {
-private:
-    GLuint programId = 0;
-    ShaderModuleGL* vertexShaderModule = nullptr;
-    ShaderModuleGL* fragmentShaderModule = nullptr;
-
-    std::vector<AttributeInfo> _attributeInfos;
-    std::unordered_map<std::string, UniformInfo> _activeUniformInfos;
-
-private:
-    void compileProgram();
-    bool getAttributeLocation(const String& attributeName, unsigned int& location) const;
-    void computeUniformInfos();
-    void computeLocations();
-
 public:
     ShaderGL(const String& vertexShader, const String& fragmentShader);
     ~ShaderGL();
+
+    inline GLuint getHandler() const { return mProgramId; }
 
 
     virtual UniformLocation getUniformLocation(const String& uniform) const override;
@@ -60,6 +48,27 @@ public:
     virtual int getMaxFragmentLocation() const override;
 
     virtual const std::unordered_map<std::string, AttributeBindInfo> getActiveAttributes() const override;
+
+private:
+
+    void compileProgram();
+    bool getAttributeLocation(const String& attributeName, unsigned int& location) const;
+    void computeUniformInfos();
+    void computeLocations();
+
+    GLuint mProgramId = 0;
+    ShaderModuleGL* mVertexShaderModule = nullptr;
+    ShaderModuleGL* mFragmentShaderModule = nullptr;
+
+    std::vector<AttributeInfo> mAttributeInfos;
+    std::unordered_map<std::string, UniformInfo> MactiveUniformInfos;
+
+    std::size_t mTotalBufferSize = 0;
+    int32 mMaxLocation = -1;
+    UniformLocation mBuiltinUniformLocation[UNIFORM_MAX];
+    int32 mBuiltinAttributeLocation[Attribute::ATTRIBUTE_MAX];
+    std::unordered_map<int, int> mBufferOffset;
+
 };
 NS_STITCHES_END
 

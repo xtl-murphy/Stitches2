@@ -19,7 +19,7 @@ Engine::Engine( bool emptyRegister) :
 
     if (!emptyRegister)
     {
-        Window::Register();
+//        Window::Register();
         Graphics::Register();
     }
 }

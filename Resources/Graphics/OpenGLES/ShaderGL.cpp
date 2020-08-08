@@ -57,5 +57,25 @@ const std::unordered_map<String, AttributeBindInfo> ShaderGL::getActiveAttribute
     return std::unordered_map<std::string, AttributeBindInfo>();
 }
 
+void ShaderGL::compileProgram()
+{
+
+}
+
+bool ShaderGL::getAttributeLocation(const String &attributeName, unsigned int &location) const
+{
+    return false;
+}
+
+void ShaderGL::computeUniformInfos()
+{
+
+}
+
+void ShaderGL::computeLocations()
+{
+
+}
+
 
 NS_STITCHES_END
