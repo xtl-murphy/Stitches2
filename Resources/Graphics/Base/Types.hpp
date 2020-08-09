@@ -307,7 +307,7 @@ enum class TextureCubeFace : uint32_t
     NEGATIVE_Z = 5
 };
 
-enum class ShaderType : size_t
+enum class ProgramType : size_t
 {
     POSITION_COLOR_LENGTH_TEXTURE,          //positionColorLengthTexture_vert, positionColorLengthTexture_frag
     POSITION_COLOR_TEXTURE_AS_POINTSIZE,    //positionColorTextureAsPointsize_vert, positionColor_frag

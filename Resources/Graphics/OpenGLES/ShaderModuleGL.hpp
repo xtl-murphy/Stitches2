@@ -16,17 +16,21 @@ NS_STITCHES_BEGIN
 
 class ShaderModuleGL : public ShaderModule
 {
-    friend class ShaderGL;
-private:
-    GLuint shaderId;
+    friend class ProgramGL;
 
 private:
+
+public:
+    ShaderModuleGL(ShaderStage stage, const String& source);
+    ~ShaderModuleGL() override;
+    inline GLuint getShader() const { return mShaderId; }
+private:
+
     void compileShader(ShaderStage stage, const String& source);
     char* getErrorLog(GLuint shader) const;
     void deleteShader();
-public:
-    ShaderModuleGL(ShaderStage stage, const String& source);
-    ~ShaderModuleGL();
+
+    GLuint mShaderId;
 };
 
 NS_STITCHES_END

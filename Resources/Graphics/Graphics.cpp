@@ -22,13 +22,14 @@ Graphics::~Graphics()
 
 void Graphics::Update()
 {
-//    if (!renderer->started)
-//    {
-//        renderer->Start();
-//        renderer->started = true;
-//    }
-//
-//    renderer->Update();
+    if (!renderer->started)
+    {
+        renderer->Start();
+        renderer->started = true;
+    }
+
+    renderer->Update();
+
 
 }
 

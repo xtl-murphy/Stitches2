@@ -4,110 +4,90 @@
  * @version 1.0
  * @since 1.0
  * <p>
- * Created by Murphy at 2020/8/1 19:12
+ * Created by Murphy at 2020/8/9 13:38
  **/
+#include <Graphics/OpenGLES/ShaderModuleGL.hpp>
 #include "ShaderCache.hpp"
 
-USING_STITCHES_VK
+NS_STITCHES_BEGIN
 
-std::unordered_map<ShaderType, Shader*> ShaderCache::mCachedShaders;
-ShaderCache* ShaderCache::mSharedProgramCache = nullptr;
+std::unordered_map<std::size_t, ShaderModule*> ShaderCache::_cachedShaders;
+ShaderCache* ShaderCache::_sharedShaderCache = nullptr;
 
-ShaderCache::~ShaderCache()
+ShaderCache* ShaderCache::getInstance()
 {
-    for(auto& program : mCachedShaders)
+    if(!_sharedShaderCache)
     {
-        delete program.second;
-    }
-//    CCLOGINFO("deallocing ProgramCache: %p", this);
-    ShaderCache::destroyInstance();
-}
-
-ShaderCache *ShaderCache::getInstance()
-{
-    if (!mSharedProgramCache)
-    {
-        mSharedProgramCache = new (std::nothrow) ShaderCache();
-        if(!mSharedProgramCache->init())
+        _sharedShaderCache = new (std::nothrow) ShaderCache();
+        if(!_sharedShaderCache->init())
         {
-            delete mSharedProgramCache;
+            SAFE_RELEASE(_sharedShaderCache);
         }
     }
-    return mSharedProgramCache;
+    return _sharedShaderCache;
 }
 
 void ShaderCache::destroyInstance()
 {
-    if (mSharedProgramCache != nullptr)
-    {
-        delete mSharedProgramCache;
-    }
+    SAFE_RELEASE_NULL(_sharedShaderCache);
 }
 
-Shader *ShaderCache::getBuiltinShader(ShaderType type) const
+ShaderCache::~ShaderCache()
 {
-    const auto& iter = ShaderCache::mCachedShaders.find(type);
-    if (ShaderCache::mCachedShaders.end() != iter)
+    for(auto& shaderModule : _cachedShaders)
     {
-        return iter->second;
+        SAFE_RELEASE(shaderModule.second);
     }
-    return nullptr;
-}
-
-void ShaderCache::removeShader(Shader *shader)
-{
-    if (!shader)
-    {
-        return;
-    }
-
-    for (auto it = mCachedShaders.cbegin(); it != mCachedShaders.cend();)
-    {
-        if (it->second == shader)
-        {
-            delete it->second;
-            it = mCachedShaders.erase(it);
-            break;
-        }
-        else
-            ++it;
-    }
-}
-
-void ShaderCache::removeUnusedShader()
-{
-//    for (auto iter = mCachedShaders.cbegin(); iter != mCachedShaders.cend();)
-//    {
-//        auto program = iter->second;
-//        if (program->getReferenceCount() == 1)
-//        {
-////            CCLOG("cocos2d: TextureCache: removing unused program");
-//            program->release();
-//            iter = mCachedShaders.erase(iter);
-//        }
-//        else
-//        {
-//            ++iter;
-//        }
-//    }
-}
-
-void ShaderCache::removeAllShaders()
-{
-    for (auto& shader : mCachedShaders)
-    {
-        delete shader.second;
-    }
-    mCachedShaders.clear();
+//    CCLOGINFO("deallocing ProgramCache: %p", this);
 }
 
 bool ShaderCache::init()
 {
-    return false;
+    return true;
 }
 
-void ShaderCache::addShader(ShaderType type)
+ShaderModule* ShaderCache::newVertexShaderModule(const std::string& shaderSource)
 {
-
+    auto vertexShaderModule = newShaderModule(ShaderStage::VERTEX, shaderSource);
+    return vertexShaderModule;
 }
 
+ShaderModule* ShaderCache::newFragmentShaderModule(const std::string& shaderSource)
+{
+    auto fragmentShaderModule = newShaderModule(ShaderStage::FRAGMENT, shaderSource);
+    return fragmentShaderModule;
+}
+
+ShaderModule* ShaderCache::newShaderModule(ShaderStage stage, const std::string& shaderSource)
+{
+    std::size_t key = std::hash<std::string>{}(shaderSource);
+    auto iter = _cachedShaders.find(key);
+    if (_cachedShaders.end() != iter)
+        return iter->second;
+
+    auto shader = new ShaderModuleGL(stage, shaderSource);
+    shader->setHashValue(key);
+    _cachedShaders.emplace(key, shader);
+
+    return shader;
+}
+
+void ShaderCache::removeUnusedShader()
+{
+    for (auto iter = _cachedShaders.cbegin(); iter != _cachedShaders.cend();)
+    {
+        auto shaderModule = iter->second;
+        if (shaderModule->getReferenceCount() == 1)
+        {
+            //            CCLOG("cocos2d: TextureCache: removing unused program");
+            shaderModule->release();
+            iter = _cachedShaders.erase(iter);
+        }
+        else
+        {
+            ++iter;
+        }
+    }
+}
+
+NS_STITCHES_END

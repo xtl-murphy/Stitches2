@@ -13,7 +13,7 @@
 
 NS_STITCHES_BEGIN
 
-class RenderPipeline
+class RenderPipeline : public Ref
 {
 public:
     virtual void update(const PipelineDescriptor & pipelineDescirptor, const RenderPassDescriptor& renderpassDescriptor) = 0;

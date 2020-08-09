@@ -9,17 +9,49 @@
 #include "CommandBufferGL.hpp"
 #include "Graphics/Platform.hpp"
 #include "UtilsGL.hpp"
+#include "TextureGL.hpp"
 
 USING_STITCHES_VK
 
+GLuint getHandler(TextureBackend *texture)
+{
+    switch (texture->getTextureType())
+    {
+        case TextureType::TEXTURE_2D:
+            return static_cast<Texture2DGL*>(texture)->getHandler();
+        case TextureType::TEXTURE_CUBE:
+            return static_cast<TextureCubeGL*>(texture)->getHandler();
+        default:
+            return 0;
+    }
+}
+
+void applyTexture(TextureBackend* texture, int slot)
+{
+    switch (texture->getTextureType())
+    {
+        case TextureType::TEXTURE_2D:
+            static_cast<Texture2DGL*>(texture)->apply(slot);
+            break;
+        case TextureType::TEXTURE_CUBE:
+            static_cast<TextureCubeGL*>(texture)->apply(slot);
+            break;
+        default:
+            return ;
+    }
+}
+
 CommandBufferGL::CommandBufferGL()
 {
-
+    glGetIntegerv(GL_FRAMEBUFFER_BINDING, &mDefaultFBO);
 }
 
 CommandBufferGL::~CommandBufferGL()
 {
+    glDeleteFramebuffers(1, &mGeneratedFBO);
+    SAFE_RELEASE_NULL(mRenderPipeline);
 
+//    cleanResources();
 }
 
 void CommandBufferGL::beginFrame()
@@ -32,12 +64,171 @@ void CommandBufferGL::beginRenderPass(const RenderPassDescriptor &descriptor)
     this->applyRenderPassDescriptor(descriptor);
 }
 
-void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &descirptor)
+void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &descriptor)
 {
-//    bool useColorAttachmentExternal = descirptor.needColorAttachment && descirptor.colorAttachmentsTexture[0];
-//    bool useDepthAttachmentExternal = descirptor.depthTestEnabled && descirptor.depthAttachmentTexture;
-//    bool useStencilAttachmentExternal = descirptor.stencilTestEnabled && descirptor.stencilAttachmentTexture;
+    bool useColorAttachmentExternal = descriptor.needColorAttachment && descriptor.colorAttachmentsTexture[0];
+    bool useDepthAttachmentExternal = descriptor.depthTestEnabled && descriptor.depthAttachmentTexture;
+    bool useStencilAttachmentExternal = descriptor.stencilTestEnabled && descriptor.stencilAttachmentTexture;
     bool useGeneratedFBO = false;
+
+    if (useColorAttachmentExternal || useDepthAttachmentExternal || useStencilAttachmentExternal)
+    {
+        if(mGeneratedFBO == 0)
+        {
+            glGenFramebuffers(1, &mGeneratedFBO);
+        }
+        mCurrentFBO = mGeneratedFBO;
+        useGeneratedFBO = true;
+    }
+    else
+    {
+        mCurrentFBO = mDefaultFBO;
+    }
+    glBindFramebuffer(GL_FRAMEBUFFER, mCurrentFBO);
+
+    if (useDepthAttachmentExternal)
+    {
+        glFramebufferTexture2D(GL_FRAMEBUFFER,
+                               GL_DEPTH_ATTACHMENT,
+                               GL_TEXTURE_2D,
+                               getHandler(descriptor.depthAttachmentTexture),
+                               0);
+        CHECK_GL_ERROR_DEBUG();
+
+        mGeneratedFBOBindDepth = true;
+    }
+    else
+    {
+        if (mGeneratedFBOBindDepth && useGeneratedFBO)
+        {
+            glFramebufferTexture2D(GL_FRAMEBUFFER,
+                                   GL_DEPTH_ATTACHMENT,
+                                   GL_TEXTURE_2D,
+                                   0,
+                                   0);
+            CHECK_GL_ERROR_DEBUG();
+
+            mGeneratedFBOBindDepth = false;
+        }
+    }
+
+    if (useStencilAttachmentExternal)
+    {
+        glFramebufferTexture2D(GL_FRAMEBUFFER,
+                               GL_STENCIL_ATTACHMENT,
+                               GL_TEXTURE_2D,
+                               getHandler(descriptor.depthAttachmentTexture),
+                               0);
+        CHECK_GL_ERROR_DEBUG();
+
+        mGeneratedFBOBindStencil = true;
+    }
+    else
+    {
+        if (mGeneratedFBOBindStencil && useGeneratedFBO)
+        {
+            glFramebufferTexture2D(GL_FRAMEBUFFER,
+                                   GL_STENCIL_ATTACHMENT,
+                                   GL_TEXTURE_2D,
+                                   0,
+                                   0);
+            CHECK_GL_ERROR_DEBUG();
+
+            mGeneratedFBOBindStencil = false;
+        }
+    }
+
+    if (descriptor.needColorAttachment)
+    {
+        int i = 0;
+        for (const auto& texture : descriptor.colorAttachmentsTexture)
+        {
+            if (texture)
+            {
+                // TODO: support texture cube
+                glFramebufferTexture2D(GL_FRAMEBUFFER,
+                                       GL_COLOR_ATTACHMENT0 + i,
+                                       GL_TEXTURE_2D,
+                                       getHandler(texture),
+                                       0);
+            }
+            CHECK_GL_ERROR_DEBUG();
+            ++i;
+        }
+
+        if (useGeneratedFBO)
+            mGeneratedFBOBindColor = true;
+    }
+    else
+    {
+        if (mGeneratedFBOBindColor && useGeneratedFBO)
+        {
+            // FIXME: Now only support attaching to attachment 0.
+            glFramebufferTexture2D(GL_FRAMEBUFFER,
+                                   GL_COLOR_ATTACHMENT0,
+                                   GL_TEXTURE_2D,
+                                   0,
+                                   0);
+
+            mGeneratedFBOBindColor = false;
+        }
+
+    }
+    CHECK_GL_ERROR_DEBUG();
+
+    // set clear color, depth and stencil
+    GLbitfield mask = 0;
+    if (descriptor.needClearColor)
+    {
+        mask |= GL_COLOR_BUFFER_BIT;
+        const auto& clearColor = descriptor.clearColorValue;
+        glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
+    }
+
+    CHECK_GL_ERROR_DEBUG();
+
+    GLboolean oldDepthWrite = GL_FALSE;
+    GLboolean oldDepthTest = GL_FALSE;
+    GLfloat oldDepthClearValue = 0.f;
+    GLint oldDepthFunc = GL_LESS;
+    if (descriptor.needClearDepth)
+    {
+        glGetBooleanv(GL_DEPTH_WRITEMASK, &oldDepthWrite);
+        glGetBooleanv(GL_DEPTH_TEST, &oldDepthTest);
+        glGetFloatv(GL_DEPTH_CLEAR_VALUE, &oldDepthClearValue);
+        glGetIntegerv(GL_DEPTH_FUNC, &oldDepthFunc);
+
+        mask |= GL_DEPTH_BUFFER_BIT;
+        glClearDepthf(descriptor.clearDepthValue);
+        glEnable(GL_DEPTH_TEST);
+        glDepthMask(GL_TRUE);
+        glDepthFunc(GL_ALWAYS);
+    }
+
+    CHECK_GL_ERROR_DEBUG();
+
+    if (descriptor.needClearStencil)
+    {
+        mask |= GL_STENCIL_BUFFER_BIT;
+        glClearStencil(descriptor.clearStencilValue);
+    }
+
+    if(mask) glClear(mask);
+
+    CHECK_GL_ERROR_DEBUG();
+
+    // restore depth test
+    if (descriptor.needClearDepth)
+    {
+        if (!oldDepthTest)
+            glDisable(GL_DEPTH_TEST);
+
+        glDepthMask(oldDepthWrite);
+        glDepthFunc(oldDepthFunc);
+        glClearDepthf(oldDepthClearValue);
+    }
+
+    CHECK_GL_ERROR_DEBUG();
 }
 
 void CommandBufferGL::endRenderPass()
@@ -85,7 +276,7 @@ void CommandBufferGL::setVertexBuffer(Buffer *buffer)
     {
         return;
     }
-//    buffer->retain();
+    buffer->retain();
     this->mVertexBuffer = dynamic_cast<BufferGL*>(buffer);
 }
 
@@ -94,8 +285,8 @@ void CommandBufferGL::setIndexBuffer(Buffer *buffer)
     if (buffer == nullptr)
         return;
 
-//    buffer->retain();
-//    CC_SAFE_RELEASE(_indexBuffer);
+    buffer->retain();
+    SAFE_RELEASE(mIndexBuffer);
     mIndexBuffer = static_cast<BufferGL*>(buffer);
 }
 
@@ -177,30 +368,30 @@ void CommandBufferGL::prepareDrawing()
     }
 }
 
-void CommandBufferGL::bindVertexBuffer(ShaderGL *shader) const
+void CommandBufferGL::bindVertexBuffer(ProgramGL *shader) const
 {
-//    auto vertexLayout = _programState->getVertexLayout();
-//
-//    if (!vertexLayout->isValid())
-//        return;
-//
-//    glBindBuffer(GL_ARRAY_BUFFER, mVertexBuffer->getHandler());
-//
-//    const auto& attributes = vertexLayout->getAttributes();
-//    for (const auto& attributeInfo : attributes)
-//    {
-//        const auto& attribute = attributeInfo.second;
-//        glEnableVertexAttribArray(attribute.index);
-//        glVertexAttribPointer(attribute.index,
-//                              UtilsGL::getGLAttributeSize(attribute.format),
-//                              UtilsGL::toGLAttributeType(attribute.format),
-//                              attribute.needToBeNormallized,
-//                              vertexLayout->getStride(),
-//                              (GLvoid*)attribute.offset);
-//    }
+    auto vertexLayout = mProgramState->getVertexLayout();
+
+    if (!vertexLayout->isValid())
+        return;
+
+    glBindBuffer(GL_ARRAY_BUFFER, mVertexBuffer->getHandler());
+
+    const auto& attributes = vertexLayout->getAttributes();
+    for (const auto& attributeInfo : attributes)
+    {
+        const auto& attribute = attributeInfo.second;
+        glEnableVertexAttribArray(attribute.index);
+        glVertexAttribPointer(attribute.index,
+                              UtilsGL::getGLAttributeSize(attribute.format),
+                              UtilsGL::toGLAttributeType(attribute.format),
+                              attribute.needToBeNormallized,
+                              vertexLayout->getStride(),
+                              (GLvoid*)attribute.offset);
+    }
 }
 
-void CommandBufferGL::setUniforms(ShaderGL *program) const
+void CommandBufferGL::setUniforms(ProgramGL *program) const
 {
 
 }

@@ -1,49 +1,71 @@
+//
+// Created by Murphy on 2020/8/9.
+//
 
 /**
  * ShaderCache
  * @version 1.0
  * @since 1.0
  * <p>
- * Created by Murphy at 2020/8/1 19:12
+ * Created by Murphy at 2020/8/9 13:38
  **/
 #pragma once
 
 #include "Stitches.hpp"
-#include "Types.hpp"
+#include "Utils/Ref.hpp"
 #include "ShaderModule.hpp"
-#include "Shader.hpp"
 
 NS_STITCHES_BEGIN
-class Shader;
-class ShaderCache
+
+class ShaderCache : public Ref
 {
 public:
+    /** returns the shared instance */
     static ShaderCache* getInstance();
 
+    /** purges the cache. It releases the retained instance. */
     static void destroyInstance();
 
-    Shader* getBuiltinShader(ShaderType type) const;
+    /**
+     * Create a vertex shader module and add it to cache.
+     * If it is created before, then just return the cached shader module.
+     * @param shaderSource The source code of the shader.
+     */
+    static ShaderModule* newVertexShaderModule(const std::string& shaderSource);
 
-    void removeShader(Shader* shader);
+    /**
+     * Create a fragment shader module.
+     * If it is created before, then just return the cached shader module.
+     * @param shaderSource The source code of the shader.
+     */
+    static ShaderModule* newFragmentShaderModule(const std::string& shaderSource);
 
+    /**
+     * Remove all unused shaders.
+     */
     void removeUnusedShader();
 
-    void removeAllShaders();
-
 protected:
-    ShaderCache() = default;
     virtual ~ShaderCache();
 
     /**
-     * Pre-load programs into cache.
+     * Initial shader cache.
+     * @return true if initial successful, otherwise false.
      */
     bool init();
 
-    /// Add built-in program
-    void addShader(ShaderType type);
+    /**
+     * New a shaderModule.
+     * If it was created before, then just return the cached shader module.
+     * Otherwise add it to cache and return the object.
+     * @param stage Specifies whether is vertex shader or fragment shader.
+     * @param source Specifies shader source.
+     * @return A ShaderModule object.
+     */
+    static ShaderModule* newShaderModule(ShaderStage stage, const std::string& shaderSource);
 
-    static std::unordered_map<ShaderType, Shader*> mCachedShaders;
-    static ShaderCache *mSharedProgramCache;
+    static std::unordered_map<std::size_t, ShaderModule*> _cachedShaders;
+    static ShaderCache* _sharedShaderCache;
 };
 
 NS_STITCHES_END

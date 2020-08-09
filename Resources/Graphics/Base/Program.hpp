@@ -1,6 +1,6 @@
 
 /**
- * Shader
+ * Program
  * @version 1.0
  * @since 1.0
  * <p>
@@ -11,21 +11,21 @@
 
 #include "Stitches.hpp"
 #include "Types.hpp"
-#include "ShaderCache.hpp"
-
+#include "ProgramCache.hpp"
+#include "Utils/Ref.hpp"
 NS_STITCHES_BEGIN
 
-class Shader
+class Program : public Ref
 {
 
 public:
-    Shader(const String& vs, const String& fs);
+    Program(const String& vs, const String& fs);
 
     /**
      * Get engine built-in program.
      * @param type Specifies the built-in program type.
      */
-    static Shader* getBuiltinProgram(ShaderType type);
+    static Program* getBuiltinProgram(ProgramType type);
 
     virtual UniformLocation getUniformLocation(const String& uniform) const = 0;
 
@@ -45,14 +45,20 @@ public:
 
     const String& getFragmentShader() const { return mFragmentShader; }
 
-protected:
-    void setShaderType(ShaderType type);
+    ProgramType getProgramType() const { return mProgramType; }
 
-    friend class ShaderCache;
+    virtual std::size_t getUniformBufferSize(ShaderStage stage) const =0;
+
+    virtual const UniformInfo& getActiveUniformInfo(ShaderStage stage, int location) const = 0;
+
+protected:
+    void setProgramType(ProgramType type);
+
+    friend class ProgramCache;
 
     String mVertexShader;
     String mFragmentShader;
-    ShaderType mShaderType = ShaderType::CUSTOM_PROGRAM;
+    ProgramType mProgramType = ProgramType::CUSTOM_PROGRAM;
 };
 
 NS_STITCHES_END

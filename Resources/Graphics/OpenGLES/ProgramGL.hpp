@@ -1,6 +1,6 @@
 
 /**
- * ShaderGL
+ * ProgramGL
  * @version 1.0
  * @since 1.0
  * <p>
@@ -9,7 +9,7 @@
 #pragma once
 
 #include "Stitches.hpp"
-#include "Graphics/Base/Shader.hpp"
+#include "Graphics/Base/Program.hpp"
 #include "Graphics/Platform.hpp"
 #include "Graphics/Base/Types.hpp"
 #include "ShaderModuleGL.hpp"
@@ -26,11 +26,11 @@ struct AttributeInfo
     String name;
 };
 
-class ShaderGL final : public Shader
+class ProgramGL final : public Program
 {
 public:
-    ShaderGL(const String& vertexShader, const String& fragmentShader);
-    ~ShaderGL();
+    ProgramGL(const String& vertexShader, const String& fragmentShader);
+    ~ProgramGL();
 
     inline GLuint getHandler() const { return mProgramId; }
 
@@ -61,7 +61,7 @@ private:
     ShaderModuleGL* mFragmentShaderModule = nullptr;
 
     std::vector<AttributeInfo> mAttributeInfos;
-    std::unordered_map<std::string, UniformInfo> MactiveUniformInfos;
+    std::unordered_map<std::string, UniformInfo> mActiveUniformInfos;
 
     std::size_t mTotalBufferSize = 0;
     int32 mMaxLocation = -1;

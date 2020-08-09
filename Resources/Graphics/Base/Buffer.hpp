@@ -11,10 +11,11 @@
 
 #include "Stitches.hpp"
 #include "Types.hpp"
+#include "Utils/Ref.hpp"
 
 NS_STITCHES_BEGIN
 
-class Buffer
+class Buffer : public Ref
 {
 public:
     Buffer(std::size_t size, BufferType type, BufferUsage usage)

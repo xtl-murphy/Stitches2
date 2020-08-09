@@ -10,6 +10,8 @@
 
 #include "Stitches.hpp"
 #include "Types.hpp"
+#include "Utils/Ref.hpp"
+
 NS_STITCHES_BEGIN
 
 enum Uniform : uint32_t
@@ -36,12 +38,13 @@ enum Attribute : uint32_t
     ATTRIBUTE_MAX //Maximum attributes
 };
 
-class ShaderModule
+class ShaderModule : public Ref
 {
+    friend class ShaderCache;
 public:
     /**
      * Get shader stage. The symbolic constant can be either VERTEX or FRAGMENT.
-     * @return Shader stage.
+     * @return Program stage.
      */
     ShaderStage getShaderStage() const;
 
@@ -52,7 +55,7 @@ protected:
     virtual ~ShaderModule();
     void setHashValue(std::size_t hash) { hash = hash; }
 
-    friend class ShaderCache;
+    friend class ProgramCache;
     ShaderStage stage = ShaderStage::VERTEX;
     std::size_t hash = 0;
 };

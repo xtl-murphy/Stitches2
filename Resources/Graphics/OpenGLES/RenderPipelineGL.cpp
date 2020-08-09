@@ -14,6 +14,13 @@ NS_STITCHES_BEGIN
 void RenderPipelineGL::update(const Stitches::PipelineDescriptor &pipelineDescriptor,
                                         const Stitches::RenderPassDescriptor &renderPassDescriptor)
 {
+
+    if(this->mProgram != pipelineDescriptor.programState->getProgram())
+    {
+        SAFE_RELEASE(mProgram);
+        mProgram = static_cast<ProgramGL*>(pipelineDescriptor.programState->getProgram());
+        SAFE_RETAIN(mProgram);
+    }
 //    this->updateBlendState(pipelineDescriptor.blendDescriptor);
 }
 

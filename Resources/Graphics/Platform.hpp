@@ -14,3 +14,12 @@
 #define GLFW_INCLUDE_GLEXT
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
+
+#define CHECK_GL_ERROR_DEBUG() \
+    do { \
+        GLenum __error = glGetError(); \
+        if(__error) { \
+            LOGE("OpenGLES", "OpenGL error 0x%04X in %s %s %d\n", __error, __FILE__, __FUNCTION__, __LINE__); \
+        } \
+    } while (false)
+

@@ -48,8 +48,8 @@ public:
 private:
 
     void prepareDrawing();
-    void bindVertexBuffer(ShaderGL* program) const;
-    void setUniforms(ShaderGL* program) const;
+    void bindVertexBuffer(ProgramGL* program) const;
+    void setUniforms(ProgramGL* program) const;
     void setUniform(bool isArray, GLuint location, unsigned int size, GLenum uniformType, void* data) const;
 
     RenderPipelineGL* mRenderPipeline = nullptr;
@@ -57,6 +57,17 @@ private:
     CullMode mCullMode = CullMode::NONE;
     BufferGL* mVertexBuffer = nullptr;
     BufferGL* mIndexBuffer = nullptr;
+
+    GLuint mGeneratedFBO = 0;
+    bool mGeneratedFBOBindColor = false;
+    bool mGeneratedFBOBindDepth = false;
+    bool mGeneratedFBOBindStencil = false;
+    GLint mDefaultFBO = 0;  // The value gets from glGetIntegerv, so need to use GLint
+    GLuint mCurrentFBO = 0;
+    GLboolean mAlphaTestEnabled = false;
+    ProgramState* mProgramState = nullptr;
+//    DepthStencilStateGL* _depthStencilStateGL = nullptr;
+
 };
 
 NS_STITCHES_END

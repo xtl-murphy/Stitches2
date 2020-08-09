@@ -10,7 +10,7 @@
 
 #include "Stitches.hpp"
 #include "Graphics/Base/RenderPipeline.hpp"
-#include "ShaderGL.hpp"
+#include "ProgramGL.hpp"
 NS_STITCHES_BEGIN
 
 class RenderPipelineGL : public RenderPipeline
@@ -21,12 +21,12 @@ public:
 
     virtual void update(const PipelineDescriptor & pipelineDescirptor, const RenderPassDescriptor& renderpassDescriptor) override;
 
-    inline ShaderGL* getShader() const { return mShader; }
+    inline ProgramGL* getShader() const { return mProgram; }
 
 private:
     void updateBlendState(const BlendDescriptor& descriptor);
 
-    ShaderGL* mShader = nullptr;
+    ProgramGL* mProgram = nullptr;
 };
 
 NS_STITCHES_END

@@ -31,13 +31,15 @@ include_directories(${THIRD_DIR}/gles/include)
 
 file(GLOB_RECURSE RES "${SRC_DIR}/*.cpp" "${SRC_DIR}/*.hpp" "${SRC_DIR}/*.inl")
 
+add_subdirectory(Test)
+
 add_executable(Stitches ${RES} main.cpp)
 
 #GLFW
 add_library(libglfw STATIC IMPORTED)
 set_target_properties(libglfw PROPERTIES IMPORTED_LOCATION ${THIRD_DIR}/glfw/libglfw3.a)
 
-target_link_libraries(Stitches libglfw ${GLES_LIBRARIES})
+target_link_libraries(Stitches libglfw ${GLES_LIBRARIES} ${Test})
 
 configure_file(${GLES_ROOT_DIR}/bin/libGLES_CM.dll ${CMAKE_CURRENT_BINARY_DIR}/libGLES_CM.dll COPYONLY)
 configure_file(${GLES_ROOT_DIR}/bin/libGLESv2.dll ${CMAKE_CURRENT_BINARY_DIR}/libGLESv2.dll COPYONLY)
