@@ -1,8 +1,4 @@
 
-//
-// Created by Murphy on 2020/8/8.
-//
-
 /**
  * RenderState
  * @version 1.0

@@ -9,10 +9,13 @@
  **/
 #pragma once
 
+#include "Stitches.hpp"
+
+NS_STITCHES_BEGIN
 
 class RenderState
 {
 
 };
 
-
+NS_STITCHES_END

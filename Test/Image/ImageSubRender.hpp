@@ -21,6 +21,8 @@ public:
     virtual void Render(const CommandBuffer &commandBuffer) override ;
 
 private:
+    Buffer* mVertexBuffer = nullptr;
+    Buffer* mIndexBuffer = nullptr;
 };
 
 NS_STITCHES_END

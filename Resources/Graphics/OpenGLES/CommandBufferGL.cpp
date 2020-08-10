@@ -73,16 +73,16 @@ void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &desc
 
     if (useColorAttachmentExternal || useDepthAttachmentExternal || useStencilAttachmentExternal)
     {
-        if(mGeneratedFBO == 0)
+        if(this->mGeneratedFBO == 0)
         {
             glGenFramebuffers(1, &mGeneratedFBO);
         }
-        mCurrentFBO = mGeneratedFBO;
+        this->mCurrentFBO = mGeneratedFBO;
         useGeneratedFBO = true;
     }
     else
     {
-        mCurrentFBO = mDefaultFBO;
+        this->mCurrentFBO = mDefaultFBO;
     }
     glBindFramebuffer(GL_FRAMEBUFFER, mCurrentFBO);
 
@@ -95,11 +95,11 @@ void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &desc
                                0);
         CHECK_GL_ERROR_DEBUG();
 
-        mGeneratedFBOBindDepth = true;
+        this->mGeneratedFBOBindDepth = true;
     }
     else
     {
-        if (mGeneratedFBOBindDepth && useGeneratedFBO)
+        if (this->mGeneratedFBOBindDepth && useGeneratedFBO)
         {
             glFramebufferTexture2D(GL_FRAMEBUFFER,
                                    GL_DEPTH_ATTACHMENT,
@@ -108,7 +108,7 @@ void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &desc
                                    0);
             CHECK_GL_ERROR_DEBUG();
 
-            mGeneratedFBOBindDepth = false;
+            this->mGeneratedFBOBindDepth = false;
         }
     }
 
@@ -121,11 +121,11 @@ void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &desc
                                0);
         CHECK_GL_ERROR_DEBUG();
 
-        mGeneratedFBOBindStencil = true;
+        this->mGeneratedFBOBindStencil = true;
     }
     else
     {
-        if (mGeneratedFBOBindStencil && useGeneratedFBO)
+        if (this->mGeneratedFBOBindStencil && useGeneratedFBO)
         {
             glFramebufferTexture2D(GL_FRAMEBUFFER,
                                    GL_STENCIL_ATTACHMENT,
@@ -134,7 +134,7 @@ void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &desc
                                    0);
             CHECK_GL_ERROR_DEBUG();
 
-            mGeneratedFBOBindStencil = false;
+            this->mGeneratedFBOBindStencil = false;
         }
     }
 
@@ -157,11 +157,11 @@ void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &desc
         }
 
         if (useGeneratedFBO)
-            mGeneratedFBOBindColor = true;
+            this->mGeneratedFBOBindColor = true;
     }
     else
     {
-        if (mGeneratedFBOBindColor && useGeneratedFBO)
+        if (this->mGeneratedFBOBindColor && useGeneratedFBO)
         {
             // FIXME: Now only support attaching to attachment 0.
             glFramebufferTexture2D(GL_FRAMEBUFFER,
@@ -170,7 +170,7 @@ void CommandBufferGL::applyRenderPassDescriptor(const RenderPassDescriptor &desc
                                    0,
                                    0);
 
-            mGeneratedFBOBindColor = false;
+            this->mGeneratedFBOBindColor = false;
         }
 
     }
@@ -246,7 +246,7 @@ void CommandBufferGL::setRenderPipeline(RenderPipeline *renderPipeline)
     if (renderPipeline == nullptr)
         return;
 
-    auto* rp = dynamic_cast<RenderPipelineGL*>(renderPipeline);
+    auto* rp = static_cast<RenderPipelineGL*>(renderPipeline);
     this->mRenderPipeline = rp;
 }
 
@@ -277,7 +277,7 @@ void CommandBufferGL::setVertexBuffer(Buffer *buffer)
         return;
     }
     buffer->retain();
-    this->mVertexBuffer = dynamic_cast<BufferGL*>(buffer);
+    this->mVertexBuffer = static_cast<BufferGL*>(buffer);
 }
 
 void CommandBufferGL::setIndexBuffer(Buffer *buffer)
@@ -286,8 +286,8 @@ void CommandBufferGL::setIndexBuffer(Buffer *buffer)
         return;
 
     buffer->retain();
-    SAFE_RELEASE(mIndexBuffer);
-    mIndexBuffer = static_cast<BufferGL*>(buffer);
+    SAFE_RELEASE(this->mIndexBuffer);
+    this->mIndexBuffer = static_cast<BufferGL*>(buffer);
 }
 
 void CommandBufferGL::setLineWidth(float lineWidth)
@@ -313,7 +313,7 @@ CommandBufferGL::drawElements(PrimitiveType primitiveType, IndexFormat indexType
                               std::size_t offset)
 {
     prepareDrawing();
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIndexBuffer->getHandler());
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->mIndexBuffer->getHandler());
     glDrawElements(UtilsGL::toGLPrimitiveType(primitiveType), count, UtilsGL::toGLIndexType(indexType), (GLvoid*)offset);
 }
 
@@ -341,7 +341,7 @@ void CommandBufferGL::captureScreen(std::function<void(const unsigned char *, in
 
 void CommandBufferGL::prepareDrawing()
 {
-    const auto& shader = mRenderPipeline->getShader();
+    const auto& shader = this->mRenderPipeline->getShader();
     glUseProgram(shader->getHandler());
 
     bindVertexBuffer(shader);
@@ -370,12 +370,12 @@ void CommandBufferGL::prepareDrawing()
 
 void CommandBufferGL::bindVertexBuffer(ProgramGL *shader) const
 {
-    auto vertexLayout = mProgramState->getVertexLayout();
+    auto vertexLayout = this->mProgramState->getVertexLayout();
 
     if (!vertexLayout->isValid())
         return;
 
-    glBindBuffer(GL_ARRAY_BUFFER, mVertexBuffer->getHandler());
+    glBindBuffer(GL_ARRAY_BUFFER, this->mVertexBuffer->getHandler());
 
     const auto& attributes = vertexLayout->getAttributes();
     for (const auto& attributeInfo : attributes)

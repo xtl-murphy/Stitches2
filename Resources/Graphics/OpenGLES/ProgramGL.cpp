@@ -17,8 +17,8 @@ NS_STITCHES_BEGIN
 ProgramGL::ProgramGL(const String &vertexShader, const String &fragmentShader)
 : Program(vertexShader, fragmentShader)
 {
-    mVertexShaderModule = dynamic_cast<ShaderModuleGL*>(ShaderCache::newVertexShaderModule(vertexShader));
-    mFragmentShaderModule = dynamic_cast<ShaderModuleGL*>(ShaderCache::newFragmentShaderModule(fragmentShader));
+    mVertexShaderModule = static_cast<ShaderModuleGL*>(ShaderCache::newVertexShaderModule(vertexShader));
+    mFragmentShaderModule = static_cast<ShaderModuleGL*>(ShaderCache::newFragmentShaderModule(fragmentShader));
 
     SAFE_RETAIN(mVertexShaderModule);
     SAFE_RETAIN(mFragmentShaderModule);
