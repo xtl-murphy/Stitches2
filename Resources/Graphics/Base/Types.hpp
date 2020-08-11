@@ -382,5 +382,20 @@ struct BlendDescriptor
     BlendFactor destinationAlphaBlendFactor = BlendFactor::ZERO;
 };
 
+enum class TextHAlignment
+{
+    LEFT,
+    CENTER,
+    RIGHT
+};
+
+enum class TextVAlignment
+{
+    TOP,
+    CENTER,
+    BOTTOM
+};
+
+
 NS_STITCHES_END
 
