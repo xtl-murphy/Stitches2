@@ -88,7 +88,7 @@ Texture2D::Texture2D()
 {
     TextureDescriptor textureDescriptor;
     textureDescriptor.textureFormat = PixelFormat::NONE;
-//    _texture = static_cast<Texture2DBackend*>(Device::getInstance()->newTexture(textureDescriptor));
+//    _texture = static_cast<Texture2DBackend*>(getInstance()->newTexture(textureDescriptor));
 }
 
 Texture2D::~Texture2D()
@@ -167,128 +167,114 @@ bool Texture2D::hasPremultipliedAlpha() const
     return _hasPremultipliedAlpha;
 }
 
-bool Texture2D::initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, const Size& /*contentSize*/, bool preMultipliedAlpha)
-{
-//    CCASSERT(dataLen>0 && pixelsWide>0 && pixelsHigh>0, "Invalid size");
+//bool Texture2D::initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, const Vector2i& /*contentSize*/, bool preMultipliedAlpha)
+//{
+////    CCASSERT(dataLen>0 && pixelsWide>0 && pixelsHigh>0, "Invalid size");
+//
+//    //if data has no mipmaps, we will consider it has only one mipmap
+//    MipmapInfo mipmap;
+//    mipmap.address = (unsigned char*)data;
+//    mipmap.len = static_cast<int>(dataLen);
+//    return initWithMipmaps(&mipmap, 1, pixelFormat, renderFormat, pixelsWide, pixelsHigh, preMultipliedAlpha);
+//}
 
-    //if data has no mipmaps, we will consider it has only one mipmap
-    MipmapInfo mipmap;
-    mipmap.address = (unsigned char*)data;
-    mipmap.len = static_cast<int>(dataLen);
-    return initWithMipmaps(&mipmap, 1, pixelFormat, renderFormat, pixelsWide, pixelsHigh, preMultipliedAlpha);
-}
-
-bool Texture2D::initWithMipmaps(MipmapInfo* mipmaps, int mipmapsNum, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, bool preMultipliedAlpha)
-{
-    //the pixelFormat must be a certain value
-//    CCASSERT(pixelFormat != PixelFormat::NONE && pixelFormat != PixelFormat::AUTO, "the \"pixelFormat\" param must be a certain value!");
-//    CCASSERT(pixelsWide > 0 && pixelsHigh > 0, "Invalid size");
-
-    if (mipmapsNum <= 0)
-    {
-//        CCLOG("cocos2d: WARNING: mipmap number is less than 1");
-        return false;
-    }
-
-
-    auto formatItr = _pixelFormatInfoTables.find(pixelFormat);
-    if (formatItr == _pixelFormatInfoTables.end())
-    {
-        LOGE("", "cocos2d: WARNING: unsupported pixelformat: %lx", (unsigned long)pixelFormat);
-
-        return false;
-    }
-
-    const PixelFormatInfo& info = formatItr->second;
-
-    if (info.compressed && !Configuration::getInstance()->supportsPVRTC()
-        && !Configuration::getInstance()->supportsETC()
-        && !Configuration::getInstance()->supportsS3TC()
-        && !Configuration::getInstance()->supportsATITC())
-    {
-        LOGE("", "cocos2d: WARNING: PVRTC/ETC images are not supported");
-        return false;
-    }
-
-#if CC_ENABLE_CACHE_TEXTURE_DATA
-    VolatileTextureMgr::findVolotileTexture(this);
-#endif
-
-    TextureDescriptor textureDescriptor;
-    textureDescriptor.width = pixelsWide;
-    textureDescriptor.height = pixelsHigh;
-    textureDescriptor.samplerDescriptor.magFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR : SamplerFilter::NEAREST;
-    if (mipmapsNum == 1)
-    {
-        textureDescriptor.samplerDescriptor.minFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR : SamplerFilter::NEAREST;
-    }
-    else
-    {
-        textureDescriptor.samplerDescriptor.minFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR_MIPMAP_NEAREST : SamplerFilter::NEAREST_MIPMAP_NEAREST;
-    }
-
-    int width = pixelsWide;
-    int height = pixelsHigh;
-    PixelFormat oriPixelFormat = pixelFormat;
-    for (int i = 0; i < mipmapsNum; ++i)
-    {
-        unsigned char *data = mipmaps[i].address;
-        size_t dataLen = mipmaps[i].len;
-        unsigned char *outData = data;
-        size_t outDataLen = dataLen;
-
-        if(renderFormat != oriPixelFormat && !info.compressed) //need conversion
-        {
-            auto convertedFormat = PixelFormatUtils::convertDataToFormat(data, dataLen, oriPixelFormat, renderFormat, &outData, &outDataLen);
-#ifdef CC_USE_METAL
-            CCASSERT(convertedFormat == renderFormat, "PixelFormat convert failed!");
-#endif
-            if(convertedFormat == renderFormat) pixelFormat = renderFormat;
-        }
-
-        textureDescriptor.textureFormat = pixelFormat;
-//        CCASSERT(textureDescriptor.textureFormat != PixelFormat::NONE, "PixelFormat should not be NONE");
-
-        if(_texture->getTextureFormat() != textureDescriptor.textureFormat)
-            _texture->updateTextureDescriptor(textureDescriptor);
-
-        if(info.compressed)
-        {
-            _texture->updateCompressedData(data, width, height, dataLen, i);
-        }
-        else
-        {
-            _texture->updateData(outData, width, height, i);
-        }
-
-        if(outData && outData != data && outDataLen > 0)
-        {
-            free(outData);
-            outData = nullptr;
-            outDataLen = 0;
-        }
-
-        if (i > 0 && (width != height || ccNextPOT(width) != width ))
-        {
-            CCLOG("cocos2d: Texture2D. WARNING. Mipmap level %u is not squared. Texture won't render correctly. width=%d != height=%d", i, width, height);
-        }
-
-        width = MAX(width >> 1, 1);
-        height = MAX(height >> 1, 1);
-    }
-
-    _contentSize = Vector2i((float)pixelsWide, (float)pixelsHigh);
-    _pixelsWide = pixelsWide;
-    _pixelsHigh = pixelsHigh;
-    _pixelFormat = pixelFormat;
-    _maxS = 1;
-    _maxT = 1;
-
-    _hasPremultipliedAlpha = preMultipliedAlpha;
-    _hasMipmaps = mipmapsNum > 1;
-
-    return true;
-}
+//bool Texture2D::initWithMipmaps(MipmapInfo* mipmaps, int mipmapsNum, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, bool preMultipliedAlpha)
+//{
+//    //the pixelFormat must be a certain value
+////    CCASSERT(pixelFormat != PixelFormat::NONE && pixelFormat != PixelFormat::AUTO, "the \"pixelFormat\" param must be a certain value!");
+////    CCASSERT(pixelsWide > 0 && pixelsHigh > 0, "Invalid size");
+//
+//    if (mipmapsNum <= 0)
+//    {
+////        CCLOG("WARNING: mipmap number is less than 1");
+//        return false;
+//    }
+//
+//
+//    auto formatItr = _pixelFormatInfoTables.find(pixelFormat);
+//    if (formatItr == _pixelFormatInfoTables.end())
+//    {
+//        LOGE("", "WARNING: unsupported pixelformat: %lx", (unsigned long)pixelFormat);
+//
+//        return false;
+//    }
+//
+//    const PixelFormatInfo& info = formatItr->second;
+//
+//
+//    TextureDescriptor textureDescriptor;
+//    textureDescriptor.width = pixelsWide;
+//    textureDescriptor.height = pixelsHigh;
+//    textureDescriptor.samplerDescriptor.magFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR : SamplerFilter::NEAREST;
+//    if (mipmapsNum == 1)
+//    {
+//        textureDescriptor.samplerDescriptor.minFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR : SamplerFilter::NEAREST;
+//    }
+//    else
+//    {
+//        textureDescriptor.samplerDescriptor.minFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR_MIPMAP_NEAREST : SamplerFilter::NEAREST_MIPMAP_NEAREST;
+//    }
+//
+//    int width = pixelsWide;
+//    int height = pixelsHigh;
+//    PixelFormat oriPixelFormat = pixelFormat;
+//    for (int i = 0; i < mipmapsNum; ++i)
+//    {
+//        unsigned char *data = mipmaps[i].address;
+//        size_t dataLen = mipmaps[i].len;
+//        unsigned char *outData = data;
+//        size_t outDataLen = dataLen;
+//
+//        if(renderFormat != oriPixelFormat && !info.compressed) //need conversion
+//        {
+//            auto convertedFormat = PixelFormatUtils::convertDataToFormat(data, dataLen, oriPixelFormat, renderFormat, &outData, &outDataLen);
+//
+//            if(convertedFormat == renderFormat) pixelFormat = renderFormat;
+//        }
+//
+//        textureDescriptor.textureFormat = pixelFormat;
+////        CCASSERT(textureDescriptor.textureFormat != PixelFormat::NONE, "PixelFormat should not be NONE");
+//
+//        if(_texture->getTextureFormat() != textureDescriptor.textureFormat)
+//            _texture->updateTextureDescriptor(textureDescriptor);
+//
+//        if(info.compressed)
+//        {
+//            _texture->updateCompressedData(data, width, height, dataLen, i);
+//        }
+//        else
+//        {
+//            _texture->updateData(outData, width, height, i);
+//        }
+//
+//        if(outData && outData != data && outDataLen > 0)
+//        {
+//            free(outData);
+//            outData = nullptr;
+//            outDataLen = 0;
+//        }
+//
+//        if (i > 0 && (width != height || ccNextPOT(width) != width ))
+//        {
+//            LOGE("Texture2D", "Texture2D. WARNING. Mipmap level %u is not squared. Texture won't render correctly. width=%d != height=%d", i, width, height);
+//        }
+//
+//        width = MAX(width >> 1, 1);
+//        height = MAX(height >> 1, 1);
+//    }
+//
+//    _contentSize = Vector2i((float)pixelsWide, (float)pixelsHigh);
+//    _pixelsWide = pixelsWide;
+//    _pixelsHigh = pixelsHigh;
+//    _pixelFormat = pixelFormat;
+//    _maxS = 1;
+//    _maxT = 1;
+//
+//    _hasPremultipliedAlpha = preMultipliedAlpha;
+//    _hasMipmaps = mipmapsNum > 1;
+//
+//    return true;
+//}
 
 bool Texture2D::updateWithData(void *data,int offsetX,int offsetY,int width,int height)
 {
@@ -302,176 +288,169 @@ bool Texture2D::updateWithData(void *data,int offsetX,int offsetY,int width,int 
 }
 
 // implementation Texture2D (Image)
-bool Texture2D::initWithImage(Image *image)
-{
-    return initWithImage(image, g_defaultAlphaPixelFormat);
-}
-
-bool Texture2D::initWithImage(Image *image, PixelFormat format)
-{
-    if (image == nullptr)
-    {
-        LOGE("", "cocos2d: Texture2D. Can't create Texture. UIImage is nil");
-        return false;
-    }
-
-    int imageWidth = image->getWidth();
-    int imageHeight = image->getHeight();
-    this->_filePath = image->getFilePath();
-    Configuration *conf = Configuration::getInstance();
-
-    int maxTextureSize = conf->getMaxTextureSize();
-    if (imageWidth > maxTextureSize || imageHeight > maxTextureSize)
-    {
-        LOGE("", "cocos2d: WARNING: Image (%u x %u) is bigger than the supported %u x %u", imageWidth, imageHeight, maxTextureSize, maxTextureSize);
-        return false;
-    }
-
-    unsigned char*   tempData = image->getData();
-    Vector2i         imageSize = Vector2i((float)imageWidth, (float)imageHeight);
-    PixelFormat      renderFormat = ((PixelFormat::NONE == format) || (PixelFormat::AUTO == format)) ? image->getPixelFormat() : format;
-    PixelFormat      imagePixelFormat = image->getPixelFormat();
-    size_t           tempDataLen = image->getDataLen();
-
-
-
-    if (image->getNumberOfMipmaps() > 1)
-    {
-        if (renderFormat != image->getPixelFormat())
-        {
-            LOGE("", "cocos2d: WARNING: This image has more than 1 mipmaps and we will not convert the data format");
-        }
-
-        //pixel format of data is not converted, renderFormat can be different from pixelFormat
-        //it will be done later
-        initWithMipmaps(image->getMipmaps(), image->getNumberOfMipmaps(), image->getPixelFormat(), renderFormat, imageWidth, imageHeight, image->hasPremultipliedAlpha());
-
-        return true;
-    }
-    else if (image->isCompressed())
-    {
-        if (renderFormat != image->getPixelFormat())
-        {
-            LOGE("", "cocos2d: WARNING: This image is compressed and we can't convert it for now");
-        }
-
-        initWithData(tempData, tempDataLen, image->getPixelFormat(), imageWidth, imageHeight, imageSize, image->hasPremultipliedAlpha());
-
-        return true;
-    }
-    else
-    {
-        //after conversion, renderFormat == pixelFormat of data
-        initWithData(tempData, tempDataLen, imagePixelFormat, renderFormat, imageWidth, imageHeight, imageSize, image->hasPremultipliedAlpha());
-
-        return true;
-    }
-}
+//bool Texture2D::initWithImage(Image *image)
+//{
+//    return initWithImage(image, g_defaultAlphaPixelFormat);
+//}
+//
+//bool Texture2D::initWithImage(Image *image, PixelFormat format)
+//{
+//    if (image == nullptr)
+//    {
+//        LOGE("", "Texture2D. Can't create Texture. UIImage is nil");
+//        return false;
+//    }
+//
+//    int imageWidth = image->getWidth();
+//    int imageHeight = image->getHeight();
+//    this->_filePath = image->getFilePath();
+//    Configuration *conf = Configuration::getInstance();
+//
+//    int maxTextureSize = conf->getMaxTextureSize();
+//    if (imageWidth > maxTextureSize || imageHeight > maxTextureSize)
+//    {
+//        LOGE("", "WARNING: Image (%u x %u) is bigger than the supported %u x %u", imageWidth, imageHeight, maxTextureSize, maxTextureSize);
+//        return false;
+//    }
+//
+//    unsigned char*   tempData = image->getData();
+//    Vector2i         imageSize = Vector2i((float)imageWidth, (float)imageHeight);
+//    PixelFormat      renderFormat = ((PixelFormat::NONE == format) || (PixelFormat::AUTO == format)) ? image->getPixelFormat() : format;
+//    PixelFormat      imagePixelFormat = image->getPixelFormat();
+//    size_t           tempDataLen = image->getDataLen();
+//
+//
+//
+//    if (image->getNumberOfMipmaps() > 1)
+//    {
+//        if (renderFormat != image->getPixelFormat())
+//        {
+//            LOGE("", "WARNING: This image has more than 1 mipmaps and we will not convert the data format");
+//        }
+//
+//        //pixel format of data is not converted, renderFormat can be different from pixelFormat
+//        //it will be done later
+//        initWithMipmaps(image->getMipmaps(), image->getNumberOfMipmaps(), image->getPixelFormat(), renderFormat, imageWidth, imageHeight, image->hasPremultipliedAlpha());
+//
+//        return true;
+//    }
+//    else if (image->isCompressed())
+//    {
+//        if (renderFormat != image->getPixelFormat())
+//        {
+//            LOGE("", "WARNING: This image is compressed and we can't convert it for now");
+//        }
+//
+//        initWithData(tempData, tempDataLen, image->getPixelFormat(), imageWidth, imageHeight, imageSize, image->hasPremultipliedAlpha());
+//
+//        return true;
+//    }
+//    else
+//    {
+//        //after conversion, renderFormat == pixelFormat of data
+//        initWithData(tempData, tempDataLen, imagePixelFormat, renderFormat, imageWidth, imageHeight, imageSize, image->hasPremultipliedAlpha());
+//
+//        return true;
+//    }
+//}
 
 // implementation Texture2D (Text)
-bool Texture2D::initWithString(const char *text, const std::string& fontName, float fontSize, const Size& dimensions/* = Size(0, 0)*/, TextHAlignment hAlignment/* =  TextHAlignment::CENTER */, TextVAlignment vAlignment/* =  TextVAlignment::TOP */, bool enableWrap /* = false */, int overflow /* = 0 */)
-{
-    FontDefinition tempDef;
+//bool Texture2D::initWithString(const char *text, const std::string& fontName, float fontSize, const Vector2i& dimensions/* = Size(0, 0)*/, TextHAlignment hAlignment/* =  TextHAlignment::CENTER */, TextVAlignment vAlignment/* =  TextVAlignment::TOP */, bool enableWrap /* = false */, int overflow /* = 0 */)
+//{
+//    FontDefinition tempDef;
+//
+//    tempDef._shadow._shadowEnabled = false;
+//    tempDef._stroke._strokeEnabled = false;
+//
+//
+//    tempDef._fontName      = fontName;
+//    tempDef._fontSize      = fontSize;
+//    tempDef._dimensions    = dimensions;
+//    tempDef._alignment     = hAlignment;
+//    tempDef._vertAlignment = vAlignment;
+//    tempDef._fontFillColor = Color3B::WHITE;
+//    tempDef._enableWrap    = enableWrap;
+//    tempDef._overflow      = overflow;
+//
+//    return initWithString(text, tempDef);
+//}
 
-    tempDef._shadow._shadowEnabled = false;
-    tempDef._stroke._strokeEnabled = false;
-
-
-    tempDef._fontName      = fontName;
-    tempDef._fontSize      = fontSize;
-    tempDef._dimensions    = dimensions;
-    tempDef._alignment     = hAlignment;
-    tempDef._vertAlignment = vAlignment;
-    tempDef._fontFillColor = Color3B::WHITE;
-    tempDef._enableWrap    = enableWrap;
-    tempDef._overflow      = overflow;
-
-    return initWithString(text, tempDef);
-}
-
-bool Texture2D::initWithString(const char *text, const FontDefinition& textDefinition)
-{
-    if(!text || 0 == strlen(text))
-    {
-        return false;
-    }
-
-#if CC_ENABLE_CACHE_TEXTURE_DATA
-    // cache the texture data
-VolatileTextureMgr::addStringTexture(this, text, textDefinition);
-#endif
-
-    bool ret = false;
-    Device::TextAlign align;
-
-    if (TextVAlignment::TOP == textDefinition._vertAlignment)
-    {
-        align = (TextHAlignment::CENTER == textDefinition._alignment) ? Device::TextAlign::TOP
-                                                                      : (TextHAlignment::LEFT == textDefinition._alignment) ? Device::TextAlign::TOP_LEFT : Device::TextAlign::TOP_RIGHT;
-    }
-    else if (TextVAlignment::CENTER == textDefinition._vertAlignment)
-    {
-        align = (TextHAlignment::CENTER == textDefinition._alignment) ? Device::TextAlign::CENTER
-                                                                      : (TextHAlignment::LEFT == textDefinition._alignment) ? Device::TextAlign::LEFT : Device::TextAlign::RIGHT;
-    }
-    else if (TextVAlignment::BOTTOM == textDefinition._vertAlignment)
-    {
-        align = (TextHAlignment::CENTER == textDefinition._alignment) ? Device::TextAlign::BOTTOM
-                                                                      : (TextHAlignment::LEFT == textDefinition._alignment) ? Device::TextAlign::BOTTOM_LEFT : Device::TextAlign::BOTTOM_RIGHT;
-    }
-    else
-    {
-        CCASSERT(false, "Not supported alignment format!");
-        return false;
-    }
-
-#if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID) && (CC_TARGET_PLATFORM != CC_PLATFORM_IOS)
-    CCASSERT(textDefinition._stroke._strokeEnabled == false, "Currently stroke only supported on iOS and Android!");
-#endif
-
-    PixelFormat      pixelFormat = g_defaultAlphaPixelFormat;
-    unsigned char* outTempData = nullptr;
-    size_t outTempDataLen = 0;
-
-    int imageWidth;
-    int imageHeight;
-    auto textDef = textDefinition;
-    auto contentScaleFactor = CC_CONTENT_SCALE_FACTOR();
-    textDef._fontSize *= contentScaleFactor;
-    textDef._dimensions.width *= contentScaleFactor;
-    textDef._dimensions.height *= contentScaleFactor;
-    textDef._stroke._strokeSize *= contentScaleFactor;
-    textDef._shadow._shadowEnabled = false;
-
-    bool hasPremultipliedAlpha;
-    Data outData = Device::getTextureDataForText(text, textDef, align, imageWidth, imageHeight, hasPremultipliedAlpha);
-    if(outData.isNull())
-    {
-        return false;
-    }
-
-    Size  imageSize = Size((float)imageWidth, (float)imageHeight);
-    pixelFormat = PixelFormatUtils::convertDataToFormat(outData.getBytes(), imageWidth*imageHeight*4, PixelFormat::RGBA8888, pixelFormat, &outTempData, &outTempDataLen);
-
-    ret = initWithData(outTempData, outTempDataLen, pixelFormat, imageWidth, imageHeight, imageSize);
-
-    if (outTempData != nullptr && outTempData != outData.getBytes())
-    {
-        free(outTempData);
-    }
-    _hasPremultipliedAlpha = hasPremultipliedAlpha;
-
-    return ret;
-}
+//bool Texture2D::initWithString(const char *text, const FontDefinition& textDefinition)
+//{
+//    if(!text || 0 == strlen(text))
+//    {
+//        return false;
+//    }
+//
+//
+//    bool ret = false;
+//    TextAlign align;
+//
+//    if (TextVAlignment::TOP == textDefinition._vertAlignment)
+//    {
+//        align = (TextHAlignment::CENTER == textDefinition._alignment) ? TextAlign::TOP
+//                                                                      : (TextHAlignment::LEFT == textDefinition._alignment) ? TextAlign::TOP_LEFT : TextAlign::TOP_RIGHT;
+//    }
+//    else if (TextVAlignment::CENTER == textDefinition._vertAlignment)
+//    {
+//        align = (TextHAlignment::CENTER == textDefinition._alignment) ? TextAlign::CENTER
+//                                                                      : (TextHAlignment::LEFT == textDefinition._alignment) ? TextAlign::LEFT : TextAlign::RIGHT;
+//    }
+//    else if (TextVAlignment::BOTTOM == textDefinition._vertAlignment)
+//    {
+//        align = (TextHAlignment::CENTER == textDefinition._alignment) ? TextAlign::BOTTOM
+//                                                                      : (TextHAlignment::LEFT == textDefinition._alignment) ? TextAlign::BOTTOM_LEFT : TextAlign::BOTTOM_RIGHT;
+//    }
+//    else
+//    {
+////        CCASSERT(false, "Not supported alignment format!");
+//        return false;
+//    }
+//
+//
+//    PixelFormat      pixelFormat = g_defaultAlphaPixelFormat;
+//    unsigned char* outTempData = nullptr;
+//    size_t outTempDataLen = 0;
+//
+//    int imageWidth;
+//    int imageHeight;
+//    auto textDef = textDefinition;
+//    auto contentScaleFactor = CC_CONTENT_SCALE_FACTOR();
+//    textDef._fontSize *= contentScaleFactor;
+//    textDef._dimensions.width *= contentScaleFactor;
+//    textDef._dimensions.height *= contentScaleFactor;
+//    textDef._stroke._strokeSize *= contentScaleFactor;
+//    textDef._shadow._shadowEnabled = false;
+//
+//    bool hasPremultipliedAlpha;
+//    Data outData = getTextureDataForText(text, textDef, align, imageWidth, imageHeight, hasPremultipliedAlpha);
+//    if(outData.isNull())
+//    {
+//        return false;
+//    }
+//
+//    Size  imageSize = Size((float)imageWidth, (float)imageHeight);
+//    pixelFormat = PixelFormatUtils::convertDataToFormat(outData.getBytes(), imageWidth*imageHeight*4, PixelFormat::RGBA8888, pixelFormat, &outTempData, &outTempDataLen);
+//
+//    ret = initWithData(outTempData, outTempDataLen, pixelFormat, imageWidth, imageHeight, imageSize);
+//
+//    if (outTempData != nullptr && outTempData != outData.getBytes())
+//    {
+//        free(outTempData);
+//    }
+//    _hasPremultipliedAlpha = hasPremultipliedAlpha;
+//
+//    return ret;
+//}
 
 bool Texture2D::initWithBackendTexture(TextureBackend *texture, bool preMultipliedAlpha)
 {
-    CC_SAFE_RETAIN(texture);
-    CC_SAFE_RELEASE(_texture);
+    SAFE_RETAIN(texture);
+    SAFE_RELEASE(_texture);
     _texture = dynamic_cast<Texture2DBackend*>(texture);
-    CC_ASSERT(_texture);
-    _pixelsWide = _contentSize.width = _texture->getWidth();
-    _pixelsHigh = _contentSize.height = _texture->getHeight();
+//    CC_ASSERT(_texture);
+    _pixelsWide = _contentSize.x = _texture->getWidth();
+    _pixelsHigh = _contentSize.y = _texture->getHeight();
     _hasPremultipliedAlpha = preMultipliedAlpha;
 
     return true;
@@ -653,10 +632,10 @@ const Texture2D::PixelFormatInfoMap& Texture2D::getPixelFormatInfoMap()
 //    }
 //}
 
-bool Texture2D::isContain9PatchInfo()const
-{
-    return nullptr != _ninePatchInfo;
-}
+//bool Texture2D::isContain9PatchInfo()const
+//{
+//    return nullptr != _ninePatchInfo;
+//}
 
 //const Rect& Texture2D::getSpriteFrameCapInset( cocos2d::SpriteFrame *spriteFrame )const
 //{
@@ -716,7 +695,7 @@ void Texture2D::setTexParameters(const Texture2D::TexParams &desc)
 
 void Texture2D::generateMipmap()
 {
-    CCASSERT(_pixelsWide == ccNextPOT(_pixelsWide) && _pixelsHigh == ccNextPOT(_pixelsHigh), "Mipmap texture only works in POT textures");
+//    CCASSERT(_pixelsWide == ccNextPOT(_pixelsWide) && _pixelsHigh == ccNextPOT(_pixelsHigh), "Mipmap texture only works in POT textures");
 
     _texture->generateMipmaps();
 }
@@ -772,33 +751,39 @@ void Texture2D::initProgram()
     _programState->setTexture(_textureLocation, 0, _texture);
 }
 
-void Texture2D::drawAtPoint(const Vec2 &point, float globalZOrder)
+void Texture2D::drawAtPoint(const Vector2f &point, float globalZOrder)
 {
     float width = (float)_pixelsWide * _maxS;
     float height = (float)_pixelsHigh * _maxT;
-    Rect rect = { point.x, point.y, width, height };
+//    Rect rect = { point.x, point.y, width, height };
+    Rect rect;
+    rect.origin.x = point.x;
+    rect.origin.y = point.y;
+    rect.size.x = width;
+    rect.size.y = height;
     drawInRect(rect, globalZOrder);
 }
 
-//void Texture2D::drawInRect(const Rect& rect, float globalZOrder)
-//{
-//    initProgram();
-//    _customCommand.init(globalZOrder);
+void Texture2D::drawInRect(const Rect& rect, float globalZOrder)
+{
+    initProgram();
+    _customCommand.init(globalZOrder);
 //    auto director = Director::getInstance();
 //    const auto& modelView = director->getMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
 //    const auto& projection = director->getMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
-//
-//    Mat4 matrixMVP = projection * modelView;
-//
-//    float vertexData[] = {
-//            rect.origin.x,                      rect.origin.y,                      0.0f,   _maxT,
-//            rect.size.width + rect.origin.x,    rect.origin.y,                      _maxS,  _maxT,
-//            rect.origin.x,                      rect.size.height  + rect.origin.y,  0.0f,   0.0f,
-//            rect.size.width + rect.origin.x,    rect.size.height  + rect.origin.y,  _maxS,  0.0f };
-//
-//    _programState->setUniform(_mvpMatrixLocation, matrixMVP.m, sizeof(matrixMVP.m));
-//    _customCommand.updateVertexBuffer(vertexData, sizeof(vertexData));
+
+//    Matrix4 matrixMVP = projection * modelView;
+    Matrix4 matrixMVP;
+
+    float vertexData[] = {
+            rect.origin.x,                      rect.origin.y,                      0.0f,   _maxT,
+            rect.size.x + rect.origin.x,    rect.origin.y,                      _maxS,  _maxT,
+            rect.origin.x,                      rect.size.y  + rect.origin.y,  0.0f,   0.0f,
+            rect.size.x + rect.origin.x,    rect.size.y  + rect.origin.y,  _maxS,  0.0f };
+
+    _programState->setUniform(_mvpMatrixLocation, matrixMVP.rows, sizeof(matrixMVP.rows));
+    _customCommand.updateVertexBuffer(vertexData, sizeof(vertexData));
 //    Director::getInstance()->getRenderer()->addCommand(&_customCommand);
-//}
+}
 
 NS_STITCHES_END

@@ -40,12 +40,12 @@ std::basic_string<_Elem> Node::WriteString(const Format &format) const {
 template<typename T>
 T Node::GetName() const {
 	// Only supports basic string to type conversions.
-	return String::From<T>(name);
+	return SString::From<T>(name);
 }
 
 template<typename T>
 void Node::SetName(const T &value) {
-	name = String::To<T>(value);
+	name = SString::To<T>(value);
 }
 
 template<typename T>
@@ -175,25 +175,25 @@ Node &operator<<(Node &node, const std::shared_ptr<T> &object) {
 }
 
 inline const Node &operator>>(const Node &node, bool &object) {
-	object = String::From<bool>(node.GetValue());
+	object = SString::From<bool>(node.GetValue());
 	return node;
 }
 
 inline Node &operator<<(Node &node, bool object) {
-	node.SetValue(String::To(object));
+	node.SetValue(SString::To(object));
 	node.SetType(Node::Type::Boolean);
 	return node;
 }
 
 template<typename T, std::enable_if_t<std::is_arithmetic_v<T> || std::is_enum_v<T>, int> = 0>
 const Node &operator>>(const Node &node, T &object) {
-	object = String::From<T>(node.GetValue());
+	object = SString::From<T>(node.GetValue());
 	return node;
 }
 
 template<typename T, std::enable_if_t<std::is_arithmetic_v<T> || std::is_enum_v<T>, int> = 0>
 Node &operator<<(Node &node, T object) {
-	node.SetValue(String::To(object));
+	node.SetValue(SString::To(object));
 	node.SetType(std::is_floating_point_v<T> ? Node::Type::Decimal : Node::Type::Integer);
 	return node;
 }
@@ -250,7 +250,7 @@ const Node &operator>>(const Node &node, std::pair<T, K> &pair) {
 
 template<typename T, typename K>
 Node &operator<<(Node &node, const std::pair<T, K> &pair) {
-	node.SetName(String::To(pair.first));
+	node.SetName(SString::To(pair.first));
 	node << pair.second;
 	return node;
 }

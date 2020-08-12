@@ -9,6 +9,7 @@
 #pragma once
 
 #include <Graphics/Image/Image.hpp>
+#include <Graphics/Command/CustomCommand.hpp>
 #include "Stitches.hpp"
 #include "Graphics/Base/Texture.hpp"
 #include "Graphics/Base/ProgramState.hpp"
@@ -92,7 +93,7 @@ public:
      * @js NA
      * @lua NA
      */
-    bool initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, int pixelsWide, int pixelsHigh, const Vector2i& contentSize, bool preMultipliedAlpha = false) { return initWithData(data, dataLen, pixelFormat, pixelFormat, pixelsWide, pixelsHigh, contentSize, preMultipliedAlpha);}
+//    bool initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, int pixelsWide, int pixelsHigh, const Vector2i& contentSize, bool preMultipliedAlpha = false) { return initWithData(data, dataLen, pixelFormat, pixelFormat, pixelsWide, pixelsHigh, contentSize, preMultipliedAlpha);}
 
     /** Initializes with a texture2d with data.
 
@@ -107,7 +108,7 @@ public:
      * @js NA
      * @lua NA
      */
-    bool initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, const Vector2i& contentSize, bool preMultipliedAlpha = false);
+//    bool initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, const Vector2i& contentSize, bool preMultipliedAlpha = false);
 
     /** Initializes with mipmaps.
 
@@ -118,7 +119,7 @@ public:
      @param pixelsHigh The image height.
      @param preMultipliedAlpha The texture has premultiplied alpha
      */
-    bool initWithMipmaps(MipmapInfo* mipmaps, int mipmapsNum, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, bool preMultipliedAlpha = false);
+//    bool initWithMipmaps(MipmapInfo* mipmaps, int mipmapsNum, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, bool preMultipliedAlpha = false);
 
     /** Update with texture data.
 
@@ -136,7 +137,7 @@ public:
     /** Draws a texture at a given point. */
     void drawAtPoint(const Vector2f & point, float globalZOrder);
     /** Draws a texture inside a rect.*/
-//    void drawInRect(const Rect& rect, float globalZOrder);
+    void drawInRect(const Rect& rect, float globalZOrder);
 
     /**
     Extensions to make it easy to create a Texture2D object from an image file.
@@ -148,7 +149,7 @@ public:
     NOTE: It will not convert the pvr image file.
     @param image An UIImage object.
     */
-    bool initWithImage(Image * image);
+//    bool initWithImage(Image * image);
 
     /**
     Initializes a texture from a UIImage object.
@@ -158,7 +159,7 @@ public:
     @param image An UIImage object.
     @param format Texture pixel formats.
     **/
-    bool initWithImage(Image * image, PixelFormat format);
+//    bool initWithImage(Image * image, PixelFormat format);
 
     /** Initializes a texture from a string with dimensions, alignment, font name and font size.
 
@@ -171,7 +172,7 @@ public:
      @param enableWrap Whether enable text wrap or not.
      @param overflow Whether shrink font size when content larger than the dimensions.
      */
-    bool initWithString(const char *text,  const std::string &fontName, float fontSize, const Vector2i& dimensions = Vector2i(0, 0), TextHAlignment hAlignment = TextHAlignment::CENTER, TextVAlignment vAlignment = TextVAlignment::TOP, bool enableWrap = true, int overflow = 0);
+//    bool initWithString(const char *text,  const std::string &fontName, float fontSize, const Vector2i& dimensions = Vector2i(0, 0), TextHAlignment hAlignment = TextHAlignment::CENTER, TextVAlignment vAlignment = TextVAlignment::TOP, bool enableWrap = true, int overflow = 0);
 
     /** Initializes a texture from a string using a text definition.
 
@@ -290,7 +291,7 @@ private:
      *
      * @return True is Texture contains a 9-patch info, false otherwise.
      */
-    bool isContain9PatchInfo()const;
+//    bool isContain9PatchInfo()const;
 
     /**
      * Get spriteFrame capInset, If spriteFrame can't be found in 9-patch info map,
@@ -363,7 +364,7 @@ protected:
     ProgramState* _programState = nullptr;
     UniformLocation _mvpMatrixLocation;
     UniformLocation _textureLocation;
-//    CustomCommand _customCommand;
+    CustomCommand _customCommand;
 
     bool _isRenderTarget = false;
 };

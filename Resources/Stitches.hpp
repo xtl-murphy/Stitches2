@@ -38,8 +38,6 @@
 #include <filesystem>
 
 
-#include "Utils/Ref.hpp"
-
 #define LOG_TURN_ON
 
 #ifdef _WIN32
@@ -104,3 +102,6 @@ typedef std::string String;
 
 typedef uint32_t uint32;
 typedef int32_t  int32;
+
+
+#include "Utils/Ref.hpp"

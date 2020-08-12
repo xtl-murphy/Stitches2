@@ -46,21 +46,21 @@ bool ShaderCache::init()
     return true;
 }
 
-ShaderModule* ShaderCache::newVertexShaderModule(const std::string& shaderSource)
+ShaderModule* ShaderCache::newVertexShaderModule(const String& shaderSource)
 {
     auto vertexShaderModule = newShaderModule(ShaderStage::VERTEX, shaderSource);
     return vertexShaderModule;
 }
 
-ShaderModule* ShaderCache::newFragmentShaderModule(const std::string& shaderSource)
+ShaderModule* ShaderCache::newFragmentShaderModule(const String& shaderSource)
 {
     auto fragmentShaderModule = newShaderModule(ShaderStage::FRAGMENT, shaderSource);
     return fragmentShaderModule;
 }
 
-ShaderModule* ShaderCache::newShaderModule(ShaderStage stage, const std::string& shaderSource)
+ShaderModule* ShaderCache::newShaderModule(ShaderStage stage, const String& shaderSource)
 {
-    std::size_t key = std::hash<std::string>{}(shaderSource);
+    std::size_t key = std::hash<String>{}(shaderSource);
     auto iter = _cachedShaders.find(key);
     if (_cachedShaders.end() != iter)
         return iter->second;

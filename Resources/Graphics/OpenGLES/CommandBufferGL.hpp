@@ -38,7 +38,7 @@ public:
     void setVertexBuffer(Buffer* buffer) override;
     void setIndexBuffer(Buffer* buffer) override;
     void setLineWidth(float lineWidth) override;
-//    virtual void setProgramState(ProgramState* programState) override;
+    virtual void setProgramState(ProgramState* programState) override;
     void drawArrays(PrimitiveType primitiveType, std::size_t start,  std::size_t count) override;
     void drawElements(PrimitiveType primitiveType, IndexFormat indexType, std::size_t count, std::size_t offset) override;
 

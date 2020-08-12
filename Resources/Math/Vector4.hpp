@@ -285,6 +285,7 @@ using Vector4f = Vector4<float>;
 using Vector4d = Vector4<double>;
 using Vector4i = Vector4<int32_t>;
 using Vector4ui = Vector4<uint32_t>;
+
 NS_STITCHES_END
 
 #include "Vector4.inl"

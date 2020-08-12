@@ -38,6 +38,7 @@ private:
     GLint	DepthWriteMask;
 
     GLint   CullFace;
+    GLfloat ClearColor[4];
 public:
     GLStateSave();
     ~GLStateSave();

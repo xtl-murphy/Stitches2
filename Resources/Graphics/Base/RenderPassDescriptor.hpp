@@ -34,13 +34,19 @@ struct RenderPassDescriptor
     bool operator==(const RenderPassDescriptor& descriptor) const;
 };
 
-struct PipelineDescriptor
+struct RenderPipelineDescriptor
 {
     ProgramState* programState = nullptr;
 //    BlendState* blendState = nullptr;
     PixelFormat colorAttachmentsFormat[MAX_COLOR_ATTCHMENT] = { PixelFormat::DEFAULT };
     PixelFormat depthAttachmentFormat = PixelFormat::NONE;
     PixelFormat stencilAttachmentFormat = PixelFormat::NONE;
+};
+
+struct PipelineDescriptor
+{
+    ProgramState*          programState = nullptr;
+    BlendDescriptor        blendDescriptor;
 };
 
 NS_STITCHES_END

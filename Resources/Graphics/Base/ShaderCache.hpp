@@ -31,14 +31,14 @@ public:
      * If it is created before, then just return the cached shader module.
      * @param shaderSource The source code of the shader.
      */
-    static ShaderModule* newVertexShaderModule(const std::string& shaderSource);
+    static ShaderModule* newVertexShaderModule(const String& shaderSource);
 
     /**
      * Create a fragment shader module.
      * If it is created before, then just return the cached shader module.
      * @param shaderSource The source code of the shader.
      */
-    static ShaderModule* newFragmentShaderModule(const std::string& shaderSource);
+    static ShaderModule* newFragmentShaderModule(const String& shaderSource);
 
     /**
      * Remove all unused shaders.
@@ -62,7 +62,7 @@ protected:
      * @param source Specifies shader source.
      * @return A ShaderModule object.
      */
-    static ShaderModule* newShaderModule(ShaderStage stage, const std::string& shaderSource);
+    static ShaderModule* newShaderModule(ShaderStage stage, const String& shaderSource);
 
     static std::unordered_map<std::size_t, ShaderModule*> _cachedShaders;
     static ShaderCache* _sharedShaderCache;

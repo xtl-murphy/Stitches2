@@ -59,15 +59,15 @@ public:
         return subRenderHolder.Get<T>();
     }
 
-    RenderStage *GetRenderStage(uint32_t index) const
-    {
-        if (renderStages.empty() || renderStages.size() < index)
-        {
-            return nullptr;
-        }
-
-        return renderStages.at(index).get();
-    }
+//    RenderStage *GetRenderStage(uint32_t index) const
+//    {
+//        if (renderStages.empty() || renderStages.size() < index)
+//        {
+//            return nullptr;
+//        }
+//
+//        return renderStages.at(index).get();
+//    }
 
 protected:
     /**
@@ -101,15 +101,15 @@ protected:
         subRenderHolder.Clear();
     }
 
-    void AddRenderStage(std::unique_ptr<RenderStage> &&renderStage)
-    {
-        renderStages.emplace_back(std::move(renderStage));
-    }
+//    void AddRenderStage(std::unique_ptr<RenderStage> &&renderStage)
+//    {
+//        renderStages.emplace_back(std::move(renderStage));
+//    }
 
 private:
     bool started = false;
     SubRenderHolder subRenderHolder;
-    std::vector<std::unique_ptr<RenderStage>> renderStages;
+//    std::vector<std::unique_ptr<RenderStage>> renderStages;
 };
 
 NS_STITCHES_END

@@ -16,9 +16,9 @@ NS_STITCHES_BEGIN
 /**
  * @brief Helper class for C++ strings.
  */
-class String {
+class SString {
 public:
-	String() = delete;
+    SString() = delete;
 
 	/**
 	 * Converts a CTF16 (wide) string to a UTF8 string.
@@ -240,6 +240,6 @@ public:
 };
 
 constexpr std::uint32_t operator"" _hash(const char *s, std::size_t count) {
-	return String::fnv1a_32(std::string_view(s, count));
+	return SString::fnv1a_32(std::string_view(s, count));
 }
 NS_STITCHES_END

@@ -489,3 +489,10 @@ void CommandBufferGL::setUniform(bool isArray, GLuint location, unsigned int siz
     }
 }
 
+void CommandBufferGL::setProgramState(ProgramState *programState)
+{
+    SAFE_RETAIN(mProgramState);
+    SAFE_RELEASE(mProgramState);
+    mProgramState = programState;
+}
+

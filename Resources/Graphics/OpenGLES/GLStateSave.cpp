@@ -40,6 +40,7 @@ GLStateSave::GLStateSave()
     glGetIntegerv(GL_DEPTH_FUNC, &DepthFunc);
     glGetIntegerv(GL_DEPTH_WRITEMASK, &DepthWriteMask);
     glGetIntegerv(GL_CULL_FACE, &CullFace);
+    glGetFloatv(GL_COLOR_CLEAR_VALUE, &ClearColor[0]);
 }
 
 GLStateSave::~GLStateSave()
@@ -76,6 +77,7 @@ GLStateSave::~GLStateSave()
     glDepthMask(DepthWriteMask);
 
     Enable(GL_CULL_FACE, CullFace);
+    glClearColor(ClearColor[0], ClearColor[1], ClearColor[2], ClearColor[3]);
 }
 
 void GLStateSave::Enable(const GLenum feature, GLboolean enabled)

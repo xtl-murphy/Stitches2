@@ -25,7 +25,7 @@ struct Viewport
     uint32 h = 0;
 };
 
-class CommandBuffer
+class CommandBuffer : public Ref
 {
 
 public:
@@ -45,7 +45,7 @@ public:
     virtual void setVertexBuffer(Buffer* buffer) = 0;
     virtual void setIndexBuffer(Buffer* buffer) = 0;
     virtual void setLineWidth(float lineWidth) = 0;
-//    virtual void setProgramState(ProgramState* programState) = 0;
+    virtual void setProgramState(ProgramState* programState) = 0;
     virtual void drawArrays(PrimitiveType primitiveType, std::size_t start,  std::size_t count) = 0;
     virtual void drawElements(PrimitiveType primitiveType, IndexFormat indexType, std::size_t count, std::size_t offset) = 0;
 

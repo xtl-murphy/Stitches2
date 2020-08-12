@@ -8,8 +8,14 @@
  **/
 #pragma once
 
+#include <Graphics/Base/CommandBuffer.hpp>
+#include <Graphics/Command/RenderQueue.hpp>
+#include <Graphics/Command/TrianglesCommand.hpp>
+#include <stack>
+#include <Graphics/Command/GroupCommand.hpp>
 #include "Graphics/Command/RenderCommand.hpp"
 #include "Stitches.hpp"
+#include "Texture2D.hpp"
 
 NS_STITCHES_BEGIN
 
@@ -73,7 +79,7 @@ public:
      @stencilAttachment The value to replace stencil attachment. Depth attachment and stencil attachment
                         can be the same value.
      */
-    void setRenderTarget(RenderTargetFlag flags, Texture2D* colorAttachment, Texture2D* depthAttachment, Texture2D* stencilAttachment);
+//    void setRenderTarget(RenderTargetFlag flags, Texture2D* colorAttachment, Texture2D* depthAttachment, Texture2D* stencilAttachment);
     /**
     Set clear values for each attachment.
     @flags Flags to indicate which attachment clear value to be modified.
@@ -81,7 +87,7 @@ public:
     @depth The clear depth value.
     @stencil The clear stencil value.
     */
-    void clear(ClearFlag flags, const Color4F& color, float depth, unsigned int stencil, float globalOrder);
+//    void clear(ClearFlag flags, const Color4F& color, float depth, unsigned int stencil, float globalOrder);
 
     /**
      * Get color attachment.
@@ -291,7 +297,7 @@ public:
     const ScissorRect& getScissorRect() const; ///< Get scissor rectangle.
 
     /** returns whether or not a rectangle is visible or not */
-    bool checkVisibility(const Mat4& transform, const Size& size);
+//    bool checkVisibility(const Matrix4& transform, const Vector2i& size);
 
 protected:
     friend class Director;
@@ -429,7 +435,7 @@ protected:
     Texture2D* _colorAttachment = nullptr;
     Texture2D* _depthAttachment = nullptr;
     Texture2D* _stencilAttachment = nullptr;
-    Color4F _clearColor = Color4F::BLACK;
+    Color4F _clearColor = Color4F(0.0, 0.0, 0.0, 1.0);
     ClearFlag _clearFlag;
     RenderTargetFlag _renderTargetFlag = RenderTargetFlag::COLOR;
 

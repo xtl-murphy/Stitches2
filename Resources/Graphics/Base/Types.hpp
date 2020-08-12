@@ -8,9 +8,20 @@
  **/
 #pragma once
 
+#include "Math/Math.hpp"
 #include "Stitches.hpp"
 
 NS_STITCHES_BEGIN
+
+//#define ENABLE_BITMASK_OPERATORS(x)  \
+//template<>                           \
+//struct EnableBitMaskOperators<x>     \
+//{                                    \
+//    static const bool enable = true; \
+//};
+
+struct Color4B;
+struct Color4F;
 
 enum class BufferUsage : uint32_t
 {
@@ -396,6 +407,218 @@ enum class TextVAlignment
     BOTTOM
 };
 
+enum class ClearFlag : uint8_t
+{
+    NONE = 0,
+    COLOR = 1,
+    DEPTH = 1 << 1,
+    STENCIL = 1 << 2,
+    ALL = COLOR | DEPTH | STENCIL
+};
+//ENABLE_BITMASK_OPERATORS(ClearFlag)
+
+enum class RenderTargetFlag : uint8_t
+{
+    COLOR = 1,
+    DEPTH = 1 << 1,
+    STENCIL = 1 << 2,
+    ALL = COLOR | DEPTH | STENCIL
+};
+
+struct Tex2F {
+    Tex2F(float _u, float _v): u(_u), v(_v) {}
+
+    Tex2F() {}
+
+    float u = 0.f;
+    float v = 0.f;
+};
+
+struct BlendFunc
+{
+    /** source blend function */
+    BlendFactor src;
+    /** destination blend function */
+    BlendFactor dst;
+
+    /** Blending disabled. Uses {BlendFactor::ONE, BlendFactor::ZERO} */
+    static const BlendFunc DISABLE;
+    /** Blending enabled for textures with Alpha premultiplied. Uses {BlendFactor::ONE, BlendFactor::ONE_MINUS_SRC_ALPHA} */
+    static const BlendFunc ALPHA_PREMULTIPLIED;
+    /** Blending enabled for textures with Alpha NON premultiplied. Uses {BlendFactor::SRC_ALPHA, BlendFactor::ONE_MINUS_SRC_ALPHA} */
+    static const BlendFunc ALPHA_NON_PREMULTIPLIED;
+    /** Enables Additive blending. Uses {BlendFactor::SRC_ALPHA, BlendFactor::ONE} */
+    static const BlendFunc ADDITIVE;
+
+    bool operator==(const BlendFunc &a) const
+    {
+        return src == a.src && dst == a.dst;
+    }
+
+    bool operator!=(const BlendFunc &a) const
+    {
+        return src != a.src || dst != a.dst;
+    }
+
+    bool operator<(const BlendFunc &a) const
+    {
+        return src < a.src || (src == a.src && dst < a.dst);
+    }
+};
+
+struct ScissorRect
+{
+    float x = 0;
+    float y = 0;
+    float width = 0;
+    float height = 0;
+};
+
+struct Rect
+{
+    Vector2f origin;
+    Vector2f size;
+};
+
+struct Color3B
+{
+            Color3B();
+    Color3B(uint8_t _r, uint8_t _g, uint8_t _b);
+    explicit Color3B(const Color4B& color);
+    explicit Color3B(const Color4F& color);
+
+    bool operator==(const Color3B& right) const;
+    bool operator==(const Color4B& right) const;
+    bool operator==(const Color4F& right) const;
+    bool operator!=(const Color3B& right) const;
+    bool operator!=(const Color4B& right) const;
+    bool operator!=(const Color4F& right) const;
+
+    bool equals(const Color3B& other) const
+    {
+        return (*this == other);
+    }
+
+    uint8_t r = 0;
+    uint8_t g = 0;
+    uint8_t b = 0;
+
+    static const Color3B WHITE;
+    static const Color3B YELLOW;
+    static const Color3B BLUE;
+    static const Color3B GREEN;
+    static const Color3B RED;
+    static const Color3B MAGENTA;
+    static const Color3B BLACK;
+    static const Color3B ORANGE;
+    static const Color3B GRAY;
+    };
+
+/**
+* RGBA color composed of 4 bytes.
+* @since v3.0
+*/
+struct Color4B
+{
+    Color4B();
+    Color4B(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a);
+    explicit Color4B(const Color3B& color, uint8_t _a = 255);
+    explicit Color4B(const Color4F& color);
+
+    inline void set(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a)
+    {
+        r = _r;
+        g = _g;
+        b = _b;
+        a = _a;
+    }
+
+    bool operator==(const Color4B& right) const;
+    bool operator==(const Color3B& right) const;
+    bool operator==(const Color4F& right) const;
+    bool operator!=(const Color4B& right) const;
+    bool operator!=(const Color3B& right) const;
+    bool operator!=(const Color4F& right) const;
+
+    uint8_t r = 0;
+    uint8_t g = 0;
+    uint8_t b = 0;
+    uint8_t a = 0;
+
+    static const Color4B WHITE;
+    static const Color4B YELLOW;
+    static const Color4B BLUE;
+    static const Color4B GREEN;
+    static const Color4B RED;
+    static const Color4B MAGENTA;
+    static const Color4B BLACK;
+    static const Color4B ORANGE;
+    static const Color4B GRAY;
+    };
+
+
+/**
+* RGBA color composed of 4 floats.
+* @since v3.0
+*/
+struct Color4F
+{
+    Color4F();
+    Color4F(float _r, float _g, float _b, float _a);
+    explicit Color4F(const Color3B& color, float _a = 1.0f);
+    explicit Color4F(const Color4B& color);
+
+    bool operator==(const Color4F& right) const;
+    bool operator==(const Color3B& right) const;
+    bool operator==(const Color4B& right) const;
+    bool operator!=(const Color4F& right) const;
+    bool operator!=(const Color3B& right) const;
+    bool operator!=(const Color4B& right) const;
+
+    bool equals(const Color4F &other) const
+    {
+        return (*this == other);
+    }
+
+    float r = 0.f;
+    float g = 0.f;
+    float b = 0.f;
+    float a = 0.f;
+
+    static const Color4F WHITE;
+    static const Color4F YELLOW;
+    static const Color4F BLUE;
+    static const Color4F GREEN;
+    static const Color4F RED;
+    static const Color4F MAGENTA;
+    static const Color4F BLACK;
+    static const Color4F ORANGE;
+    static const Color4F GRAY;
+    };
+
+Color4F& operator+=(Color4F& lhs, const Color4F& rhs);
+Color4F operator+(Color4F lhs, const Color4F& rhs);
+
+Color4F& operator-=(Color4F& lhs, const Color4F& rhs);
+Color4F operator-(Color4F lhs, const Color4F& rhs);
+
+Color4F& operator*=(Color4F& lhs, const Color4F& rhs);
+Color4F operator*(Color4F lhs, const Color4F& rhs);
+Color4F& operator*=(Color4F& lhs, float rhs);
+Color4F operator*(Color4F lhs, float rhs);
+
+Color4F& operator/=(Color4F& lhs, const Color4F& rhs);
+Color4F operator/(Color4F lhs, const Color4F& rhs);
+Color4F& operator/=(Color4F& lhs, float rhs);
+Color4F operator/(Color4F lhs, float rhs);
+
+
+struct V3F_C4B_T2F
+{
+    Vec3     vertices;            // 12 bytes
+    Color4F  colors;              // 4 bytes
+    Tex2F    texCoords;           // 8 bytes
+};
 
 NS_STITCHES_END
 

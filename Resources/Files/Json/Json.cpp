@@ -34,7 +34,7 @@ void Json::ParseString(std::string_view string) {
 		// When not reading a string tokens can be found.
 		// While in a string whitespace and tokens are added to the strings view.
 		if (quoteState == QuoteState::None) {
-			if (String::IsWhitespace(c)) {
+			if (SString::IsWhitespace(c)) {
 				// On whitespace start save current token.
 				AddToken(std::string_view(string.data() + tokenStart, index - tokenStart), tokens);
 				tokenStart = index + 1;
@@ -68,7 +68,7 @@ void Json::AddToken(std::string_view view, Tokens &tokens) {
 			tokens.emplace_back(Type::Null, std::string_view());
 		} else if (view == "true" || view == "false") {
 			tokens.emplace_back(Type::Boolean, view);
-		} else if (String::IsNumber(view)) {
+		} else if (SString::IsNumber(view)) {
 			// This is a quick hack to get if the number is a decimal.
 			if (view.find('.') != std::string::npos) {
 				if (view.size() >= std::numeric_limits<long double>::digits)
@@ -119,7 +119,7 @@ void Json::Convert(Node &current, const Tokens &tokens, int32_t i, int32_t &r) {
 	} else {
 		std::string str(tokens[i].view);
 		if (tokens[i].type == Type::String)
-			str = String::UnfixEscapedChars(str);
+			str = SString::UnfixEscapedChars(str);
 		current.SetValue(str);
 		current.SetType(tokens[i].type);
 		r = i + 1;
@@ -132,7 +132,7 @@ void Json::AppendData(const Node &source, std::ostream &stream, const Format &fo
 	// Only output the value if no properties exist.
 	if (source.GetProperties().empty()) {
 		if (source.GetType() == Type::String)
-			stream << '\"' << String::FixEscapedChars(source.GetValue()) << '\"';
+			stream << '\"' << SString::FixEscapedChars(source.GetValue()) << '\"';
 		else if (source.GetType() == Type::Null)
 			stream << "null";
 		else

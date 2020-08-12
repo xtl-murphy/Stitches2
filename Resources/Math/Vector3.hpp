@@ -317,6 +317,9 @@ using Vector3f = Vector3<float>;
 using Vector3d = Vector3<double>;
 using Vector3i = Vector3<int32_t>;
 using Vector3ui = Vector3<uint32_t>;
+
+typedef Vector3f Vec3;
+
 }
 
 #include "Vector3.inl"
