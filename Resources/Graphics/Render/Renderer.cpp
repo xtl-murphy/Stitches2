@@ -7,6 +7,7 @@
  * Created by Murphy at 2020/8/11 20:51
  **/
 #include <Graphics/Command/CustomCommand.hpp>
+#include <Graphics/OpenGLES/CommandBufferGL.hpp>
 #include "Renderer.hpp"
 
 NS_STITCHES_BEGIN
@@ -62,9 +63,9 @@ void Renderer::init()
     _indexBuffer = _triangleCommandBufferManager.getIndexBuffer();
 
 //    auto device = Device::getInstance();
-//    _commandBuffer = device->newCommandBuffer();
-//    _renderPipeline = device->newRenderPipeline();
-//    _commandBuffer->setRenderPipeline(_renderPipeline);
+    _commandBuffer = new CommandBufferGL();
+    _renderPipeline = new RenderPipelineGL();
+    _commandBuffer->setRenderPipeline(_renderPipeline);
 }
 
 void Renderer::addCommand(RenderCommand* command)
@@ -233,7 +234,7 @@ void Renderer::render()
         }
         visitRenderQueue(_renderGroups[0]);
     }
-    clean();
+//    clean();
     _isRendering = false;
 }
 

@@ -21,6 +21,7 @@ NS_STITCHES_BEGIN
 
 class Renderer
 {
+    friend class GraphicsRenderer;
 public:
 
     /**The max number of vertices in a vertex buffer object.*/

@@ -10,13 +10,23 @@
 
 USING_STITCHES_VK
 
-ImageRender::ImageRender()
+ImageRender::ImageRender() : GraphicsRenderer()
+{
+    auto* program = Program::getBuiltinProgram(ProgramType::Normal_Image);
+    auto programState = new ProgramState(program);
+    command.getPipelineDescriptor().programState = programState;
+}
+
+ImageRender::~ImageRender()
 {
 
 }
 
+
 void ImageRender::Start()
 {
+//    auto* program = backend::Device::getInstance()->newProgram(vert, frag);
+//    auto programState = new (std::nothrow) backend::ProgramState(program);
 
 }
 
@@ -24,3 +34,4 @@ void ImageRender::Update()
 {
 
 }
+

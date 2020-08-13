@@ -241,4 +241,14 @@ void ProgramGL::computeLocations()
     mBuiltinUniformLocation[Uniform::TEXTURE1].location[0] = location;
 }
 
+std::size_t ProgramGL::getUniformBufferSize(ShaderStage stage) const
+{
+    return mTotalBufferSize;
+}
+
+const UniformInfo &ProgramGL::getActiveUniformInfo(ShaderStage stage, int location) const
+{
+    return std::move(UniformInfo{});
+}
+
 NS_STITCHES_END

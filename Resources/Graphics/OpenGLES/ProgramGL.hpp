@@ -49,6 +49,10 @@ public:
 
     virtual const std::unordered_map<std::string, AttributeBindInfo> getActiveAttributes() const override;
 
+    virtual std::size_t getUniformBufferSize(ShaderStage stage) const override;
+
+    virtual const UniformInfo& getActiveUniformInfo(ShaderStage stage, int location) const override;
+
 private:
 
     void compileProgram();

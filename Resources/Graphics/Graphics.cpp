@@ -30,6 +30,7 @@ void Graphics::Update()
 
     renderer->Update();
 
+    renderer->drawScene();
 
 }
 

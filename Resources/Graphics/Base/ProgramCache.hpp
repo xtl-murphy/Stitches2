@@ -40,9 +40,9 @@ protected:
     bool init();
 
     /// Add built-in program
-    void addShader(ProgramType type);
+    void addProgram(ProgramType type);
 
-    static std::unordered_map<ProgramType, Program*> mCachedShaders;
+    static std::unordered_map<ProgramType, Program*> mCachedPrograms;
     static ProgramCache *mSharedProgramCache;
 };
 

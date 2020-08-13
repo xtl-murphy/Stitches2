@@ -6,16 +6,17 @@
  * <p>
  * Created by Murphy at 2020/8/1 19:12
  **/
+#include <Graphics/OpenGLES/ProgramGL.hpp>
 #include "ProgramCache.hpp"
-
+#include "Graphics/Shader/Shader.hpp"
 USING_STITCHES_VK
 
-std::unordered_map<ProgramType, Program*> ProgramCache::mCachedShaders;
+std::unordered_map<ProgramType, Program*> ProgramCache::mCachedPrograms;
 ProgramCache* ProgramCache::mSharedProgramCache = nullptr;
 
 ProgramCache::~ProgramCache()
 {
-    for(auto& program : mCachedShaders)
+    for(auto& program : mCachedPrograms)
     {
         delete program.second;
     }
@@ -46,8 +47,8 @@ void ProgramCache::destroyInstance()
 
 Program *ProgramCache::getBuiltinShader(ProgramType type) const
 {
-    const auto& iter = ProgramCache::mCachedShaders.find(type);
-    if (ProgramCache::mCachedShaders.end() != iter)
+    const auto& iter = ProgramCache::mCachedPrograms.find(type);
+    if (ProgramCache::mCachedPrograms.end() != iter)
     {
         return iter->second;
     }
@@ -61,12 +62,12 @@ void ProgramCache::removeShader(Program *shader)
         return;
     }
 
-    for (auto it = mCachedShaders.cbegin(); it != mCachedShaders.cend();)
+    for (auto it = mCachedPrograms.cbegin(); it != mCachedPrograms.cend();)
     {
         if (it->second == shader)
         {
             delete it->second;
-            it = mCachedShaders.erase(it);
+            it = mCachedPrograms.erase(it);
             break;
         }
         else
@@ -76,14 +77,14 @@ void ProgramCache::removeShader(Program *shader)
 
 void ProgramCache::removeUnusedShader()
 {
-//    for (auto iter = mCachedShaders.cbegin(); iter != mCachedShaders.cend();)
+//    for (auto iter = mCachedPrograms.cbegin(); iter != mCachedPrograms.cend();)
 //    {
 //        auto program = iter->second;
 //        if (program->getReferenceCount() == 1)
 //        {
 ////            CCLOG("cocos2d: TextureCache: removing unused program");
 //            program->release();
-//            iter = mCachedShaders.erase(iter);
+//            iter = mCachedPrograms.erase(iter);
 //        }
 //        else
 //        {
@@ -94,20 +95,29 @@ void ProgramCache::removeUnusedShader()
 
 void ProgramCache::removeAllShaders()
 {
-    for (auto& shader : mCachedShaders)
+    for (auto& shader : mCachedPrograms)
     {
         delete shader.second;
     }
-    mCachedShaders.clear();
+    mCachedPrograms.clear();
 }
 
 bool ProgramCache::init()
 {
-    return false;
+    addProgram(ProgramType::Normal_Image);
+    return true;
 }
 
-void ProgramCache::addShader(ProgramType type)
+void ProgramCache::addProgram(ProgramType type)
 {
-
+    Program* program = nullptr;
+    switch (type)
+    {
+        case ProgramType::Normal_Image:
+            program = new ProgramGL(ImageNormalVert, ImageNormalVertFrag);
+            break;
+    }
+    program->setProgramType(type);
+    ProgramCache::mCachedPrograms.emplace(type, program);
 }
 
