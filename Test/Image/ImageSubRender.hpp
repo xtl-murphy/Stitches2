@@ -11,18 +11,23 @@
 
 #include "Stitches.hpp"
 #include "Graphics/SubRender.hpp"
-#include "Graphics/OpenGLES/RenderPipelineGL.hpp"
 
 NS_STITCHES_BEGIN
 
 class ImageSubRender : public SubRender
 {
 public:
-    virtual void Render(const CommandBuffer &commandBuffer) override ;
+    explicit ImageSubRender(SubRenderType type);
+    ~ImageSubRender() override;
+    void Render() override;
 
+    RenderCommand* GetCommand() override;
+    void Start() override;
 private:
-    Buffer* mVertexBuffer = nullptr;
-    Buffer* mIndexBuffer = nullptr;
+
+    TrianglesCommand command;
+    TrianglesCommand::Triangles triangles;
+    Matrix4 mat;
 };
 
 NS_STITCHES_END

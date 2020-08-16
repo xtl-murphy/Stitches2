@@ -1,12 +1,15 @@
 
 const char* ImageNormalVert = R"(
 
-attribute vec4 a_position;
-attribute vec2 a_texCoord;
+#version 300 es
+precision highp float;
 
-varying mediump vec2 v_texCoord;
+layout(location = 0) in vec4 a_position;
+layout(location = 1) in vec2 a_texCoord;
 
-uniform mat4 u_MVPMatrix;
+out mediump vec2 v_texCoord;
+
+uniform highp mat4 u_MVPMatrix;
 
 void main()
 {
@@ -18,14 +21,15 @@ void main()
 
 const char* ImageNormalVertFrag = R"(
 
+#version 300 es
 precision mediump float;
 
-varying vec2 v_texCoord;
+in vec2 v_texCoord;
 
 uniform sampler2D u_texture;
 
 void main()
 {
-    gl_FragColor =  texture2D(u_texture, v_texCoord);
+    gl_FragColor =  texture(u_texture, v_texCoord);
 }
 )";

@@ -8,9 +8,43 @@
  **/
 #include "ImageSubRender.hpp"
 
-USING_STITCHES_VK
+NS_STITCHES_BEGIN
 
-void ImageSubRender::Render(const Stitches::CommandBuffer &commandBuffer)
+ImageSubRender::ImageSubRender(SubRenderType type) : SubRender(type)
+{
+
+    triangles.verts = nullptr;
+    triangles.indices = nullptr;
+    triangles.vertCount = 0;
+    triangles.indexCount = 0;
+
+    this->command.init(0, nullptr, BlendFunc::DISABLE, this->triangles, this->mat, 0);
+
+}
+
+ImageSubRender::~ImageSubRender()
 {
 
 }
+
+void ImageSubRender::Render()
+{
+
+}
+
+RenderCommand *ImageSubRender::GetCommand()
+{
+    return &this->command;
+}
+
+void ImageSubRender::Start()
+{
+    auto* program = Program::getBuiltinProgram(ProgramType::Normal_Image);
+    auto programState = new ProgramState(program);
+    command.getPipelineDescriptor().programState = programState;
+
+}
+
+NS_STITCHES_END
+
+

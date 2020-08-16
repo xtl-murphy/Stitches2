@@ -37,7 +37,7 @@ void TrianglesCommand::init(float globalOrder, Texture2D* texture, const BlendFu
         _blendType = blendType;
 
         //since it would be too expensive to check the uniforms, simplify enable batching for built-in program.
-        if(_programType == ProgramType::CUSTOM_PROGRAM)
+        if(_programType == ProgramType::Normal_Image)
             setSkipBatching(true);
 
         //TODO: minggo set it in Node?

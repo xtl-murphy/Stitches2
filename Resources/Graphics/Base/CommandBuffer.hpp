@@ -29,8 +29,6 @@ class CommandBuffer : public Ref
 {
 
 public:
-    using Stage = std::pair<uint32_t, uint32_t>;
-
 
     virtual void beginFrame() = 0;
     virtual void beginRenderPass(const RenderPassDescriptor& descriptor) = 0;

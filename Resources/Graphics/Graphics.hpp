@@ -10,12 +10,13 @@
 
 
 #include "Stitches.hpp"
-#include "Utils/Module.hpp"
+#include "Graphics/Render/Renderer.hpp"
 #include "Graphics/Base/CommandBuffer.hpp"
-#include "GraphicsRenderer.hpp"
+#include "Utils/Module.hpp"
+#include "RenderContainer.hpp"
 
 NS_STITCHES_BEGIN
-class GraphicsRenderer;
+class RenderContainer;
 class Graphics final : public Module::Registrar<Graphics, Module::Stage::Render>
 {
 public:
@@ -24,15 +25,14 @@ public:
 
     void Update() override;
 
-    GraphicsRenderer *GetRenderer() const { return renderer.get(); }
-    void SetRenderer(std::unique_ptr<GraphicsRenderer> &&renderer) { this->renderer = std::move(renderer); }
+    Renderer *GetRenderer() const { return renderer.get(); }
+    void SetRenderer(std::unique_ptr<RenderContainer> &&container) { this->container = std::move(container); }
 
 private:
-    bool StartRenderPass();
-    void EndRenderPass();
+
 private:
-    std::unique_ptr<GraphicsRenderer> renderer;
-    std::unique_ptr<CommandBuffer> commandBuffer;
+    std::unique_ptr<RenderContainer> container;
+    std::unique_ptr<Renderer> renderer;
 };
 
 

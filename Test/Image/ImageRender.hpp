@@ -9,10 +9,10 @@
 #pragma once
 
 #include "Stitches.hpp"
-#include "Graphics/GraphicsRenderer.hpp"
+#include "Graphics/RenderContainer.hpp"
 NS_STITCHES_BEGIN
 
-class ImageRender : public GraphicsRenderer
+class ImageRender : public RenderContainer
 {
 public:
     ImageRender();
@@ -21,7 +21,6 @@ public:
     void Update() override;
 
 private:
-    TrianglesCommand command;
 };
 
 NS_STITCHES_END

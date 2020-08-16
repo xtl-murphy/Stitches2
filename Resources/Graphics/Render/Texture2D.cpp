@@ -707,7 +707,7 @@ void Texture2D::initProgram()
 
     auto& pipelineDescriptor = _customCommand.getPipelineDescriptor();
     //create program state
-    auto* program = Program::getBuiltinProgram(ProgramType::POSITION_TEXTURE);
+    auto* program = Program::getBuiltinProgram(ProgramType::Normal_Image);
     _programState = new (std::nothrow) ProgramState(program);
     _mvpMatrixLocation = _programState->getUniformLocation("u_MVPMatrix");
     _textureLocation = _programState->getUniformLocation("u_texture");
@@ -747,7 +747,6 @@ void Texture2D::initProgram()
     blendDescriptor.blendEnabled = true;
     blendDescriptor.sourceRGBBlendFactor = blendDescriptor.sourceAlphaBlendFactor = blendFunc.src;
     blendDescriptor.destinationRGBBlendFactor = blendDescriptor.destinationAlphaBlendFactor = blendFunc.dst;
-
     _programState->setTexture(_textureLocation, 0, _texture);
 }
 

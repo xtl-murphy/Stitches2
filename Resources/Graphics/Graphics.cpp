@@ -12,7 +12,8 @@ USING_STITCHES_VK
 
 Graphics::Graphics()
 {
-
+    this->renderer = std::make_unique<Renderer>();
+    this->renderer->init();
 }
 
 Graphics::~Graphics()
@@ -22,24 +23,28 @@ Graphics::~Graphics()
 
 void Graphics::Update()
 {
-    if (!renderer->started)
+    if (!container->started)
     {
-        renderer->Start();
-        renderer->started = true;
+        container->Start();
+        container->started = true;
+
+        for (auto subRender : container->subRenders)
+        {
+            subRender->Start();
+        }
+    }
+    container->Update();
+
+    this->renderer->beginFrame();
+
+    for (auto subRender : container->subRenders)
+    {
+        subRender->Render();
+        this->renderer->addCommand(subRender->GetCommand());
     }
 
-    renderer->Update();
+    this->renderer->render();
 
-    renderer->drawScene();
-
+    this->renderer->endFrame();
 }
 
-bool Graphics::StartRenderPass()
-{
-    return false;
-}
-
-void Graphics::EndRenderPass()
-{
-
-}

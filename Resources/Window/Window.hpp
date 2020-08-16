@@ -278,6 +278,8 @@ public:
 
     std::pair<const char **, uint32_t> GetInstanceExtensions() const;
 //    VkResult CreateSurface(const VkInstance &instance, const VkAllocationCallbacks *allocator, VkSurfaceKHR *surface) const;
+    bool BindSurface();
+
 };
 
 

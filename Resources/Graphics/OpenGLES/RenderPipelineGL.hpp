@@ -17,7 +17,7 @@ class RenderPipelineGL : public RenderPipeline
 {
 public:
     RenderPipelineGL() = default;
-    ~RenderPipelineGL();
+    ~RenderPipelineGL() override;
 
     virtual void update(const PipelineDescriptor & pipelineDescirptor, const RenderPassDescriptor& renderpassDescriptor) override;
 

@@ -9,6 +9,7 @@ set(CMAKE_MODULE_PATH
 set(GLES_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Third/gles)
 
 find_package(GLES REQUIRED)
+#find_package(GLEW REQUIRED)
 
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_C_FLAGS_DEBUG "-D_DEBUG")
@@ -29,12 +30,14 @@ include_directories(${SRC_DIR})
 
 include_directories(${THIRD_DIR}/glfw/include)
 include_directories(${THIRD_DIR}/gles/include)
+include_directories(${THIRD_DIR}/glad/include)
 
 file(GLOB_RECURSE RES "${SRC_DIR}/*.cpp" "${SRC_DIR}/*.hpp" "${SRC_DIR}/*.inl" "${TEST_DIR}/*.cpp")
 
+
 add_subdirectory(Test)
 
-add_executable(Stitches ${RES}  main.cpp)
+add_executable(Stitches ${RES} main.cpp ${THIRD_DIR}/glad/src/glad.c)
 
 #GLFW
 add_library(libglfw STATIC IMPORTED)

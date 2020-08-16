@@ -14,7 +14,7 @@ ShaderModuleGL::ShaderModuleGL(ShaderStage stage, const String &source)
         : ShaderModule(stage)
 {
     this->compileShader(stage, source);
-}
+ }
 
 ShaderModuleGL::~ShaderModuleGL()
 {

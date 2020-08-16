@@ -234,7 +234,7 @@ void Renderer::render()
         }
         visitRenderQueue(_renderGroups[0]);
     }
-//    clean();
+    clean();
     _isRendering = false;
 }
 
@@ -818,33 +818,31 @@ Buffer* Renderer::TriangleCommandBufferManager::getIndexBuffer() const
 
 void Renderer::TriangleCommandBufferManager::createBuffer()
 {
-//    auto device = Device::getInstance();
-//
-//    auto tmpData = malloc(Renderer::VBO_SIZE * sizeof(V3F_C4B_T2F));
-//    if (!tmpData)
-//        return;
-//
-//    auto vertexBuffer = device->newBuffer(Renderer::VBO_SIZE * sizeof(V3F_C4B_T2F), BufferType::VERTEX, BufferUsage::DYNAMIC);
-//    if (!vertexBuffer)
-//    {
-//        free(tmpData);
-//        return;
-//    }
-//    vertexBuffer->updateData(tmpData, Renderer::VBO_SIZE * sizeof(V3F_C4B_T2F));
-//
-//    auto indexBuffer = device->newBuffer(Renderer::INDEX_VBO_SIZE * sizeof(unsigned short), BufferType::INDEX, BufferUsage::DYNAMIC);
-//    if (! indexBuffer)
-//    {
-//        free(tmpData);
-//        vertexBuffer->release();
-//        return;
-//    }
-//    indexBuffer->updateData(tmpData, Renderer::INDEX_VBO_SIZE * sizeof(unsigned short));
-//
-//    free(tmpData);
-//
-//    _vertexBufferPool.push_back(vertexBuffer);
-//    _indexBufferPool.push_back(indexBuffer);
+    auto tmpData = malloc(Renderer::VBO_SIZE * sizeof(V3F_C4B_T2F));
+    if (!tmpData)
+        return;
+
+    auto vertexBuffer = new BufferGL(Renderer::VBO_SIZE * sizeof(V3F_C4B_T2F), BufferType::VERTEX, BufferUsage::DYNAMIC);
+    if (!vertexBuffer)
+    {
+        free(tmpData);
+        return;
+    }
+    vertexBuffer->updateData(tmpData, Renderer::VBO_SIZE * sizeof(V3F_C4B_T2F));
+
+    auto indexBuffer = new BufferGL(Renderer::INDEX_VBO_SIZE * sizeof(unsigned short), BufferType::INDEX, BufferUsage::DYNAMIC);
+    if (! indexBuffer)
+    {
+        free(tmpData);
+        vertexBuffer->release();
+        return;
+    }
+    indexBuffer->updateData(tmpData, Renderer::INDEX_VBO_SIZE * sizeof(unsigned short));
+
+    free(tmpData);
+
+    _vertexBufferPool.push_back(vertexBuffer);
+    _indexBufferPool.push_back(indexBuffer);
 }
 
 void Renderer::pushStateBlock()

@@ -9,6 +9,7 @@
 
 #include "Window.hpp"
 
+
 NS_STITCHES_BEGIN
 void CallbackError(int32_t error, const char *description)
 {
@@ -105,10 +106,9 @@ Window::Window() :
     // The window will stay hidden until after creation.
     glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
     // Disable context creation.
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_ES_API);
+//    glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_ES_API);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
-
 
     // Fixes 16 bit stencil bits in macOS.
     glfwWindowHint(GLFW_STENCIL_BITS, 8);
@@ -126,11 +126,16 @@ Window::Window() :
     auto videoMode = this->monitors[0]->GetVideoMode();
 
     // Create a windowed mode window and its context.
-    window = glfwCreateWindow(size.x, size.y, title.c_str(), nullptr, nullptr);
-
+    this->window = glfwCreateWindow(size.x, size.y, title.c_str(), nullptr, nullptr);
     // Gets any window errors.
-    if (!window) {
+    if (!this->window) {
         glfwTerminate();
+        throw std::runtime_error("GLFW failed to create the window");
+    }
+    glfwMakeContextCurrent(this->window);
+    if (!gladLoadGLES2Loader((GLADloadproc)glfwGetProcAddress))
+    {
+        std::cout << "Failed to initialize GLAD" << std::endl;
         throw std::runtime_error("GLFW failed to create the window");
     }
 
@@ -177,6 +182,7 @@ Window::~Window() {
 void Window::Update() {
     // Polls for window events.
     glfwPollEvents();
+    glfwSwapBuffers(this->window);
 }
 
 void Window::SetSize(const Vector2i &size) {
@@ -359,6 +365,93 @@ std::pair<const char **, uint32_t> Window::GetInstanceExtensions() const {
     uint32_t glfwExtensionCount;
     auto glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
     return std::make_pair(glfwExtensions, glfwExtensionCount);
+}
+
+
+bool Window::BindSurface()
+{
+
+//    EGLNativeDisplayType eglNativeDisplay;
+//
+//    /// Window handle
+//    EGLNativeWindowType eglNativeWindow;
+//    /// EGL display
+//    EGLDisplay eglDisplay;
+//
+//    /// EGL context
+//    EGLContext eglContext;
+//
+//    /// EGL surface
+//    EGLSurface eglSurface;
+//
+//    GLuint flags;
+//    EGLConfig config;
+//    EGLint majorVersion;
+//    EGLint minorVersion;
+//    EGLint contextAttribs[] = {EGL_CONTEXT_CLIENT_VERSION, 3, EGL_NONE};
+//
+//
+//    eglDisplay = eglGetDisplay(eglNativeDisplay);
+//
+//    if (eglDisplay == EGL_NO_DISPLAY) {
+//        return GL_FALSE;
+//    }
+//
+//    // Initialize EGL
+//    if (!eglInitialize(eglDisplay, &majorVersion, &minorVersion)) {
+//        return GL_FALSE;
+//    }
+//
+//
+//    {
+//        EGLint numConfigs = 0;
+//        EGLint attribList[] =
+//                {
+//                        EGL_RED_SIZE, 5,
+//                        EGL_GREEN_SIZE, 6,
+//                        EGL_BLUE_SIZE, 5,
+//                        EGL_ALPHA_SIZE, (flags & ES_WINDOW_ALPHA) ? 8 : EGL_DONT_CARE,
+//                        EGL_DEPTH_SIZE, (flags & ES_WINDOW_DEPTH) ? 8 : EGL_DONT_CARE,
+//                        EGL_STENCIL_SIZE, (flags & ES_WINDOW_STENCIL) ? 8 : EGL_DONT_CARE,
+//                        EGL_SAMPLE_BUFFERS, (flags & ES_WINDOW_MULTISAMPLE) ? 1 : 0,
+//                        // if EGL_KHR_create_context extension is supported, then we will use
+//                        // EGL_OPENGL_ES3_BIT_KHR instead of EGL_OPENGL_ES2_BIT in the attribute list
+//                        EGL_RENDERABLE_TYPE, GetContextRenderableType(eglDisplay),
+//                        EGL_NONE
+//                };
+//
+//        // Choose config
+//        if (!eglChooseConfig(eglDisplay, attribList, &config, 1, &numConfigs)) {
+//            return GL_FALSE;
+//        }
+//
+//        if (numConfigs < 1) {
+//            return GL_FALSE;
+//        }
+//    }
+//
+//    eglSurface = eglCreateWindowSurface(eglDisplay, config, eglNativeWindow, NULL);
+//
+//    if (eglSurface == EGL_NO_SURFACE) {
+//        return GL_FALSE;
+//    }
+//
+//    // Create a GL context
+//    eglContext = eglCreateContext(eglDisplay, config,
+//                                             EGL_NO_CONTEXT, contextAttribs);
+//
+//    if (eglContext == EGL_NO_CONTEXT) {
+//        return GL_FALSE;
+//    }
+//
+//    // Make the context current
+//    if (!eglMakeCurrent(eglDisplay, eglSurface, eglSurface, eglContext))
+//    {
+//        return GL_FALSE;
+//    }
+//
+//
+//    return GL_TRUE;
 }
 
 //VkResult Window::CreateSurface(const VkInstance &instance, const VkAllocationCallbacks *allocator, VkSurfaceKHR *surface) const {

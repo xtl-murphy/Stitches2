@@ -11,6 +11,11 @@
 
 NS_STITCHES_BEGIN
 
+RenderPipelineGL::~RenderPipelineGL()
+{
+
+}
+
 void RenderPipelineGL::update(const Stitches::PipelineDescriptor &pipelineDescriptor,
                                         const Stitches::RenderPassDescriptor &renderPassDescriptor)
 {
@@ -21,7 +26,7 @@ void RenderPipelineGL::update(const Stitches::PipelineDescriptor &pipelineDescri
         mProgram = static_cast<ProgramGL*>(pipelineDescriptor.programState->getProgram());
         SAFE_RETAIN(mProgram);
     }
-//    this->updateBlendState(pipelineDescriptor.blendDescriptor);
+    this->updateBlendState(pipelineDescriptor.blendDescriptor);
 }
 
 void RenderPipelineGL::updateBlendState(const BlendDescriptor &descriptor)
@@ -52,6 +57,8 @@ void RenderPipelineGL::updateBlendState(const BlendDescriptor &descriptor)
 
     glColorMask(writeMaskRed, writeMaskGreen, writeMaskBlue, writeMaskAlpha);
 }
+
+
 
 
 NS_STITCHES_END

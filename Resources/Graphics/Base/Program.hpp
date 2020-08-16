@@ -58,7 +58,7 @@ protected:
 
     String mVertexShader;
     String mFragmentShader;
-    ProgramType mProgramType = ProgramType::CUSTOM_PROGRAM;
+    ProgramType mProgramType = ProgramType::Normal_Image;
 };
 
 NS_STITCHES_END

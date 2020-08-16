@@ -9,38 +9,44 @@
 
 #pragma once
 
-#include <Graphics/Render/Renderer.hpp>
 #include "Stitches.hpp"
-#include "Graphics/SubRenderHolder.hpp"
+#include "SubRender.hpp"
 #include "Graphics/Graphics.hpp"
 #include "Graphics/Base/Types.hpp"
-#include "RenderState.hpp"
+
 NS_STITCHES_BEGIN
 
-class GraphicsRenderer
+
+class SubRender;
+enum class SubRenderType;
+class RenderContainer
 {
     friend class Graphics;
 public:
     /**
      * Creates a new renderer, fill {@link renderStages} in your subclass of this.
      */
-    GraphicsRenderer();
+    RenderContainer();
 
-    virtual ~GraphicsRenderer() = default;
+    virtual ~RenderContainer() = default;
 
     virtual void Start() = 0;
 
     virtual void Update() = 0;
 
-    void drawScene();
-
-
 protected:
-
-
+    template<typename T>
+    T *AddSubRender(SubRenderType type)
+    {
+        auto subRender = new T(type);
+        this->subRenders.push_back(subRender);
+        return subRender;
+    }
+//
+    void ClearSubRenders();
 private:
     bool started = false;
-    std::unique_ptr<Renderer> renderer;
+    std::vector<SubRender *> subRenders;
 };
 
 NS_STITCHES_END

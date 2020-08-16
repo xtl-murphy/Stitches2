@@ -9,11 +9,16 @@
 
 #pragma once
 
+#include <glad/glad.h>
 
-#define GLFW_INCLUDE_ES3
-#define GLFW_INCLUDE_GLEXT
+//#define GLFW_INCLUDE_ES3
+//#define GLFW_INCLUDE_GLEXT
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
+
+
+
+
 
 #define CHECK_GL_ERROR_DEBUG() \
     do { \
