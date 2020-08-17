@@ -9,6 +9,7 @@
 #pragma once
 
 
+#include <Graphics/OpenGLES/TextureGL.hpp>
 #include "Stitches.hpp"
 #include "Graphics/SubRender.hpp"
 
@@ -27,7 +28,10 @@ private:
 
     TrianglesCommand command;
     TrianglesCommand::Triangles triangles;
+
     Matrix4 mat;
+    Texture2DGL* tex;
+
 };
 
 NS_STITCHES_END

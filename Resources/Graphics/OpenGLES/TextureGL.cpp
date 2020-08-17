@@ -56,15 +56,6 @@ Texture2DGL::Texture2DGL(const TextureDescriptor& descriptor) : Texture2DBackend
     glGenTextures(1, &mTextureInfo.texture);
 
     updateTextureDescriptor(descriptor);
-
-#if CC_ENABLE_CACHE_TEXTURE_DATA
-    // Listen this event to restored texture id after coming to foreground on Android.
-_backToForegroundListener = EventListenerCustom::create(EVENT_RENDERER_RECREATED, [this](EventCustom*){
-    glGenTextures(1, &(this->mTextureInfo.texture));
-    this->initWithZeros();
-});
-Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority(_backToForegroundListener, -1);
-#endif
 }
 
 void Texture2DGL::initWithZeros()
@@ -100,9 +91,6 @@ Texture2DGL::~Texture2DGL()
     if (mTextureInfo.texture)
         glDeleteTextures(1, &mTextureInfo.texture);
     mTextureInfo.texture = 0;
-#if CC_ENABLE_CACHE_TEXTURE_DATA
-    Director::getInstance()->getEventDispatcher()->removeEventListener(_backToForegroundListener);
-#endif
 }
 
 void Texture2DGL::updateSamplerDescriptor(const SamplerDescriptor &sampler) {
@@ -131,6 +119,11 @@ void Texture2DGL::updateSamplerDescriptor(const SamplerDescriptor &sampler) {
     {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, mTextureInfo.tAddressModeGL);
     }
+}
+
+void Texture2DGL::updateWithBitmap(Bitmap *bitmap)
+{
+    this->updateData(bitmap->GetData().get(), bitmap->GetSize().x, bitmap->GetSize().y, 0);
 }
 
 void Texture2DGL::updateData(uint8_t* data, std::size_t width , std::size_t height, std::size_t level)
@@ -309,6 +302,8 @@ void Texture2DGL::getBytes(std::size_t x, std::size_t y, std::size_t width, std:
     glBindFramebuffer(GL_FRAMEBUFFER, defaultFBO);
     glDeleteFramebuffers(1, &frameBuffer);
 }
+
+
 
 TextureCubeGL::TextureCubeGL(const TextureDescriptor& descriptor)
         :TextureCubemapBackend(descriptor)

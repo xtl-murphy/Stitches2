@@ -167,115 +167,6 @@ bool Texture2D::hasPremultipliedAlpha() const
     return _hasPremultipliedAlpha;
 }
 
-//bool Texture2D::initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, const Vector2i& /*contentSize*/, bool preMultipliedAlpha)
-//{
-////    CCASSERT(dataLen>0 && pixelsWide>0 && pixelsHigh>0, "Invalid size");
-//
-//    //if data has no mipmaps, we will consider it has only one mipmap
-//    MipmapInfo mipmap;
-//    mipmap.address = (unsigned char*)data;
-//    mipmap.len = static_cast<int>(dataLen);
-//    return initWithMipmaps(&mipmap, 1, pixelFormat, renderFormat, pixelsWide, pixelsHigh, preMultipliedAlpha);
-//}
-
-//bool Texture2D::initWithMipmaps(MipmapInfo* mipmaps, int mipmapsNum, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, bool preMultipliedAlpha)
-//{
-//    //the pixelFormat must be a certain value
-////    CCASSERT(pixelFormat != PixelFormat::NONE && pixelFormat != PixelFormat::AUTO, "the \"pixelFormat\" param must be a certain value!");
-////    CCASSERT(pixelsWide > 0 && pixelsHigh > 0, "Invalid size");
-//
-//    if (mipmapsNum <= 0)
-//    {
-////        CCLOG("WARNING: mipmap number is less than 1");
-//        return false;
-//    }
-//
-//
-//    auto formatItr = _pixelFormatInfoTables.find(pixelFormat);
-//    if (formatItr == _pixelFormatInfoTables.end())
-//    {
-//        LOGE("", "WARNING: unsupported pixelformat: %lx", (unsigned long)pixelFormat);
-//
-//        return false;
-//    }
-//
-//    const PixelFormatInfo& info = formatItr->second;
-//
-//
-//    TextureDescriptor textureDescriptor;
-//    textureDescriptor.width = pixelsWide;
-//    textureDescriptor.height = pixelsHigh;
-//    textureDescriptor.samplerDescriptor.magFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR : SamplerFilter::NEAREST;
-//    if (mipmapsNum == 1)
-//    {
-//        textureDescriptor.samplerDescriptor.minFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR : SamplerFilter::NEAREST;
-//    }
-//    else
-//    {
-//        textureDescriptor.samplerDescriptor.minFilter = (_antialiasEnabled) ? SamplerFilter::LINEAR_MIPMAP_NEAREST : SamplerFilter::NEAREST_MIPMAP_NEAREST;
-//    }
-//
-//    int width = pixelsWide;
-//    int height = pixelsHigh;
-//    PixelFormat oriPixelFormat = pixelFormat;
-//    for (int i = 0; i < mipmapsNum; ++i)
-//    {
-//        unsigned char *data = mipmaps[i].address;
-//        size_t dataLen = mipmaps[i].len;
-//        unsigned char *outData = data;
-//        size_t outDataLen = dataLen;
-//
-//        if(renderFormat != oriPixelFormat && !info.compressed) //need conversion
-//        {
-//            auto convertedFormat = PixelFormatUtils::convertDataToFormat(data, dataLen, oriPixelFormat, renderFormat, &outData, &outDataLen);
-//
-//            if(convertedFormat == renderFormat) pixelFormat = renderFormat;
-//        }
-//
-//        textureDescriptor.textureFormat = pixelFormat;
-////        CCASSERT(textureDescriptor.textureFormat != PixelFormat::NONE, "PixelFormat should not be NONE");
-//
-//        if(_texture->getTextureFormat() != textureDescriptor.textureFormat)
-//            _texture->updateTextureDescriptor(textureDescriptor);
-//
-//        if(info.compressed)
-//        {
-//            _texture->updateCompressedData(data, width, height, dataLen, i);
-//        }
-//        else
-//        {
-//            _texture->updateData(outData, width, height, i);
-//        }
-//
-//        if(outData && outData != data && outDataLen > 0)
-//        {
-//            free(outData);
-//            outData = nullptr;
-//            outDataLen = 0;
-//        }
-//
-//        if (i > 0 && (width != height || ccNextPOT(width) != width ))
-//        {
-//            LOGE("Texture2D", "Texture2D. WARNING. Mipmap level %u is not squared. Texture won't render correctly. width=%d != height=%d", i, width, height);
-//        }
-//
-//        width = MAX(width >> 1, 1);
-//        height = MAX(height >> 1, 1);
-//    }
-//
-//    _contentSize = Vector2i((float)pixelsWide, (float)pixelsHigh);
-//    _pixelsWide = pixelsWide;
-//    _pixelsHigh = pixelsHigh;
-//    _pixelFormat = pixelFormat;
-//    _maxS = 1;
-//    _maxT = 1;
-//
-//    _hasPremultipliedAlpha = preMultipliedAlpha;
-//    _hasMipmaps = mipmapsNum > 1;
-//
-//    return true;
-//}
-
 bool Texture2D::updateWithData(void *data,int offsetX,int offsetY,int width,int height)
 {
     if (_texture && width > 0 && height > 0)
@@ -287,24 +178,26 @@ bool Texture2D::updateWithData(void *data,int offsetX,int offsetY,int width,int 
     return false;
 }
 
-// implementation Texture2D (Image)
-//bool Texture2D::initWithImage(Image *image)
-//{
-//    return initWithImage(image, g_defaultAlphaPixelFormat);
-//}
-//
-//bool Texture2D::initWithImage(Image *image, PixelFormat format)
-//{
-//    if (image == nullptr)
-//    {
-//        LOGE("", "Texture2D. Can't create Texture. UIImage is nil");
-//        return false;
-//    }
-//
-//    int imageWidth = image->getWidth();
-//    int imageHeight = image->getHeight();
-//    this->_filePath = image->getFilePath();
-//    Configuration *conf = Configuration::getInstance();
+
+bool Texture2D::initWithBitmap(Bitmap *image)
+{
+    return initWithBitmap(image, g_defaultAlphaPixelFormat);
+}
+
+bool Texture2D::initWithBitmap(Bitmap* image, PixelFormat format)
+{
+    if (image == nullptr)
+    {
+        LOGE("", "Texture2D. Can't create Texture. UIImage is nil");
+        return false;
+    }
+
+    return true;
+
+//    int imageWidth = image->GetSize().x;
+//    int imageHeight = image->GetSize().y;
+//    this->_filePath = image->GetFilename().string();
+////    Configuration *conf = Configuration::getInstance();
 //
 //    int maxTextureSize = conf->getMaxTextureSize();
 //    if (imageWidth > maxTextureSize || imageHeight > maxTextureSize)
@@ -313,7 +206,7 @@ bool Texture2D::updateWithData(void *data,int offsetX,int offsetY,int width,int 
 //        return false;
 //    }
 //
-//    unsigned char*   tempData = image->getData();
+//    unsigned char*   tempData = image->GetData().get();
 //    Vector2i         imageSize = Vector2i((float)imageWidth, (float)imageHeight);
 //    PixelFormat      renderFormat = ((PixelFormat::NONE == format) || (PixelFormat::AUTO == format)) ? image->getPixelFormat() : format;
 //    PixelFormat      imagePixelFormat = image->getPixelFormat();
@@ -352,7 +245,7 @@ bool Texture2D::updateWithData(void *data,int offsetX,int offsetY,int width,int 
 //
 //        return true;
 //    }
-//}
+}
 
 // implementation Texture2D (Text)
 //bool Texture2D::initWithString(const char *text, const std::string& fontName, float fontSize, const Vector2i& dimensions/* = Size(0, 0)*/, TextHAlignment hAlignment/* =  TextHAlignment::CENTER */, TextVAlignment vAlignment/* =  TextVAlignment::TOP */, bool enableWrap /* = false */, int overflow /* = 0 */)

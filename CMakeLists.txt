@@ -31,9 +31,11 @@ include_directories(${SRC_DIR})
 include_directories(${THIRD_DIR}/glfw/include)
 include_directories(${THIRD_DIR}/gles/include)
 include_directories(${THIRD_DIR}/glad/include)
+include_directories(${THIRD_DIR}/physfs/src)
+include_directories(${THIRD_DIR})
 
 file(GLOB_RECURSE RES "${SRC_DIR}/*.cpp" "${SRC_DIR}/*.hpp" "${SRC_DIR}/*.inl" "${TEST_DIR}/*.cpp")
-
+file(GLOB_RECURSE STB "${THIRD_DIR}/stb/*.c" "${THIRD_DIR}/stb/*.h")
 
 add_subdirectory(Test)
 
@@ -43,7 +45,18 @@ add_executable(Stitches ${RES} main.cpp ${THIRD_DIR}/glad/src/glad.c)
 add_library(libglfw STATIC IMPORTED)
 set_target_properties(libglfw PROPERTIES IMPORTED_LOCATION ${THIRD_DIR}/glfw/libglfw3.a)
 
-target_link_libraries(Stitches libglfw ${GLES_LIBRARIES})
+#physys
+set(PHYSFS_BUILD_STATIC NOT${BUILD_SHARED_LIBS} CACHE INTERNAL "")
+set(PHYSFS_BUILD_SHARED ${BUILD_SHARED_LIBS} CACHE INTERNAL "")
+set(PHYSFS_BUILD_TEST OFF CACHE INTERNAL "")
+set(PHYSFS_TARGETNAME_DOCS "physfs-docs" CACHE INTERNAL STRING)
+set(PHYSFS_TARGETNAME_DIST "physfs-dist" CACHE INTERNAL STRING)
+set(PHYSFS_TARGETNAME_UNINSTALL "physfs-uninstall" CACHE INTERNAL STRING)
+set(CMAKE_DISABLE_FIND_PACKAGE_Doxygen TRUE)
+add_subdirectory(${THIRD_DIR}/physfs)
+set_target_properties(physfs-static PROPERTIES FOLDER External/physfs)
+
+target_link_libraries(Stitches libglfw ${GLES_LIBRARIES} ${STB} physfs-static)
 
 configure_file(${GLES_ROOT_DIR}/bin/libGLES_CM.dll ${CMAKE_CURRENT_BINARY_DIR}/libGLES_CM.dll COPYONLY)
 configure_file(${GLES_ROOT_DIR}/bin/libGLESv2.dll ${CMAKE_CURRENT_BINARY_DIR}/libGLESv2.dll COPYONLY)

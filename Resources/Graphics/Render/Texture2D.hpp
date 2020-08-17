@@ -10,6 +10,7 @@
 
 #include <Graphics/Image/Image.hpp>
 #include <Graphics/Command/CustomCommand.hpp>
+#include <Graphics/Image/Bitmap.hpp>
 #include "Stitches.hpp"
 #include "Graphics/Base/Texture.hpp"
 #include "Graphics/Base/ProgramState.hpp"
@@ -81,33 +82,10 @@ public:
      */
     virtual ~Texture2D();
 
-    /** Initializes with a texture2d with data.
-
-     @param data Specifies a pointer to the image data in memory.
-     @param dataLen The image data length.
-     @param pixelFormat The image pixelFormat.
-     @param pixelsWide The image width.
-     @param pixelsHigh The image height.
-     @param contentSize The image content size.
-     @param preMultipliedAlpha The texture has premultiplied alpha
-     * @js NA
-     * @lua NA
-     */
+//
 //    bool initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, int pixelsWide, int pixelsHigh, const Vector2i& contentSize, bool preMultipliedAlpha = false) { return initWithData(data, dataLen, pixelFormat, pixelFormat, pixelsWide, pixelsHigh, contentSize, preMultipliedAlpha);}
-
-    /** Initializes with a texture2d with data.
-
-     @param data Specifies a pointer to the image data in memory.
-     @param dataLen The image data length.
-     @param pixelFormat The image pixelFormat.
-     @param renderFormat The format converted to.
-     @param pixelsWide The image width.
-     @param pixelsHigh The image height.
-     @param contentSize The image content size.
-     @param preMultipliedAlpha The texture has premultiplied alpha
-     * @js NA
-     * @lua NA
-     */
+//
+//
 //    bool initWithData(const void *data, ssize_t dataLen, PixelFormat pixelFormat, PixelFormat renderFormat, int pixelsWide, int pixelsHigh, const Vector2i& contentSize, bool preMultipliedAlpha = false);
 
     /** Initializes with mipmaps.
@@ -149,17 +127,10 @@ public:
     NOTE: It will not convert the pvr image file.
     @param image An UIImage object.
     */
-//    bool initWithImage(Image * image);
+    bool initWithBitmap(Bitmap* image);
 
-    /**
-    Initializes a texture from a UIImage object.
 
-    We will use the format you passed to the function to convert the image format to the texture format.
-    If you pass PixelFormat::Automatic, we will auto detect the image render type and use that type for texture to render.
-    @param image An UIImage object.
-    @param format Texture pixel formats.
-    **/
-//    bool initWithImage(Image * image, PixelFormat format);
+    bool initWithBitmap(Bitmap* image, PixelFormat format);
 
     /** Initializes a texture from a string with dimensions, alignment, font name and font size.
 

@@ -8,6 +8,7 @@
  **/
 #pragma once
 
+#include <Graphics/Image/Bitmap.hpp>
 #include "Stitches.hpp"
 #include "Types.hpp"
 #include "Utils/Ref.hpp"
@@ -98,70 +99,27 @@ protected:
 class Texture2DBackend : public TextureBackend
 {
 public:
-    /**
-     * Update a two-dimensional texture image
-     * @param data Specifies a pointer to the image data in memory.
-     * @param width Specifies the width of the texture image.
-     * @param height Specifies the height of the texture image.
-     * @param level Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.
-     */
+
+    virtual void updateWithBitmap(Bitmap* bitmap) = 0;
+
     virtual void updateData(uint8_t* data, std::size_t width , std::size_t height, std::size_t level) = 0;
 
-    /**
-     * Update a two-dimensional texture image in a compressed format
-     * @param data Specifies a pointer to the compressed image data in memory.
-     * @param width Specifies the width of the texture image.
-     * @param height Specifies the height of the texture image.
-     * @param dataLen Specifies the totoal size of compressed image in bytes.
-     * @param level Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.
-     */
     virtual void updateCompressedData(uint8_t* data, std::size_t width , std::size_t height, std::size_t dataLen, std::size_t level) = 0;
 
-    /**
-     * Update a two-dimensional texture subimage
-     * @param xoffset Specifies a texel offset in the x direction within the texture array.
-     * @param yoffset Specifies a texel offset in the y direction within the texture array.
-     * @param width Specifies the width of the texture subimage.
-     * @param height Specifies the height of the texture subimage.
-     * @param level Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.
-     * @param data Specifies a pointer to the image data in memory.
-     */
     virtual void updateSubData(std::size_t xoffset, std::size_t yoffset, std::size_t width, std::size_t height, std::size_t level, uint8_t* data) = 0;
 
-    /**
-     * Update a two-dimensional texture subimage in a compressed format
-     * @param xoffset Specifies a texel offset in the x direction within the texture array.
-     * @param yoffset Specifies a texel offset in the y direction within the texture array.
-     * @param width Specifies the width of the texture subimage.
-     * @param height Specifies the height of the texture subimage.
-     * @param dataLen Specifies the totoal size of compressed subimage in bytes.
-     * @param level Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.
-     * @param data Specifies a pointer to the compressed image data in memory.
-     */
     virtual void updateCompressedSubData(std::size_t xoffset, std::size_t yoffset, std::size_t width, std::size_t height, std::size_t dataLen, std::size_t level, uint8_t* data) = 0;
 
-    /**
-     * Get texture width.
-     * @return Texture width.
-     */
     inline std::size_t getWidth() const { return mWidth; }
 
-    /**
-     * Get texture height.
-     * @return Texture height.
-     */
     inline std::size_t getHeight() const { return mHeight; }
 
 protected:
-    /**
-     * @param descriptor Specifies the texture descriptor.
-     */
+
     Texture2DBackend(const TextureDescriptor& descriptor);
 };
 
-/**
-* A cubemap texture.
-*/
+
 class TextureCubemapBackend : public TextureBackend
 {
 public:
@@ -173,9 +131,7 @@ public:
     virtual void updateFaceData(TextureCubeFace side, void *data) = 0;
 
 protected:
-    /**
-     * @param descriptor Specifies the texture descriptor.
-     */
+
     TextureCubemapBackend(const TextureDescriptor& descriptor);
 };
 

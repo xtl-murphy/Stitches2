@@ -6,6 +6,7 @@
  * Created by Murphy at 2020/6/16 23:50
  **/
 
+#include <Files/Files.hpp>
 #include "Engine.hpp"
 NS_STITCHES_BEGIN
 Engine *Engine::Instance = nullptr;
@@ -19,6 +20,7 @@ Engine::Engine( bool emptyRegister) :
 
     if (!emptyRegister)
     {
+        Files::Register();
         Window::Register();
         Graphics::Register();
     }

@@ -44,6 +44,8 @@ public:
     Texture2DGL(const TextureDescriptor& descriptor);
     ~Texture2DGL();
 
+    virtual void updateWithBitmap(Bitmap* bitmap) override ;
+
     /**
      * Update a two-dimensional texture image
      * @param data Specifies a pointer to the image data in memory.

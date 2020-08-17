@@ -9,6 +9,7 @@
 #pragma once
 
 #include <Graphics/Render/Texture2D.hpp>
+#include <Graphics/OpenGLES/TextureGL.hpp>
 #include "Stitches.hpp"
 #include "RenderCommand.hpp"
 NS_STITCHES_BEGIN
@@ -52,7 +53,7 @@ public:
      @param mv ModelView matrix for the command.
      @param flags to indicate that the command is using 3D rendering or not.
      */
-    void init(float globalOrder, Texture2D* texture, const BlendFunc& blendType,  const Triangles& triangles, const Matrix4& mv, uint32_t flags);
+    void init(float globalOrder, Texture2DGL* texture, const BlendFunc& blendType,  const Triangles& triangles, const Matrix4& mv, uint32_t flags);
     /**Get the material id of command.*/
     uint32_t getMaterialID() const { return _materialID; }
     /**Get a const reference of triangles.*/
