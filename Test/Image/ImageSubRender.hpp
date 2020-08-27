@@ -26,12 +26,15 @@ public:
     void Start() override;
 private:
 
-    TrianglesCommand command;
-    TrianglesCommand::Triangles triangles;
+    void updateTexture();
+    void initProgram();
 
+    CustomCommand command;
+    ProgramState *programState;
     Matrix4 mat;
     Texture2DGL* tex;
-
+    UniformLocation _mvpMatrixLocation;
+    UniformLocation _textureLocation;
 };
 
 NS_STITCHES_END

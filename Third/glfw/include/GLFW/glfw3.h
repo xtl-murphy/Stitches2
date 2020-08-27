@@ -1749,7 +1749,7 @@ typedef struct GLFWgamepadstate
  *  @errors Possible errors include @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark @macos This function will change the current directory of the
- *  application to the `Contents/Resources` subdirectory of the application's
+ *  application to the `Contents/Src` subdirectory of the application's
  *  bundle, if present.  This can be disabled with the @ref
  *  GLFW_COCOA_CHDIR_RESOURCES init hint.
  *

@@ -107,4 +107,4 @@ typedef int32_t  int32;
 
 #include "Utils/Ref.hpp"
 
-constexpr std::string_view RESOURCES_DEV = "../Resources";
+constexpr std::string_view RESOURCES_DEV = "../Resource";

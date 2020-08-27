@@ -6,6 +6,7 @@
  * <p>
  * Created by Murphy at 2020/8/12 23:09
  **/
+#include <Graphics/OpenGLES/BufferGL.hpp>
 #include "CustomCommand.hpp"
 
 NS_STITCHES_BEGIN
@@ -50,6 +51,7 @@ void CustomCommand::createVertexBuffer(std::size_t vertexSize, std::size_t capac
 
 //    auto device = Device::getInstance();
 //    _vertexBuffer = device->newBuffer(vertexSize * capacity, BufferType::VERTEX, usage);
+    _vertexBuffer = new BufferGL(vertexSize * capacity, BufferType::VERTEX, usage);
 }
 
 void CustomCommand::createIndexBuffer(IndexFormat format, std::size_t capacity, BufferUsage usage)
